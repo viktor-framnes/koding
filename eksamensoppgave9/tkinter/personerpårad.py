@@ -13,13 +13,10 @@ class Person():
     def __init__(self):
         self.tilstand = tilstander[0]
         self.window = tk.Tk()
-        self.window.geometry("755x210")
+        self.window.geometry("755x110")
         self.lengde = 100
         self.bredde = 1000
         self.tilstand0()
-
-        tk.Button(self.window, text="Start", command=lambda: TestCode()).pack()
-
 
     def tilstand0(self):
         canvas = tk.Canvas(self.window,bg="lightgrey",width=self.bredde*0.08,height=self.bredde*0.08)
@@ -82,15 +79,9 @@ class Person():
     def __str__(self):
         return f"Personens tilstand er {self.tilstand}"
 
-class TestCode():
-    def __init__(self):
-        pass
-        
-        
-
-
 def main():
     person1 = Person()
+
     print(person1)
     person1.smitte()
     for i in range(8):

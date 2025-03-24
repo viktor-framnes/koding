@@ -1,60 +1,54 @@
-# Oppgave 9
-# Del 1
-# funksjonalitet for at nye personer starter som friske uten immunitet og kan bli smittet av andre.
-# etter tre dager som smittet blir personen syke, og etter fire dagers sykdom blir de friske med immunitet.
-# Sannsynligheten for død mens en person er syk, skal være 1 prosent (0,01) hver dag mens de er syke. 
-# Definer klassen med passende datafelter og metoder.
-
-import random 
 import tkinter as tk
+import random
+import time
 
-tilstander = {
-    0:"friskUtenImunitet", # lys grå
-    1:"smittet", # rosa med svart skråstrek
-    2:"syk", # rød med hvit skråstrek
-    3:"friskMedImunitet", # mørk grå med svart prikk
-    4:"død" # svart med hvit prikk
-}
+tilstander = ["friskUtenImunitet","smittet","syk","friskMedImunitet","død"]
 
-class Person():
+class Personspredning(tk.Tk):
     def __init__(self):
-        self.tilstand = tilstander[0]
-        self.window = tk.Tk()
-        self.window.geometry("755x110")
-        self.lengde = 100
+        tk.Tk.__init__(self)
+        self.minsize(200,200)
         self.bredde = 1000
-        self.tilstand0()
+        self.tilstand = tilstander[0]
+        self.lb = tk.Label(self,text=tilstander[0])
+        self.lb.pack(side="top")
+        self.canvas = tk.Canvas(self,bg="lightgrey",width=self.bredde*0.08,height=self.bredde*0.08)
+        self.canvas.pack(expand=True)
+        tk.Button(self, text="Start", command=lambda: kjor()).pack(side="bottom")
 
     def tilstand0(self):
-        canvas = tk.Canvas(self.window,bg="lightgrey",width=self.bredde*0.08,height=self.bredde*0.08)
-        canvas.pack(side="left",expand=True)
+        self.canvas.delete("all")
+        self.canvas.configure(bg="lightgrey")
+        self.lb.configure(text="friskUtenImunitet")
+        self.canvas.update()
 
     def tilstand1(self):
-        canvas = tk.Canvas(self.window,bg="#ff9696",width=self.bredde*0.08,height=self.bredde*0.08)
-        canvas.pack(side="left",expand=True)
-
-        canvas.create_line(12,12,70,70,fill="black",width=5)
+        self.canvas.delete("all")
+        self.canvas.configure(bg="#ff9696")
+        self.canvas.create_line(12,12,70,70,fill="black",width=5)
+        self.lb.configure(text="smittet")
+        self.canvas.update()
 
     def tilstand2(self):
-        canvas = tk.Canvas(self.window,bg="red",width=self.bredde*0.08,height=self.bredde*0.08)
-        canvas.pack(side="left",expand=True)
-
-        canvas.create_line(12,70,70,12,fill="white",width=5)
+        self.canvas.delete("all")
+        self.canvas.configure(bg="red")
+        self.canvas.create_line(12,70,70,12,fill="white",width=5)
+        self.lb.configure(text="syk")
+        self.canvas.update()
 
     def tilstand3(self):
-        canvas = tk.Canvas(self.window,bg="#414141",width=self.bredde*0.08,height=self.bredde*0.08)
-        canvas.pack(side="left",expand=True)
-
-        canvas.create_oval(38,38,48,48,fill="black")
+        self.canvas.delete("all")
+        self.canvas.configure(bg="#414141")
+        self.canvas.create_oval(38,38,48,48,fill="black")
+        self.lb.configure(text="friskMedImunitet")
+        self.canvas.update()
 
     def tilstand4(self):
-        canvas = tk.Canvas(self.window,bg="black",width=self.bredde*0.08,height=self.bredde*0.08)
-        canvas.pack(side="left",expand=True)
-
-        canvas.create_oval(38,38,48,48,fill="white")
-
-    def vis(self):
-        self.window.mainloop()
+        self.canvas.delete("all")
+        self.canvas.configure(bg="black")
+        self.canvas.create_oval(38,38,48,48,fill="white")
+        self.lb.configure(text=f"Død")
+        self.canvas.update()
 
     def smitte(self):
         if self.tilstand == "friskUtenImunitet":
@@ -69,6 +63,7 @@ class Person():
             self.dagerSmittet += 1
             if self.dagerSmittet > 3:
                 self.tilstand = tilstander[2]
+                self.tilstand2()
             else:
                 self.tilstand1()
                 
@@ -82,20 +77,25 @@ class Person():
             else:
                 self.tilstand = tilstander[3]
                 self.tilstand3()
-            
+                
+
     def __str__(self):
         return f"Personens tilstand er {self.tilstand}"
 
-def main():
-    person1 = Person()
-
-    print(person1)
-    person1.smitte()
+def kjor():
+    print(b)
+    b.smitte()
     for i in range(8):
-        person1.oppdaterTilstand()
+        b.oppdaterTilstand()
         print(f"dag {i+1}")
-        print(person1)
-    person1.vis()
+        print(b)
+        time.sleep(1)
 
-if __name__ == "__main__":
-    main()
+b = Personspredning()
+b.mainloop()
+
+
+
+    
+
+
