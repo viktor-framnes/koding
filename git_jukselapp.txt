@@ -1,0 +1,40 @@
+
+🧠 Git + GitHub Jukselapp (for skole & hjemmebruk)
+
+🔁 Vanlig arbeidsflyt:
+
+1. Før du starter å jobbe (på en maskin):
+    git pull
+    📥 Henter siste versjon fra GitHub
+
+2. Etter at du har redigert, lagt til eller slettet filer:
+    git add .
+    ➕ Legger til alle endringer i staging
+
+    git commit -m "beskrivelse av hva du gjorde"
+    💬 Lager en lagret versjon av endringene
+
+    git push
+    🚀 Skyver endringene opp til GitHub
+
+3. Når du setter deg ved den andre maskinen igjen:
+    git pull
+    📥 Henter ned alt det nyeste fra GitHub
+
+🛠 Vanlige engangskommandoer:
+
+🆕 Klone repo (første gang på ny maskin):
+    git clone https://github.com/brukernavn/repo-navn.git
+
+🔗 Koble lokal mappe til GitHub (hvis du startet lokalt):
+    git init
+    git remote add origin https://github.com/brukernavn/repo-navn.git
+    git branch -M main
+    git push -u origin main
+
+🆘 Vanlige problemer:
+
+🚫 Feil: fatal: not a git repository (or any of the parent directories): .git
+✅ Løsning: Du står i feil mappe. Gå inn i repo-mappen først:
+    cd repo-navn
+    git pull
