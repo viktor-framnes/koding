@@ -1,0 +1,94 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}    
+body{
+    /* farger
+    lyslilla: #adbbda
+    mørklilla: #8697C4
+    hvit: #EDE8F5
+    lysblå: #7091E6
+    mørkblå: #3D52A0
+    */
+    background-color: white;
+    text-align: center;
+}
+h1{
+    color: #69779c;
+    padding: 50px;
+    font-size: 40px;
+}
+.nesteTilbake{
+    height: 70px;
+    position: fixed;
+    width: 230px;
+    top: 87%;
+    border-radius: 120px;
+    display: flex;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    color: #69779c;
+    background-color: #adbbda;
+    font-size: 25px;
+}
+#sideTall{
+    margin: 0px 20px;
+    cursor: default;
+    user-select: none;
+}
+.info1, .info2, .info3{
+    margin: 40px auto;
+    width: 300px;
+    display: none;
+}
+.bunn{
+    display: none;
+    justify-content: center;
+}
+.top{
+    background-color: #adbbda;
+    height: 150px;
+    
+}
+#fram, #tilbake{
+    cursor: pointer;
+    user-select: none;
+}
+.celle{
+    width: 250px;
+    height: 250px;
+    border-radius: 55px;
+    margin: 10px;
+}
+.forside{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+h2{
+    height: 54px;
+    margin: 14px 0px;
+    color: #69779c;
+}
+.rad1, .rad2, .rad3{
+    margin: 70px 20px;
+}
+.celle img{
+    height: 250px;
+    width: 250px;
+    object-fit:cover;
+    border-radius: 55px;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: #69779c;
+}
+a:hover{
+    font-size: 41px;
+    transition: 0.2s;
+}
