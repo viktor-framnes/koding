@@ -5,32 +5,8 @@ import time
 class Person():
     def __init__(self):
         self.dagerSmittet = 0
-        self.tilstander = ["friskUtenImunitet","smittet","syk","friskMedImunitet","død"]
-        self.tilstand = 0
-
-    def oppdaterTilstand(self):
-        if self.tilstand == "friskUtenImunitet":
-            self.tilstand0()
-
-        elif self.tilstand == "smittet":
-            self.dagerSmittet += 1
-            if self.dagerSmittet > 3:
-                self.tilstand = self.tilstander[2]
-                self.tilstand2()
-            else:
-                self.tilstand1()
-                
-        elif self.tilstand == "syk":
-            self.tilstand2()
-            self.dagerSmittet += 1
-            if self.dagerSmittet <= 7:
-                if random.randint(0,100) == 9:
-                    self.tilstand = self.tilstander[4]
-                    self.tilstand4()
-            else:
-                self.tilstand = self.tilstander[3]
-                self.tilstand3()
-
+        self.tilstander = [0,1,2,3,4]
+        self.tilstand = [0]
 
 
 class PopulasjonMedtkinter():
@@ -59,9 +35,8 @@ class PopulasjonMedtkinter():
         tk.Button(self.window, text="Start", command=lambda: kjor()).pack(expand=True)
         self.frame.pack(expand=True)
 
-        self.personer = []
-        for i in range(11):
-            self.personer.append([Person()]*11)
+        self.personer = [[Person() for i in range(11)] for j in range(11)]
+
 
         for i in range(11):
             for j in range(11):
@@ -70,14 +45,19 @@ class PopulasjonMedtkinter():
         #start posisjon
         #midten
         self.sykBlokk(5,5)
+        self.personer[5][5].tilstand = self.personer[5][5].tilstander[2]
         #N
         self.smittetBlokk(4,5)
+        self.personer[4][5].tilstand = self.personer[4][5].tilstander[1]
         #S
         self.smittetBlokk(6,5)
+        self.personer[6][5].tilstand = self.personer[6][5].tilstander[1]
         #V
         self.smittetBlokk(5,4)
+        self.personer[5][4].tilstand = self.personer[5][4].tilstander[1]
         #Ø
         self.smittetBlokk(5,6)
+        self.personer[5][6].tilstand = self.personer[5][6].tilstander[1]
         
 
     def lagblokk(self,i,j):
@@ -128,18 +108,19 @@ class PopulasjonMedtkinter():
 
         for i in range(self.lengde):
             for j in range(self.lengde):
-                if self.brett[i][j] == 1 or self.brett[i][j] == 2:
+                if self.brett[i][j] == 1 or self.brett[i][j] == 2 or self.brett[i][j] == 3:
                     indekser.append(str(i) + " " + str(j))
-
 
         for i in range(len(indekser)):
             y, x = map(int,indekser[i].split())
+
             # Nord
             try:
                 if y > 0:
                     if self.brett[y-1][x] == 0:
                         if random.random() < 0.3:
                             self.brett[y-1][x] = 1
+                            self.personer[y-1][x].dagerSmittet = 1
                             self.smittetBlokk((y-1),x)
                 else:
                     pass
@@ -150,6 +131,7 @@ class PopulasjonMedtkinter():
                 if self.brett[y+1][x] == 0:
                     if random.random() < 0.3:
                         self.brett[y+1][x] = 1  
+                        self.personer[y+1][x].dagerSmittet = 1
                         self.smittetBlokk((y+1),x)
             except IndexError:
                 pass
@@ -158,6 +140,7 @@ class PopulasjonMedtkinter():
                 if self.brett[y][x+1] == 0:
                     if random.random() < 0.3:
                         self.brett[y][x+1] = 1
+                        self.personer[y][x+1].dagerSmittet = 1
                         self.smittetBlokk(y,(x+1))
             except IndexError:
                 pass
@@ -167,17 +150,54 @@ class PopulasjonMedtkinter():
                     if self.brett[y][x-1] == 0:
                         if random.random() < 0.3:
                             self.brett[y][x-1] = 1
+                            self.personer[y][x-1].dagerSmittet = 1
                             self.smittetBlokk(y,(x-1))
                 else:
                     pass
             except IndexError:
                 pass
 
+    def oppdaterTilstand(self):
+        for i in range(self.lengde):
+            for j in range(self.lengde):
+                if self.brett[i][j] == 1 or self.brett[i][j] == 2 or self.brett[i][j] == 3:
+                    self.personer[i][j].dagerSmittet += 1
+                    if self.brett[i][j] == 1:
+                        if self.personer[i][j].dagerSmittet > 3:
+                            self.brett[i][j] = self.personer[i][j].tilstander[2]
+                            self.sykBlokk(i,j)
+
+
+        
+
+
+            # if self.brett[y][x] == 1:
+            #     self.personer[y][x].dagerSmittet += 1
+            #     if self.personer[y][x].dagerSmittet > 3:
+            #         self.personer[y][x].tilstand = self.personer[y][x].tilstander[2]
+            #         self.brett[y][x] = self.personer[y][x].tilstander[2]
+            #         self.sykBlokk(y,x)
+            #     else:
+            #         self.smittetBlokk(i,j)
+                        
+            # elif self.brett[y][x] == 2:
+            #     self.sykBlokk(y,x)
+            #     self.personer[y][x].dagerSmittet += 1
+            #     if self.personer[y][x].dagerSmittet <= 7:
+            #         if random.randint(0,100) == 9:
+            #             self.personer[y][x].tilstand = self.personer[y][x].tilstander[4]
+            #             self.brett[y][x] = self.personer[y][x].tilstander[4]
+            #             self.dodBlokk(y,x)
+            #     else:
+            #         self.brett[y][x] = self.personer[y][x].tilstander[3]
+            #         self.friskMedInumitetBlokk(y,x)
+
 
 def kjor():
     for i in range(8):
         print(f"dag {i+1}")
         populasjon1.spredning()
+        populasjon1.oppdaterTilstand()
         populasjon1.tegnBrett()
         time.sleep(1)
     

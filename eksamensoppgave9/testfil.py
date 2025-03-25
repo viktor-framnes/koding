@@ -9,14 +9,17 @@ class Person():
     def __str__(self):
         return f"jeg er {self.dagersyk} dager syk"
 
-brett = []
-for i in range(11):
-    brett.append([Person()]*11)
 
-brett[5][5].dag()
+brett = [[Person() for i in range(5)] for j in range(5)]
 
-print(brett[5][5])
+brett[4][4] = 1
+# brett[4][5].dag()
+# brett[5][4].dag()
 
-# print(brett)
+# print(brett[5][5])
+# print(brett[4][4])
+# print(brett[5][4])
+
+print(brett)
 
     
