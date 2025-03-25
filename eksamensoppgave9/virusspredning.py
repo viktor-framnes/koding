@@ -2,6 +2,37 @@ import random
 import tkinter as tk
 import time
 
+class Person():
+    def __init__(self):
+        self.dagerSmittet = 0
+        self.tilstander = ["friskUtenImunitet","smittet","syk","friskMedImunitet","død"]
+        self.tilstand = 0
+
+    def oppdaterTilstand(self):
+        if self.tilstand == "friskUtenImunitet":
+            self.tilstand0()
+
+        elif self.tilstand == "smittet":
+            self.dagerSmittet += 1
+            if self.dagerSmittet > 3:
+                self.tilstand = self.tilstander[2]
+                self.tilstand2()
+            else:
+                self.tilstand1()
+                
+        elif self.tilstand == "syk":
+            self.tilstand2()
+            self.dagerSmittet += 1
+            if self.dagerSmittet <= 7:
+                if random.randint(0,100) == 9:
+                    self.tilstand = self.tilstander[4]
+                    self.tilstand4()
+            else:
+                self.tilstand = self.tilstander[3]
+                self.tilstand3()
+
+
+
 class PopulasjonMedtkinter():
     def __init__(self,n):
         self.lengde = n
@@ -28,12 +59,13 @@ class PopulasjonMedtkinter():
         tk.Button(self.window, text="Start", command=lambda: kjor()).pack(expand=True)
         self.frame.pack(expand=True)
 
-
+        self.personer = []
+        for i in range(11):
+            self.personer.append([Person()]*11)
 
         for i in range(11):
             for j in range(11):
-                self.Person(i,j,self.window)
-                
+                self.lagblokk(i,j)
 
         #start posisjon
         #midten
@@ -52,13 +84,9 @@ class PopulasjonMedtkinter():
         self.blokk = tk.Canvas(self.frame,bg="grey",width=self.bredde*0.05,height=self.hoyde*0.05)
         self.blokk.grid(row=i,column=j)
 
+    # def oppdaterblokk(self,i,j):
 
     #forskjellige typer tilstander
-    def friskUtenImunitet(self,i,j):
-        self.blokk = tk.Canvas(self.frame,bg="grey",width=self.bredde*0.05,height=self.hoyde*0.05)
-        self.blokk.grid(row=i,column=j)
-        self.blokk.update()
-
     def smittetBlokk(self,i,j):
         self.blokk = tk.Canvas(self.frame,bg="#ff9696",width=self.bredde*0.05,height=self.bredde*0.05)
         self.blokk.create_line(8,8,46,46,fill="black",width=3.3)
@@ -144,44 +172,6 @@ class PopulasjonMedtkinter():
                     pass
             except IndexError:
                 pass
-        self.Person.oppdaterTilstand()
-
-    class Person():
-        def __init__(self,i,j,forelder):
-            self.dagerSyk = 0
-            self.bredde = 1000
-            self.hoyde = 1000
-            self.tilstander = ["friskUtenImunitet","smittet","syk","friskMedImunitet","død"]
-            self.tilstand = self.tilstander[0]
-
-        def lagBlokk(self):
-            for i in range(11):
-                for j in range(11):
-                    self.Person(i,j,self.window)
-
-
-        def oppdaterTilstand(self):
-            if self.tilstand == "friskUtenImunitet":
-                PopulasjonMedtkinter.friskMedInumitetBlokk()
-
-            elif self.tilstand == "smittet":
-                self.dagerSmittet += 1
-                if self.dagerSmittet > 3:
-                    self.tilstand = self.tilstander[2]
-                    PopulasjonMedtkinter.sykBlokk()
-                else:
-                    PopulasjonMedtkinter.smittetBlokk()
-                        
-            elif self.tilstand == "syk":
-                PopulasjonMedtkinter.sykBlokk()
-                self.dagerSmittet += 1
-                if self.dagerSmittet <= 7:
-                    if random.randint(0,100) == 9:
-                        self.tilstand = self.tilstander[4]
-                        PopulasjonMedtkinter.dodBlokk()
-                else:
-                    self.tilstand = self.tilstander[3]
-                    PopulasjonMedtkinter.friskMedInumitetBlokk()
 
 
 def kjor():
