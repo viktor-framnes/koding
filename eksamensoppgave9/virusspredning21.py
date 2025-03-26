@@ -62,8 +62,6 @@ class PopulasjonMedtkinter():
         self.blokk = tk.Canvas(self.frame,bg="#d6d5d5",width=self.bredde*0.03,height=self.hoyde*0.03)
         self.blokk.grid(row=i,column=j)
 
-    # def oppdaterblokk(self,i,j):
-
     #forskjellige typer tilstander
     def smittetBlokk(self,i,j):
         self.blokk = tk.Canvas(self.frame,bg="#ff9696",width=self.bredde*0.03,height=self.bredde*0.03)
