@@ -168,8 +168,6 @@ class PopulasjonMedtkinter():
                             self.brett[i][j] = 3
                             self.friskMedInumitetBlokk(i,j)
 
-
-
 def kjor():
     for i in range(15):
         print(f"dag {i+1}")
