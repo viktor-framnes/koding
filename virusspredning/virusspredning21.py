@@ -179,4 +179,3 @@ def kjor():
 
 populasjon1 = PopulasjonMedtkinter(21)
 populasjon1.window.mainloop() 
-    

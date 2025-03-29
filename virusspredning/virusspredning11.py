@@ -5,8 +5,6 @@ import time
 class Person():
     def __init__(self):
         self.dagerSmittet = 0
-        
-
 
 class PopulasjonMedtkinter():
     def __init__(self,n):
