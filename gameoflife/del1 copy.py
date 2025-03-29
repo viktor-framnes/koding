@@ -50,52 +50,57 @@ class Brett(tk.Tk):
                 self.celler[i][j].tilstand = 0
 
 
+    def tegnBrett(self):
+        for rad in self.brettKopi:
+            for i in range(0,len(rad)-1):
+                print(f"{rad[i]:4}",end="")
+            print(f"{rad[-1]:4}")
+        print("\n")
+
     def start(self):
-        indekser = []
+        self.brettKopi = []
+        for i in range(20):
+            self.brettKopi.append([0]*20)
+        teller = 0
+
+
         for i in range(20):
             for j in range(20):
-                if self.celler[i][j].tilstand == 1:
-                    indekser.append(str(i) + " " + str(j))
+                try:
+                    #N
+                    if self.celler[i-1][j].tilstand == 1:
+                        teller += 1
+                    #S
+                    if self.celler[i+1][j].tilstand == 1:
+                        teller += 1
+                    #Ø
+                    if self.celler[i][j+1].tilstand == 1:
+                        teller += 1
+                    #V
+                    if self.celler[i][j-1].tilstand == 1:
+                        teller += 1
+                    #NØ
+                    if self.celler[i-1][j+1].tilstand == 1:
+                        teller += 1
+                    #NV
+                    if self.celler[i-1][j-1].tilstand == 1:
+                        teller += 1
+                    #SØ
+                    if self.celler[i+1][j+1].tilstand == 1:
+                        teller += 1
+                    #SV
+                    if self.celler[i+1][j-1].tilstand == 1:
+                        teller += 1
+                except IndexError:
+                    pass
 
-        for i in range(len(indekser)):
-            y, x = map(int,indekser[i].split())
-            print(y,x)
-            teller = 0
-            #N
-
-            if self.celler[y-1][x].tilstand == 1:
-                teller += 1
-            #S
-            if self.celler[y+1][x].tilstand == 1:
-                teller += 1
-            #Ø
-            if self.celler[y][x+1].tilstand == 1:
-                teller += 1
-            #V
-            if self.celler[y][x-1].tilstand == 1:
-                teller += 1
-            #NØ
-            if self.celler[y-1][x+1].tilstand == 1:
-                teller += 1
-            #NV
-            if self.celler[y-1][x-1].tilstand == 1:
-                teller += 1
-            #SØ
-            if self.celler[y+1][x+1].tilstand == 1:
-                teller += 1
-            #SV
-            if self.celler[y+1][x-1].tilstand == 1:
-                teller += 1
-            if teller > 3:
-                self.celler[y][x].tilstand = 0
-                self.celler[y][x].cell.config(bg="white")
-            elif teller == 2 or teller == 3:
-                pass
-            elif teller < 2:
-                self.celler[y][x].tilstand = 0
-                self.celler[y][x].cell.config(bg="white")
-            print(teller)
-
+                if teller > 3:
+                    self.brettKopi[i][j] = 0
+                elif teller == 2 or teller == 3:
+                    self.brettKopi[i][j] = 1
+                elif teller < 2:
+                    self.brettKopi[i][j] = 0
+        self.tegnBrett()
 
 
 
