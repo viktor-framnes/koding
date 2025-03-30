@@ -51,51 +51,7 @@ class Brett(tk.Tk):
 
 
     def start(self):
-        indekser = []
-        for i in range(20):
-            for j in range(20):
-                if self.celler[i][j].tilstand == 1:
-                    indekser.append(str(i) + " " + str(j))
-
-        for i in range(len(indekser)):
-            y, x = map(int,indekser[i].split())
-            print(y,x)
-            teller = 0
-            #N
-
-            if self.celler[y-1][x].tilstand == 1:
-                teller += 1
-            #S
-            if self.celler[y+1][x].tilstand == 1:
-                teller += 1
-            #Ø
-            if self.celler[y][x+1].tilstand == 1:
-                teller += 1
-            #V
-            if self.celler[y][x-1].tilstand == 1:
-                teller += 1
-            #NØ
-            if self.celler[y-1][x+1].tilstand == 1:
-                teller += 1
-            #NV
-            if self.celler[y-1][x-1].tilstand == 1:
-                teller += 1
-            #SØ
-            if self.celler[y+1][x+1].tilstand == 1:
-                teller += 1
-            #SV
-            if self.celler[y+1][x-1].tilstand == 1:
-                teller += 1
-            if teller > 3:
-                self.celler[y][x].tilstand = 0
-                self.celler[y][x].cell.config(bg="white")
-            elif teller == 2 or teller == 3:
-                pass
-            elif teller < 2:
-                self.celler[y][x].tilstand = 0
-                self.celler[y][x].cell.config(bg="white")
-            print(teller)
-
+        
 
 
 
