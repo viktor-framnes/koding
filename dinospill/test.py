@@ -4,19 +4,37 @@ class MoveCanvas(tk.Canvas):
 
 	def __init__(self, *args, **kwargs):
 		super().__init__(*args, **kwargs)
-
+		self.x = 15
+		self.y = 15
 		self.dx = 0
 		self.dy = 0
+		self.ds = 3
 
-		self.box = self.create_rectangle(0, 0, 10, 10, fill="black")
+		self.box = self.create_rectangle(5, 5, 15, 15, fill="black")
 
 		self.dt = 25
 		self.tick()
 	
 	def tick(self):
-
+		self.x += self.dx
+		self.y += self.dy
 		self.move(self.box, self.dx, self.dy)
+		self.sjekkKolisjon()
 		self.after(self.dt, self.tick)
+
+	def sjekkKolisjon(self):
+		if self.x >= 300:
+			self.move(self.box,-self.dx,self.dy)
+			self.x += self.dx
+			self.y += self.dy
+			self.change_heading(-self.ds,0)
+
+		if self.y >= 300:
+			self.move(self.box,self.dx,-self.dy)
+			self.x += self.dx
+			self.y += self.dy
+			self.change_heading(0,-self.ds)
+
 
 	def change_heading(self, dx, dy):
 		self.dx = dx
@@ -27,6 +45,7 @@ if __name__ == "__main__":
 
 	root = tk.Tk()
 	root.geometry("300x300")
+
 
 	cvs = MoveCanvas(root)
 	cvs.pack(fill="both", expand=True)

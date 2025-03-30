@@ -165,12 +165,7 @@ def game_over():
                        text="GAME OVER",
                        font=("Arial",30),
                        fill="red")
-    canvas.create_text(window_width/2,window_height/2+20,text=f"score: {elapesed_time*10:.0f} poeng")
-
-
-
-
-
+    canvas.create_text(window_width/2,window_height/2+40,text=f"score: {elapesed_time*10:.0f} poeng")
 
 
 #Definerer hendelser for trykk på knapper
