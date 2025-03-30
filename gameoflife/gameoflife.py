@@ -1,6 +1,5 @@
 import random
 import tkinter as tk
-import time
 
 class Celle:
     def __init__(self,forelder):
@@ -13,7 +12,7 @@ class Celle:
         self.pixel = tk.PhotoImage(width=1, height=1)
         self.cell = tk.Button(self.forelder,bg=farge,image=self.pixel,width=15,height=15,highlightthickness=1,command=self.klikket)
         self.cell.grid(row=i,column=j)
-    
+
     def klikket(self):
         if self.tilstand == 0:
             self.cell.config(bg="black")
@@ -32,7 +31,7 @@ class Gameoflife(tk.Tk):
         self.knapper = tk.Frame(self)
         self.knapper.pack(expand=True)
         tk.Button(self.knapper,text="Tøm",command=lambda:self.tom()).pack(side="left")
-        tk.Button(self.knapper,text="Start",command=lambda:self.kjor()).pack()
+        tk.Button(self.knapper,text="Start",command=lambda:self.kjor(True)).pack()
         self.frame = tk.Frame(self)
         self.frame.pack(expand=True)
 
@@ -52,12 +51,13 @@ class Gameoflife(tk.Tk):
                 self.celler[i][j].cell.config(bg="white")
                 self.celler[i][j].tilstand = 0
 
-    def kjor(self):
+    def kjor(self,a):
+        while a:
             for n in range(self.lengde):
                 for m in range(self.lengde):
                     naboer = self.tellnaboer(n,m)
                     if self.celler[n][m].tilstand == 1:
-                        if naboer in [2,3]: 
+                        if naboer in [2,3]:
                             self.celler[n][m].tilstand = 3
                     elif naboer == 3:
                         self.celler[n][m].tilstand = 2
@@ -67,9 +67,12 @@ class Gameoflife(tk.Tk):
                     if self.celler[n][m].tilstand == 1:
                         self.celler[n][m].tilstand = 0
                         self.celler[n][m].cell.config(bg="white")
+                        self.celler[n][m].cell.update_idletasks()
                     elif self.celler[n][m].tilstand in [2,3]:
                         self.celler[n][m].tilstand = 1
                         self.celler[n][m].cell.config(bg="black")
+                        self.celler[n][m].cell.update_idletasks()
+            self.after(500)
 
 
     def tellnaboer(self,n,m):
@@ -81,8 +84,6 @@ class Gameoflife(tk.Tk):
                 if self.celler[i][j].tilstand in [1,3]:
                     naboer += 1
         return naboer
-
-    
 
 if __name__ == "__main__":
     x = Gameoflife(30)
