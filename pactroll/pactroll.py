@@ -15,6 +15,9 @@ class Pactroll(tk.Tk):
         self.dy = 0
         self.ds = 3
         self.matpos = []
+        self.blokker = []
+        self.resizable(False, False)
+        
 
         self.canvas = tk.Canvas(self,bg="black",width=bredde,height=hoyde)
         self.minsize(bredde,hoyde)
@@ -56,12 +59,18 @@ class Pactroll(tk.Tk):
                 elif self.dy > 0:  # Beveger seg nedover
                     self.byttRettning(0, -self.ds)  # Snu oppover
 
-                # Flytt trollet bort fra matbiten
-                self.x += self.dx
-                self.y += self.dy
-                self.canvas.move(self.troll, self.dx, self.dy)
-                self.lagMat()
+                if self.blokker[i].tilstand == 0:
+                    # Flytt trollet bort fra matbiten
+                    self.x += self.dx
+                    self.y += self.dy
+                    self.canvas.move(self.troll, self.dx, self.dy)
+
+                    self.lagMat()
+                    self.blokker[i].hinder()
+                else:
+                    self.game_over()
                 
+
         # kolisjon med hinder
             
 
@@ -104,8 +113,10 @@ class Pactroll(tk.Tk):
                 else:
                     if self.canvas.coords(self.blokk.Mat_id) not in self.matpos:
                         self.matpos.append(self.canvas.coords(self.blokk.Mat_id))
+                        self.blokker.append(self.blokk)
             if len(self.matpos) == 0:
                 self.matpos.append(self.canvas.coords(self.blokk.Mat_id))
+                self.blokker.append(self.blokk)
 
 
 class Mat:
@@ -114,9 +125,11 @@ class Mat:
         self.x = random.randint(0+r,bredde-r)
         self.y = random.randint(0+r,hoyde-r)
         self.Mat_id = self.canvas.create_rectangle(self.x-r,self.y-r,self.x+r,self.y+r,fill="yellow")
+        self.tilstand = 0
         
-    # def hinder(self):
-    #     self.Mat_id.config(fill="grey")
+    def hinder(self):
+        self.tilstand = 1
+        self.canvas.itemconfig(self.Mat_id,fill="grey")
 
 _ = Pactroll()
 _.lagMat(3)
