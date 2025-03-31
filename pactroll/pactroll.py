@@ -30,6 +30,7 @@ class Pactroll(tk.Tk):
         self.game_loop()
 
     def sjekkKolisjon(self):
+        # sjekker kolisjon med veggene
         if self.x+r >= bredde:
             self.game_over()
         if self.y+r >= hoyde:
@@ -38,6 +39,30 @@ class Pactroll(tk.Tk):
             self.game_over()
         if self.y-r <= 0:
             self.game_over()
+
+        # kolisjon med mat bit
+        trollpos = self.canvas.coords(self.troll)
+        for i in range(len(self.matpos)):
+            overlappX = trollpos[2] >= self.matpos[i][0] and trollpos[0] <= self.matpos[i][2]
+            overlappY = trollpos[1] <= self.matpos[i][3] and trollpos[3] >= self.matpos[i][1]
+
+            if overlappX and overlappY:
+                if self.dx < 0:  # Beveger seg til venstre
+                    self.byttRettning(self.ds, 0)  # Snu til høyre
+                elif self.dx > 0:  # Beveger seg til høyre
+                    self.byttRettning(-self.ds, 0)  # Snu til venstre
+                elif self.dy < 0:  # Beveger seg oppover
+                    self.byttRettning(0, self.ds)  # Snu nedover
+                elif self.dy > 0:  # Beveger seg nedover
+                    self.byttRettning(0, -self.ds)  # Snu oppover
+
+                # Flytt trollet bort fra matbiten
+                self.x += self.dx
+                self.y += self.dy
+                self.canvas.move(self.troll, self.dx, self.dy)
+                self.lagMat()
+                
+        # kolisjon med hinder
             
 
     def byttRettning(self, dx, dy):
@@ -46,10 +71,10 @@ class Pactroll(tk.Tk):
 
     def game_loop(self):
         if self.kjorer:
+            self.sjekkKolisjon()
             self.x += self.dx
             self.y += self.dy
             self.canvas.move(self.troll, self.dx, self.dy)
-            self.sjekkKolisjon()
             self.after(20,self.game_loop)
         
     def game_over(self):
@@ -62,24 +87,18 @@ class Pactroll(tk.Tk):
             nyMatpos = self.canvas.coords(self.blokk.Mat_id)
             trollpos = self.canvas.coords(self.troll)
 
-            overlappX = trollpos[2] >= nyMatpos[0] and trollpos[0] <= nyMatpos[2]
-            overlappY = trollpos[1] <= nyMatpos[3] and trollpos[3] >= nyMatpos[1]
+            overlappX = nyMatpos[2] >= trollpos[0] and nyMatpos[0] <= trollpos[2]
+            overlappY = nyMatpos[1] <= trollpos[3] and nyMatpos[3] >= trollpos[1]
 
-            print(nyMatpos)
-            print(trollpos)
-
-            # if overlappX and overlappY:
-            #     self.canvas.delete(self.blokk.Mat_id)
-            #     self.lagMat()
-            # else:
-            #     if self.canvas.coords(self.blokk.Mat_id) not in self.matpos:
-            #         self.matpos.append(self.canvas.coords(self.blokk.Mat_id))
+            if overlappX and overlappY:
+                self.canvas.delete(self.blokk.Mat_id)
+                self.lagMat()
+            
 
             for a in range(len(self.matpos)):
                 overlappX = nyMatpos[2] >= self.matpos[a][0] and nyMatpos[0] <= self.matpos[a][2]
                 overlappY = nyMatpos[1] <= self.matpos[a][3] and nyMatpos[3] >= self.matpos[a][1]
                 if overlappX and overlappY:
-                    print("hey")
                     self.canvas.delete(self.blokk.Mat_id)
                     self.lagMat()
                 else:
@@ -96,9 +115,9 @@ class Mat:
         self.y = random.randint(0+r,hoyde-r)
         self.Mat_id = self.canvas.create_rectangle(self.x-r,self.y-r,self.x+r,self.y+r,fill="yellow")
         
-
+    # def hinder(self):
+    #     self.Mat_id.config(fill="grey")
 
 _ = Pactroll()
 _.lagMat(3)
-print(_.matpos)
 _.mainloop()
