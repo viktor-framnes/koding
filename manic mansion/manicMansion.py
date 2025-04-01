@@ -8,6 +8,7 @@ class Manic(tk.Tk):
     def __init__(self):
         tk.Tk.__init__(self)
         self.minsize(bredde,hoyde)
+        self.maxsize(bredde,hoyde)
         self.venstreCanvas = tk.Canvas(self,bg="blue",width=200,height=hoyde,highlightthickness=0)
         self.venstreCanvas.pack(side="left")
         self.midtCanvas = tk.Canvas(self,bg="black",width=bredde-400,height=hoyde,highlightthickness=0)
