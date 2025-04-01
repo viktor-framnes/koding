@@ -1,5 +1,4 @@
 import tkinter as tk
-import random
 
 bredde = 1200
 hoyde = 700
