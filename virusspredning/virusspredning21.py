@@ -76,14 +76,11 @@ class PopulasjonMedtkinter():
 
         for i in range(self.lengde):
             for j in range(self.lengde):
-                if self.personer[i][j].tilstand == 1 or self.personer[i][j].tilstand == 2 or self.personer[i][j].tilstand == 3:
+                if self.personer[i][j].tilstand in [1,2]:
                     indekser.append((i,j))
 
         for i in range(len(indekser)):
             y, x = indekser[i]
-
-            if (self.personer[y][x].tilstand in [0,3,4]):
-                continue
           
             if (y < 0 or y+1 > self.lengde or x < 0 or x+1 > self.lengde):
                 continue
@@ -106,7 +103,7 @@ class PopulasjonMedtkinter():
     def oppdaterTilstand(self):
         for i in range(self.lengde):
             for j in range(self.lengde):
-                if self.personer[i][j].tilstand == 1 or self.personer[i][j].tilstand == 2 or self.personer[i][j].tilstand == 3:
+                if self.personer[i][j].tilstand in [1,2,3]:
                     self.personer[i][j].dagerSmittet += 1
                     if self.personer[i][j].tilstand == 1:
                         if self.personer[i][j].dagerSmittet > 3:
@@ -126,7 +123,7 @@ class PopulasjonMedtkinter():
             print(f"dag {i+1}")
             self.oppdaterTilstand()
             self.spredning()
-            time.sleep(1)
+            time.sleep(0.5)
     
 
 populasjon1 = PopulasjonMedtkinter(21)
