@@ -28,7 +28,6 @@ class Spillobject:
     def flytt(self,x,y):
         pass
 
-
 class Menneske(Spillobject):
     def __init__(self):
         super().__init__()
