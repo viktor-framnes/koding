@@ -1,0 +1,31 @@
+{
+    "butikker": [
+      {
+        "navn": "TeknoShop Oslo",
+        "produkter": [
+          {"navn": "Laptop", "pris": 8500, "antall_solgt": [12, 15, 10, 20]},
+          {"navn": "Mobiltelefon", "pris": 6000, "antall_solgt": [20, 25, 30, 15]},
+          {"navn": "Hodetelefoner", "pris": 1500, "antall_solgt": [8, 5, 12, 10]}
+        ],
+        "vær": {"temperatur": [-1, 0, -3, 2], "nedbør": [5, 10, 15, 10]}
+      },
+      {
+        "navn": "MøbelHuset Bergen",
+        "produkter": [
+          {"navn": "Sofa", "pris": 7000, "antall_solgt": [5, 8, 6, 7]},
+          {"navn": "Stol", "pris": 1200, "antall_solgt": [10, 15, 20, 18]},
+          {"navn": "Kjøleskap", "pris": 10000, "antall_solgt": [2, 3, 4, 3]}
+        ],
+        "vær": {"temperatur": [3, 4, 3, 2], "nedbør": [50, 60, 40, 30]}
+      },
+      {
+        "navn": "NordTek Tromsø",
+        "produkter": [
+          {"navn": "Laptop", "pris": 8500, "antall_solgt": [5, 10, 8, 12]},
+          {"navn": "Mobiltelefon", "pris": 6000, "antall_solgt": [7, 8, 6, 9]},
+          {"navn": "Hodetelefoner", "pris": 1500, "antall_solgt": [4, 5, 7, 6]}
+        ],
+        "vær": {"temperatur": [-6, -5, -4, -7], "nedbør": [10, 20, 15, 5]}
+      }
+    ]
+  }

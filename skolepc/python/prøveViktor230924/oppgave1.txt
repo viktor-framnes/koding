@@ -1,0 +1,15 @@
+en if test skal sjekke om det i if setningen er sann og hvis den er det skal den kjøre koden i if setningen.
+Du kan bruke forskjellige operatorer i if setningen.
+
+if x < 1:
+    print("Hei")
+#her printer den hei hvis x er mindre enn 1, hvis x ikke er det gjør den ingen ting og bare går videre.
+du kan bruke mye forskjellig i en if setning,
+f.eks. == for å sammenligne to verdier, != for å sjekke om to verdier ikke er like, < og > for å sjekke om noe er mindre eller større.
+også kan du sjekke flere ting samtidig med, and. 
+if x > 1 and x < 4:
+    print("HElLO")
+#Her sjekker man om x er større en 1 og x er mindre enn 4. Begge må være sanne for å printe HElLO
+if x == 1 or x == 2:
+    print("Hey")
+#Her sjekker man om x er lik 1 eller lik 2. Hvis en av de er riktige printer den.
