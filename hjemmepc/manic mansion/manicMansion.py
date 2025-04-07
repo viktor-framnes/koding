@@ -17,16 +17,37 @@ class Manic(tk.Tk):
         self.hoyreCanvas.pack(side="left")
 
         self.objekter = []
+        self.spiller = Spillobject(self.venstreCanvas)
+        self.kjorer = True
+
+        self.bind("<KeyPress-Left>", lambda _: self.spiller.flytt(-self.spiller.ds, 0))
+        self.bind("<KeyPress-Right>", lambda _: self.spiller.flytt(self.spiller.ds, 0))
+        self.bind("<KeyPress-Up>", lambda _: self.spiller.flytt(0, -self.spiller.ds))
+        self.bind("<KeyPress-Down>", lambda _: self.spiller.flytt(0, self.spiller.ds))
+
+    def game_loop(self):
+        if self.kjorer:
+            self.spiller.x += self.spiller.dx
+            self.spiller.y += self.spiller.dy
+
 
 class Spillobject:
-    def __init__(self):
+    def __init__(self,canvas):
+        self.brett = canvas
         self.x = 0
         self.y = 0
+        self.dx = 0
+        self.dy = 0
+        self.ds = 3
+        self.spiller_id = self.brett.create_rectangle(self.x-r,self.y-r,self.x+r,self.y+r,fill="yellow")
+
 
     def plassering(self,x,y):
         pass
+
     def flytt(self,x,y):
-        pass
+        self.dx = x
+        self.dy = y
 
 class Menneske(Spillobject):
     def __init__(self):
