@@ -1,5 +1,4 @@
 import tkinter as tk
-import random
 
 bredde = 1000
 hoyde = 500
@@ -16,9 +15,8 @@ class Manic(tk.Tk):
         self.ds = 2
         self.matpos = []
         self.blokker = []
-        self.resizable(False, False)
         
-
+        self.resizable(False, False)
         self.canvas = tk.Canvas(self,bg="black",width=bredde,height=hoyde)
         self.minsize(bredde,hoyde)
         self.canvas.pack(expand=True)
@@ -29,6 +27,10 @@ class Manic(tk.Tk):
         self.bind("<KeyPress-Right>", lambda _: self.byttRettning(self.ds, 0))
         self.bind("<KeyPress-Up>", lambda _: self.byttRettning(0, -self.ds))
         self.bind("<KeyPress-Down>", lambda _: self.byttRettning(0, self.ds))
+        self.bind("<KeyRelease-Left>", lambda _: self.stopp())
+        self.bind("<KeyRelease-Right>", lambda _: self.stopp())
+        self.bind("<KeyRelease-Up>", lambda _: self.stopp())
+        self.bind("<KeyRelease-Down>", lambda _: self.stopp())
 
         self.game_loop()
 
@@ -44,8 +46,14 @@ class Manic(tk.Tk):
             self.byttRettning(0, self.ds)  # Snu nedover
 
     def byttRettning(self, dx, dy):
+        self.ds = 2
         self.dx = dx
         self.dy = dy
+        
+    def stopp(self):
+        self.dx = 0
+        self.dy = 0
+    
 
     def game_loop(self):
         if self.kjorer:
