@@ -90,33 +90,33 @@ class Pactroll(tk.Tk):
         self.kjorer = False
         self.canvas.create_text(bredde/2,hoyde/2,text="Game over",fill="red",font=20)
 
-    def lagMat(self,i=1):
-        for _ in range(i):
-            self.blokk = Mat(self.canvas)
-            nyMatpos = self.canvas.coords(self.blokk.Mat_id)
-            trollpos = self.canvas.coords(self.troll)
+    def lagMat(self, antall=1, maks_forsok=100):
+        forsok = 0
+        laget = 0
 
-            overlappX = nyMatpos[2] >= trollpos[0] and nyMatpos[0] <= trollpos[2]
-            overlappY = nyMatpos[1] <= trollpos[3] and nyMatpos[3] >= trollpos[1]
+        while laget < antall and forsok < maks_forsok:
+            forsok += 1
+            blokk = Mat(self.canvas)
+            ny_pos = self.canvas.coords(blokk.Mat_id)
+            troll_pos = self.canvas.coords(self.troll)
 
-            if overlappX and overlappY:
-                self.canvas.delete(self.blokk.Mat_id)
-                self.lagMat()
-            
+            def overlapper(a, b):
+                return (
+                    a[2] >= b[0] and a[0] <= b[2] and
+                    a[3] >= b[1] and a[1] <= b[3]
+                )
 
-            for a in range(len(self.matpos)):
-                overlappX = nyMatpos[2] >= self.matpos[a][0] and nyMatpos[0] <= self.matpos[a][2]
-                overlappY = nyMatpos[1] <= self.matpos[a][3] and nyMatpos[3] >= self.matpos[a][1]
-                if overlappX and overlappY:
-                    self.canvas.delete(self.blokk.Mat_id)
-                    self.lagMat()
-                else:
-                    if self.canvas.coords(self.blokk.Mat_id) not in self.matpos:
-                        self.matpos.append(self.canvas.coords(self.blokk.Mat_id))
-                        self.blokker.append(self.blokk)
-            if len(self.matpos) == 0:
-                self.matpos.append(self.canvas.coords(self.blokk.Mat_id))
-                self.blokker.append(self.blokk)
+            overlapp_med_troll = overlapper(ny_pos, troll_pos)
+            overlapp_med_mat = any(overlapper(ny_pos, pos) for pos in self.matpos)
+
+            if overlapp_med_troll or overlapp_med_mat:
+                self.canvas.delete(blokk.Mat_id)
+                continue  # prøv på nytt
+            else:
+                self.matpos.append(ny_pos)
+                self.blokker.append(blokk)
+                laget += 1
+
 
 
 class Mat:

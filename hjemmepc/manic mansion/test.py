@@ -88,26 +88,49 @@ class Manic(tk.Tk):
         self.canvas.create_text(bredde/2,hoyde/2,text="Game over",fill="red",font=20)
 
     def lagSau(self,i=3):
-        for _ in range(i):
-            self.blokk = Sau(self.canvas)
-            nySaupos = self.canvas.coords(self.blokk.Sau_id)
-            # spillerpos = self.canvas.coords(self.spiller)            
+        laget = 0
 
-            for a in range(len(self.saupos)):
-                overlappX = nySaupos[2] >= self.saupos[a][0] and nySaupos[0] <= self.saupos[a][2]
-                overlappY = nySaupos[1] <= self.saupos[a][3] and nySaupos[3] >= self.saupos[a][1]
-                if overlappX and overlappY:
-                    self.canvas.delete(self.blokk.Sau_id)
-                    print("hey")
-                    self.lagSau()
-                else:
-                    if self.canvas.coords(self.blokk.Sau_id) not in self.saupos:
-                        self.saupos.append(self.canvas.coords(self.blokk.Sau_id))
-                        self.sauer.append(self.blokk)
-            if len(self.saupos) == 0:
-                self.saupos.append(self.canvas.coords(self.blokk.Sau_id))
-                self.sauer.append(self.blokk)
-        print(self.sauer)
+        while laget < i:
+            blokk = Sau(self.canvas)
+            nysaupos = self.canvas.coords(blokk.Sau_id)
+
+            def overlapp(a,b):
+                return (
+                    a[2] >= b[0] and a[0] <= b[2] and a[3] >= b[1] and a[1] <=b[3]
+                )
+            
+            overlappSau = any(overlapp(nysaupos,pos) for pos in self.saupos)
+
+            if overlappSau:
+                self.canvas.delete(blokk.Sau_id)
+                print("hey")
+                continue
+            else:
+                self.saupos.append(nysaupos)
+                self.sauer.append(blokk)
+                laget += 1
+
+
+        # for _ in range(i):
+        #     self.blokk = Sau(self.canvas)
+        #     nySaupos = self.canvas.coords(self.blokk.Sau_id)
+        #     # spillerpos = self.canvas.coords(self.spiller)            
+
+        #     for a in range(len(self.saupos)):
+        #         overlappX = nySaupos[2] >= self.saupos[a][0] and nySaupos[0] <= self.saupos[a][2]
+        #         overlappY = nySaupos[1] <= self.saupos[a][3] and nySaupos[3] >= self.saupos[a][1]
+        #         if overlappX and overlappY:
+        #             self.canvas.delete(self.blokk.Sau_id)
+        #             print("hey")
+        #             self.lagSau()
+        #         else:
+        #             if self.canvas.coords(self.blokk.Sau_id) not in self.saupos:
+        #                 self.saupos.append(self.canvas.coords(self.blokk.Sau_id))
+        #                 self.sauer.append(self.blokk)
+        #     if len(self.saupos) == 0:
+        #         self.saupos.append(self.canvas.coords(self.blokk.Sau_id))
+        #         self.sauer.append(self.blokk)
+        # print(self.sauer)
 
 
 class Sau:
