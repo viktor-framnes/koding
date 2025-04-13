@@ -66,7 +66,7 @@ def gameover():
     global hoyde
     global bredde
     kjorer = False
-    canvas.create_text(x, y, text="Game over", fill="red")
+    canvas.create_text(bredde/2, hoyde/2, text="Game over", fill="red")
 
 
 def gameloop():
