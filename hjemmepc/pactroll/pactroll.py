@@ -64,15 +64,12 @@ class Pactroll(tk.Tk):
                     self.x += self.dx
                     self.y += self.dy
                     self.canvas.move(self.troll, self.dx, self.dy)
-
+                    self.ds += 0.2
                     self.lagMat()
                     self.blokker[i].hinder()
                 else:
                     self.game_over()
-                
-
-        # kolisjon med hinder
-            
+                            
 
     def byttRettning(self, dx, dy):
         self.dx = dx

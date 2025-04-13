@@ -41,7 +41,6 @@ class Gameoflife:
         return naboer
 
     
-
 if __name__ == "__main__":
     x = Gameoflife(10)
     for rad in x.brett:

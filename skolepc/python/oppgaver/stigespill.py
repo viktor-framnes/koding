@@ -9,7 +9,7 @@ y = 111
 antallkast = 0
 
 #spiller kordinasjon
-spillerikon = "X"
+spillerikon = "X" 
 spiller = 0
 buffer = 0
 
