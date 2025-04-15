@@ -77,8 +77,11 @@ class Pactroll:
 class Matbit():
     def __init__(self,canvas): # bestemmer egenskapene til matbiten
         # setter x og y koordinatene et tilfeldig sted på canvas'et
+        
+        # !trenger å legge til r
         self.x = random.randint(0, bredde)  
         self.y = random.randint(0, hoyde)
+        
         self.matID = canvas.create_rectangle(self.x-r,self.y-r,self.x+r,self.y+r,fill="yellow") # lager tegner matbiten på canvas'et med x og y koordinatene vi bestemte rett over og gir den fargen gul
  
  
