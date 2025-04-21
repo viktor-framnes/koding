@@ -87,6 +87,13 @@ class Manic(tk.Tk):
 
         spiller = self.canvas.coords(self.spiller)
 
+        if self.sauberer:
+            for sau_coords in self.saupos:
+                if self.saupos[self.hvilke] == sau_coords:
+                    continue
+                if self.overlapp(spiller,sau_coords):
+                    self.game_over()   
+
         for teller, i in enumerate(self.ghoster):
             overlappX = spiller[2] >= self.ghostpos[teller][0] and spiller[0] <= self.ghostpos[teller][2]
             overlappY = spiller[1] <= self.ghostpos[teller][3] and spiller[3] >= self.ghostpos[teller][1]
@@ -166,7 +173,7 @@ class Manic(tk.Tk):
     def yay(self):
         self.poeng += 1
         self.canvas.delete(self.sauer[self.hvilke].Sau_id)
-        self.sauer.pop(int(self.hvilke))
+        self.sauer.pop(self.hvilke)
         self.saupos.pop(self.hvilke)
         self.ds = 4
         self.lagSau(1)
@@ -196,20 +203,21 @@ class Manic(tk.Tk):
                 self.x = ny_x
                 self.y = ny_y
 
-            mid_coords = self.canvas.coords(self.spiller)
-            for teller, sau_coords in enumerate(self.saupos):
-                if self.overlapp(mid_coords,sau_coords):
-                    self.sauberer = True
-                    self.ds = 2.5
-                    self.hvilke = teller
-
-
             self.sjekkKolisjon()
+
+            if self.sauberer != True:
+                mid_coords = self.canvas.coords(self.spiller)
+                for teller, sau_coords in enumerate(self.saupos):
+                    if self.overlapp(mid_coords,sau_coords):
+                        self.sauberer = True
+                        self.ds = 2.5
+                        self.hvilke = teller
+
+
             self.flyttGhost()
             self.canvas.coords(self.spiller, self.x - r, self.y - r, self.x + r, self.y + r)
             if self.sauberer:
                 self.canvas.coords(self.sauer[self.hvilke].Sau_id, self.x + r, self.y - r, self.x + 3*r, self.y + r)
-                print(self.x)
                 if self.x < 185:
                     self.yay()
             self.after(10, self.game_loop)
