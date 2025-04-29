@@ -120,7 +120,7 @@ class Ball:
         self.y += self.dy
 
 ball1 = Ball("ball1",canvasbredde/1.5,canvashoyde/2,-3,1)
-# ball2 = Ball("ball2",canvasbredde/4,canvashoyde/2,3,-1,"blue")
+ball2 = Ball("ball2",canvasbredde/4,canvashoyde/2,3,-1,"blue")
 # ball3 = Ball("ball3",canvasbredde/4,canvashoyde/4,3,2,"green")
 # ball4 = Ball("ball4",canvasbredde/0.5,canvashoyde/2,-3,1,"red")
 # ball5 = Ball("ball5",canvasbredde/3,canvashoyde/2,3,-1,"orange")
@@ -139,7 +139,7 @@ ball1 = Ball("ball1",canvasbredde/1.5,canvashoyde/2,-3,1)
 # ball18 = Ball("ball18",canvasbredde/1.25,canvashoyde/0.5,3,2,"lightgrey")
 
 # baller = [ball1,ball2,ball3,ball4,ball5,ball6,ball7,ball8,ball9,ball10,ball11,ball12,ball13,ball14,ball15,ball16,ball17,ball18]
-baller = [ball1]
+baller = [ball1,ball2]
 
 # avslutt footer
 footer = tk.Frame(window)

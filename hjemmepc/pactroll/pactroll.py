@@ -17,6 +17,8 @@ class Pactroll(tk.Tk):
         self.matpos = []
         self.blokker = []
         self.resizable(False, False)
+        self.poeng = 0
+
         
 
         self.canvas = tk.Canvas(self,bg="black",width=bredde,height=hoyde)
@@ -24,6 +26,7 @@ class Pactroll(tk.Tk):
         self.canvas.pack(expand=True)
         self.troll = self.canvas.create_rectangle(self.x-r,self.y-r,self.x+r,self.y+r,fill="green")
 
+        self.tekst = self.canvas.create_text(50, 50, text=f"{self.poeng}", fill="red", font=("Pursia", 20, "bold"))
 
         self.bind("<KeyPress-Left>", lambda _: self.byttRettning(-self.ds, 0))
         self.bind("<KeyPress-Right>", lambda _: self.byttRettning(self.ds, 0))
@@ -60,6 +63,8 @@ class Pactroll(tk.Tk):
                     self.byttRettning(0, -self.ds)  # Snu oppover
 
                 if self.blokker[i].tilstand == 0:
+                    self.poeng += 1
+                    self.canvas.itemconfig(self.tekst,text=f"{self.poeng}")
                     # Flytt trollet bort fra matbiten
                     self.x += self.dx
                     self.y += self.dy
