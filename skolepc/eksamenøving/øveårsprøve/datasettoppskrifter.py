@@ -31,7 +31,7 @@ for oppskrift in data["oppskrifter"]:
     else:
         rating.append(float(oppskrift["rating"]))
 gjennomsnitt = sum(rating)/len(rating)
-print(f"{gjennomsnitt:.1f}")
+print(f"{gjennomsnitt:.3f}")
 
 # oppgave 5
 storst = 0
