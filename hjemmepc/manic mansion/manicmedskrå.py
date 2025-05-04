@@ -1,5 +1,6 @@
 import tkinter as tk
 import random
+import math
 
 bredde = 1000
 hoyde = 500
@@ -56,7 +57,7 @@ class Manic(tk.Tk):
         self.kjorer = True
         self.x, self.y = 50, hoyde / 2
         self.dx = self.dy = 0
-        self.ds = 6
+        self.ds = 4
         self.poeng = 0
         self.sauberer = False
         self.hvilke = 0
@@ -81,7 +82,7 @@ class Manic(tk.Tk):
 
         self.lag_objekter(Sau, self.sauer, 3)
         self.lag_objekter(Hinder, self.hindre, 3)
-        self.lag_objekter(Ghost, self.ghoster, 1)
+        # self.lag_objekter(Ghost, self.ghoster, 1)
 
         self.game_loop()
 
@@ -104,12 +105,31 @@ class Manic(tk.Tk):
             self.dx = self.dy = 0
             return
         t = self.aktive_taster[-1]
-        self.dx, self.dy = {
-            "Up": (0, -self.ds),
-            "Down": (0, self.ds),
-            "Left": (-self.ds, 0),
-            "Right": (self.ds, 0)
-        }[t]
+        if len(self.aktive_taster) >= 2:
+            f = self.aktive_taster[-2]
+            z = t+f
+            d = math.sqrt(8) 
+            self.dx, self.dy = {
+                "LeftUp": (-d, -d),
+                "UpLeft": (-d, -d),
+                "RightUp": (d, -d),
+                "UpRight": (d, -d),
+                "LeftDown": (-d, d),
+                "DownLeft": (-d, d),
+                "RightDown": (d, d),
+                "DownRight": (d, d),
+                "RightLeft": (self.ds,0),
+                "LeftRight": (-self.ds,0),
+                "UpDown": (0, -self.ds),
+                "DownUp": (0, self.ds),
+            }[z]
+        else:
+            self.dx, self.dy = {
+                "Up": (0, -self.ds),
+                "Down": (0, self.ds),
+                "Left": (-self.ds, 0),
+                "Right": (self.ds, 0)
+            }[t]
 
     def overlapp(self, a, b):
         return a[2] >= b[0] and a[0] <= b[2] and a[3] >= b[1] and a[1] <= b[3]
@@ -160,6 +180,8 @@ class Manic(tk.Tk):
     def game_loop(self):
         if not self.kjorer:
             return
+
+        # print(self.aktive_taster)
 
         self.flytt_spiller()
         self.sjekk_kollisjoner()
