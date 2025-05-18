@@ -18,16 +18,8 @@ etter = [""]*n
 for i in range(n):
     menn[i], før[i], etter[i] = input().split()
 
-# print(før)
-# print(menn)
-# print(etter)
-
 for i in range(n-1):
     indeks = etter.index(før[i])
-    # print(før[i],etter.index(før[i]))
-#     print(før[i])
-#     print(før[indeks])
-    før[i+1], menn[i+1], etter[i+1], før[indeks], menn[indeks], etter[indeks] = før[indeks], menn[indeks], etter[indeks], før[i+1], menn[i+1], etter[i+1] # bytter rad i med rad til indeks
-
+    før[i+1], menn[i+1], etter[i+1], før[indeks], menn[indeks], etter[indeks] = før[indeks], menn[indeks], etter[indeks], før[i+1], menn[i+1], etter[i+1]
 
 print(menn)
