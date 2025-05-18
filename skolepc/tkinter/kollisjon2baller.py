@@ -39,7 +39,7 @@ class Ball:
                 fill = "yellow",
                 outline="white"
                 ):
-        self.radius = 5
+        self.radius = 20
         self.x = xpos
         self.y = ypos
         self.dx = deltax
