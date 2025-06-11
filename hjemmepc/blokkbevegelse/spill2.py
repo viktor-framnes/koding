@@ -51,7 +51,7 @@ class Spill(tk.Tk):
         
         self.flytt(self.aktivretning)
 
-        self.after(100, self.gameloop)
+        self.after(200, self.gameloop)
 
 
 
