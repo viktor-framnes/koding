@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrePåRad</title>
+<style>
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: #14bdac;
+}
+.brett{
+    background-color: #0f9285;
+    width: 539px;
+    height: 540px;
+    margin: 80px auto;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 180px 180px 180px;
+    grid-template-rows: 180px 180px 180px;
+}
+.celle{
+    background-color: #14bdac;
+    height: 170px;
+    width: 170px;
+    color: black;
+    font-size: 60px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: #0a524b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.skille{
+    background-color: #14bdac;
+}
+.poeng{
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: 900;
+    color: #0a524b;
+    padding: 10px;
+}
+.innpakning{
+    display: flex;
+    flex-direction: row;
+}
+.restart{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.score{
+    display: flex;
+    flex-direction: row;
+
+}
+.xp{
+    border-right: #0a524b solid 3px;
+    padding: 8px;
+    margin-top: 20px;
+}
+.yp{
+    border-left: #0a524b solid 3px;
+    padding: 8px;
+    margin-top: 20px;
+}
+img{
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+    <div class="innpakning">    
+        <div class="poeng">
+            <p id="res"></p>
+            <div class="score">
+                <div class="xp">
+                    <p id="xP">0</p> 
+                </div>
+                <div class="yp">
+                    <p id="yP">0</p>
+                </div>
+            </div>
+        </div>
+        <div class="skille">
+            <p></p>
+            <div class="brett">
+                <div class="celle" id="0"></div>
+                <div class="celle" id="1"></div>
+                <div class="celle" id="2"></div>
+                <div class="celle" id="3"></div>
+                <div class="celle" id="4"></div>
+                <div class="celle" id="5"></div>
+                <div class="celle" id="6"></div>
+                <div class="celle" id="7"></div>
+                <div class="celle" id="8"></div>
+            </div>
+        </div>
+        <div class="restart">
+            <img src="restart.png" id="restartKnapp" width="170px" height="170px" alt="">
+        </div>
+    </div>
+<script>
+    let resEl = document.querySelector("#res");
+    let spillKarakter = "X"
+    let spillBrett = ["","","","","","","","",""];
+    let celler = document.querySelectorAll(".celle");
+    let Xp = document.querySelector("#xP");
+    let Yp = document.querySelector("#yP");
+    let knappEl = document.querySelector("#restartKnapp");
+    let xPoeng = 0;
+    let yPoeng = 0;
+
+    for(let i = 0; i < celler.length; i++) {
+        celler[i].addEventListener("click", function(e){
+            if(e.target.textContent != "" || sjekkOmFerdig()) return;
+
+            spillBrett[e.target.id] = spillKarakter;
+            e.target.innerHTML = spillKarakter;
+            
+            if(sjekkOmVunnet()){
+                resEl.innerHTML = "Spiller " + spillKarakter + " har vunnet"
+                if(spillKarakter == "X"){
+                    xPoeng++;
+                } else{
+                    yPoeng++;
+                }
+                Xp.innerHTML = xPoeng;
+                Yp.innerHTML = yPoeng;
+            } else if(spillBrett.indexOf("") == -1){
+                resEl.innerHTML = "Uavgjort"
+            }
+
+            if(spillKarakter === "X"){
+                spillKarakter = "O"
+            }else {
+                spillKarakter = "X"
+            }
+        })
+    }
+
+    knappEl.addEventListener("click", function(){
+        resEl.innerHTML = "";
+        spillKarakter = "X";
+
+        for(let i = 0; i < spillBrett.length; i++){
+            spillBrett[i] = "";
+        }
+        for(let i = 0; i < celler.length; i++){
+            celler[i].innerHTML = "";
+        }
+
+    })
+
+
+    function sjekkOmVunnet() {
+        let vinnMuligheter = [
+            [0,1,2], [3,4,5], [6,7,8],
+            [0,3,6], [1,4,7], [2,5,8],
+            [0,4,8], [2,4,6]
+        ];
+        for(let i = 0; i < vinnMuligheter.length; i++){
+            let [a,b,c] = vinnMuligheter[i]
+            if(spillBrett[a] && spillBrett[a] == spillBrett[b] && spillBrett[a] == spillBrett[c]){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function sjekkOmFerdig() {
+        return sjekkOmVunnet() || spillBrett.indexOf("") == -1;
+    }
+
+</script>
+</body>
+</html>

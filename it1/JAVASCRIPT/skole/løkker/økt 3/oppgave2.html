@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+
+</style>
+</head>
+<body>
+<div class="innpakning">
+    <h1>Få loddrett utskrift</h1>
+    <input type="text" placeholder="Test">
+    <button>Sjekk svar</button>
+    <p></p>
+</div>
+<script>
+    let ordEl = document.querySelector("input");
+    let knappEl = document.querySelector("button");
+    let resultatEl = document.querySelector("p");
+
+    knappEl.addEventListener("click", vis)
+    function vis(){
+        resultatEl.innerHTML = ""
+        for(let i = 0; i < ordEl.value.length; i++){
+            resultatEl.innerHTML += ordEl.value[i] + "<br>"
+        }
+    }
+</script>
+</body>
+</html>

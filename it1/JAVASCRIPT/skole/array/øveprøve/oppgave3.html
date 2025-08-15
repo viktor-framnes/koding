@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+
+</style>
+</head>
+<body>
+    
+<script>
+    let tall = [3,2,6,37,4,26]
+
+    tall.sort(sammenlign);
+    function sammenlign(a,b){
+        return a - b;
+    }
+    document.write(tall + "<br>")
+
+    for(let i = 0; i < tall.length; i++){
+        if(tall[i] == 6){
+            tall.splice(i,1)
+        }
+    }
+    document.write(tall + "<br>")
+
+    let antall = 0;
+    for(let i = 0; i < tall.length; i++){
+        antall += tall[i]
+    }
+    document.write("gjennomsnitt: " + antall/tall.length)
+</script>
+</body>
+</html>

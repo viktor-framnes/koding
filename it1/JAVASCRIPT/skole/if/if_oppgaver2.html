@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+
+</style>
+</head>
+<body>
+
+<script>
+    let pris1 = Number(prompt("Skriv prisen på den første varen"));
+    let pris2 = Number(prompt("Skriv prisen på den andre varen"));    
+    
+    let sum = pris1 + pris2
+
+    if (sum <= 1000 && sum > 2000) {
+        sum = sum - 100
+        document.write(sum + " kr");
+    } else if (sum >= 2000 && sum < 10000) {
+        sum = sum - 700
+        document.write(sum + " kr");
+    } else if (sum >= 10000) {
+        sum = sum - 3000
+        document.write(sum + " kr");
+    } else {
+        document.write(sum + " kr");
+    }
+
+</script>
+</body>
+</html>

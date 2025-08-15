@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+   
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h1>Skriv inn navnet ditt. Trykk på knappen etter hver bokstav.</h1>
+        <input type="text">
+        <button>Sjekk bokstav</button>
+        <p></p>
+    </div>
+<script>
+    let res = document.querySelector("p");
+    let knappEl = document.querySelector("button");
+    let bokstav = document.querySelector("input");
+    let navn = []
+    let vokaler = ["A","E","I","O","U","Y","Æ","Ø","Å"]
+
+    let antallBok = 0;
+    let antallVok = 0;
+    let antallKon = 0;
+
+    knappEl.addEventListener("click", function(){
+        antallKon = 0;
+        antallVok = 0;
+        navn.push((bokstav.value).toUpperCase())
+        antallBok = navn.length
+        for(let i = 0; i < navn.length; i++){
+            if(vokaler.indexOf(navn[i]) === -1){
+                antallKon++;
+            } else {
+                antallVok++;
+            }
+        }
+        
+        res.innerHTML = navn + "<br> Det er " + antallBok + " bokstaver i navnet ditt. <br>" +
+        "Det er " + antallVok + " vokaler i navnet ditt. <br> Det er " + antallKon + " konstonanter i navnet ditt."
+    })
+
+</script>
+</body>
+</html>

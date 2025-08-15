@@ -1,0 +1,193 @@
+*{
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+body{
+    background-color: #1b1b34;
+}
+div{
+    color: white;
+    margin: 5px 0px 5px 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+div.innpakning{
+    display: flex;
+    flex-direction: row;
+}
+div.logo{
+    flex: 1;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.logo a{
+    color: white;
+    text-decoration: none;
+}
+div.top{
+    height: 80px;
+    text-align: center;
+    padding-top: 1px;
+    color: #ECECEC;
+    font-family: 'Times New Roman', Times, serif;
+    border-bottom: 2px solid white;
+    margin: auto;
+    width: 550px;
+}
+div.filler{
+    flex: 1;
+    padding: 20px 20px 0px 0px;
+}
+div.nav{
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 0px;
+    margin-top: 30px;
+}
+div.button{
+    height: 40px;
+    margin: auto;
+    width: 355px;
+    text-align: center;
+    padding-top: 10px;
+}
+div.mid{
+    height: 600px;
+    margin: 20px 0px 0px 0px;
+}
+.mid img{
+    height: 90%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+    box-shadow: 10px 10px 70px rgba(0, 0, 0, 0.566);
+}
+div.bunn{
+    height: 50px;
+    text-align: center;
+    padding-top: 15px;
+    color: #ECECEC;
+    margin-top: 0px;
+    font-family: 'Times New Roman', Times, serif;
+}
+a.button{
+    text-decoration: none;
+    color: #ECECEC;
+}
+a:hover{
+    color: #474787;
+    transition: 0.2s;
+}
+.intro{
+    display: flex;
+    flex-direction: row;
+}
+div.bilde{
+    flex-basis: 50%;
+}
+.intro img{
+    height: 75%;
+    width: 90%;
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 10px 10px 70px rgba(0, 0, 0, 0.566);
+}
+div.fakta{
+    flex-basis: 50%;
+    height: 600px;
+}
+li{
+    padding: 10px;
+}
+.fakta h1{
+    text-align: center;
+}
+.fakta h2{
+    text-align: center;
+}
+
+.faktaboks{
+    width: 90%;
+    height: 500px;
+    margin: auto;
+    margin-top: 90px;
+    display: flex;
+    flex-direction: row;
+}
+
+.faktabilde{
+    flex: 1;
+    margin: 4px 0px 4px 4px;
+    padding: 10px;
+}
+
+.faktabilde img{
+    border-radius: 240px;
+    height: 450px;
+    width: 450px;
+}
+
+.faktatekst{
+    flex: 1;
+    margin: 4px 4px 4px 4px;
+    padding: 10px;
+    color: white;
+}
+#faktatekst{
+    font-size: 20px;
+}
+#overskrift{
+    font-size: 35px;
+}
+.lagringsmedium{
+    position: relative;
+    top: 140px;
+}
+.faktaboks2{
+    width: 90%;
+    height: 700px;
+    margin: auto;
+    margin-top: 90px;
+    display: flex;
+    flex-direction: row;
+}
+.faktaboks3{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+.faktatekst3{
+    margin: 4px 4px 4px 4px;
+    padding: 10px;
+    color: white;
+    text-align: left;
+}
+#faktatekst2{
+    font-size: 20px;
+    font-weight: bold;
+}
+table{
+    border: black solid 2px;
+    width: 90%;
+    height: 150px;
+    text-align: center;
+    font-weight: bold;
+}
+#hvit{
+    background-color: #2d2d53;
+    color: black;
+}
+#grey{
+    background-color: #353565;
+    color: black;
+}  
+#kode tr td{
+    padding: 10px;
+}
+#kode tr th{
+    padding: 10px;
+}

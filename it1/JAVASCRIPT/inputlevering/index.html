@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+.trykket{
+    display: none;
+}
+.innpakning{
+    text-align: center;
+}
+h1, h2{
+    text-align: center;
+}
+.voksen{
+    display: flex;
+    flex-direction: row;
+    height: 310px;
+    align-items: center;
+    text-align: center;
+}
+.barn1{
+    flex: 1;
+    
+}
+#antallFirkant{
+    display: block;
+    margin: 4px auto;
+    
+}
+.barn2{
+    width: 250px;
+    text-align: left;
+    margin-left: 30%;
+}
+#donasjon, #hvorStorDonasjon{
+    display: block;
+    margin: 10px auto;
+}
+</style>
+</head>
+<body>
+<div class="innpakning">
+    <div class="firkantDiv">
+        <h1>Bestill en firkant</h1>
+        <div class="voksen">
+            <div class="barn1">
+                Bredde: <br>
+                <input type="range" id="bred" min="10" max="250"><br>
+                Høyde: <br>
+                <input type="range" id="hoy" min="10" max="250"><br><br>
+                Farge:<br>
+                <input type="color" id="fargeValg"><br><br>
+                Hvor mange firkanter skal du ha? <br><input type="number" id="antallFirkant">
+            </div>
+            <div class="barn1">
+                <img src="firkant.png" alt="" height="200" id="firkant">
+            </div>
+        </div>
+        <button id="firkantKnapp">Neste</button>
+    </div>
+    <div class="donasjonDiv trykket">
+        <h2>Vil du donere penger?</h2>
+        <select name="donasjon" id="donasjon">
+            <option value="ja">Ja</option>
+            <option value="Nei">Nei</option>
+        </select>
+        <div class="hvorStorDonasjon trykket">
+            Hvor mye? <br><input type="number" id="hvorStorDonasjon" placeholder="kr"><br>
+            <button id="donasjonBekreftelse">Neste</button>
+        </div>
+        <div class="erdusikker trykket">
+            Velg riktig påstand om deg
+            <br><input type="checkbox" id="check1">Du er gjerrig
+            <br><input type="checkbox" id="check2">Du liker ikke å hjelpe andre 
+        </div>
+        <button id="donasjonKnapp">Neste</button>
+    </div>
+    <div class="betalingDiv trykket">
+        <h2>Bestillingsinfo</h2>
+        <div class="barn2">
+            <input type="radio" id="hurtig" name="levering" checked>
+            Hurtiglevering (1-3)<br>
+            <input type="radio" id="standar" name="levering">
+            Standar levering (4-5 dager)
+            <br><br><input type="text" id="navn" placeholder="Navn">
+            <input type="text" id="adresse" placeholder="Adresse">
+            <button id="bestillingKnapp">Neste</button>
+        </div>
+    </div>
+    <div class="bekreftelseDiv trykket">
+        <b><p id="bekreftelseTekst"></p></b>
+        <button id="bekreftelseKnapp">Bekreft</button>
+    </div>
+    <div class="takk trykket">
+        <h1>Da er din firkant på vei!</h1>
+    </div>
+</div>
+<script>
+    let firkantEl = document.querySelector("#firkant");
+    let breddeSlider = document.querySelector("#bred");
+    let hoydeSlider = document.querySelector("#hoy");
+    let fargeValg = document.querySelector("#fargeValg");
+    let firkantKnapp = document.querySelector("#firkantKnapp");
+    let antallFirkantInput = document.querySelector("#antallFirkant");
+    let antallFirkant = 0;
+    let breddeFirkant = "";
+    let hodyeFirkant = "";
+    let fargeFirkant = "";
+    let donasjonValg = document.querySelector("#donasjon");
+    let donasjonKnapp = document.querySelector("#donasjonKnapp");
+    let firkantDiv = document.querySelector(".firkantDiv");
+    let donasjonDiv = document.querySelector(".donasjonDiv");
+    let bekreftelseDiv = document.querySelector(".bekreftelseDiv");
+    let betalingDiv = document.querySelector(".betalingDiv");
+    let leveringHurtig = document.querySelector("#hurtig");
+    let leveringStandar = document.querySelector("#standar");
+    let levering = "";
+    let leveringPris = 0;
+    let gjerrig = document.querySelector(".erdusikker")
+    let gjerrigCount = 0;
+    let gjerrig1 = document.querySelector("#check1")
+    let gjerrig2 = document.querySelector("#check2")
+
+    breddeSlider.addEventListener("mousemove", function(){
+        firkantEl.width = breddeSlider.value
+    })
+    hoydeSlider.addEventListener("mousemove", function(){
+        firkantEl.height = hoydeSlider.value
+    })
+    fargeValg.addEventListener("change", function(){
+        firkantEl.style.backgroundColor = fargeValg.value
+    })
+
+    firkantKnapp.addEventListener("click", function(){
+        firkantDiv.classList.add("trykket");
+        donasjonDiv.classList.remove("trykket")
+    })
+
+    donasjonKnapp.addEventListener("click", function(){
+        if(donasjonValg.value == "ja") {
+            document.querySelector(".hvorStorDonasjon").classList.remove("trykket");
+            donasjonKnapp.style.display = "none";
+            document.querySelector("#donasjonBekreftelse").addEventListener("click", function(){
+                betalingDiv.classList.remove("trykket");
+                donasjonDiv.classList.add("trykket");
+            })
+        } else{
+            gjerrig.classList.remove("trykket");
+            if(gjerrig1.checked) {
+                gjerrigCount ++;
+            }
+            if(gjerrig2.checked) {
+                gjerrigCount ++;
+            }
+            document.querySelector("#donasjonKnapp").addEventListener("click", function(){
+                betalingDiv.classList.remove("trykket");
+                gjerrig.classList.add("trykket");
+                donasjonDiv.classList.add("trykket");
+            })
+        }
+    })
+    
+    document.querySelector("#bestillingKnapp").addEventListener("click", function(){
+        if(leveringHurtig.checked){
+            levering = "Hurtiglevering"
+            leveringPris = 300;
+        } 
+        if(leveringStandar.checked){
+            levering = "Standar levering"
+            leveringPris = 150;
+        }
+        betalingDiv.classList.add("trykket");
+        bekreftelseDiv.classList.remove("trykket");
+        bekreftelse()
+    })
+    
+    document.querySelector("#bekreftelseKnapp").addEventListener("click", function(){
+        bekreftelseDiv.classList.add("trykket");
+        document.querySelector(".takk").classList.remove("trykket");
+    })
+    
+    let gjerrigTekst = "";
+
+    if(gjerrigCount = 2){
+        gjerrigTekst = "<br> Du er veldig gjerrig"
+    } else if(gjerrigCount = 1) {
+        gjerrigTekst = "<br> Du er litt gjerrig"
+    }
+    
+
+
+    function bekreftelse(){
+        /* Bekreftelse utskrift */
+        let pris = (Number(document.querySelector("#hvorStorDonasjon").value) + Number(leveringPris) + (breddeSlider.value * breddeSlider.value * hoydeSlider.value * 0.005) * antallFirkantInput.value);
+        bekreftelseTekst.innerHTML = "Dette er din bestillling: <br> Navn: " + document.querySelector("#navn").value + "<br> Adresse: " + document.querySelector("#adresse").value + " <br>Bredde: " + breddeSlider.value + "px <br> Høyde: " +
+        hoydeSlider.value + "px <br> Farge: " + fargeValg.value + "<br> Antall firkanter: " + antallFirkantInput.value + "<br> Donasjon: " +
+        document.querySelector("#hvorStorDonasjon").value + " kr <br> Levering: " + levering + "<br> Prisen blir: " + pris + " kr" + gjerrigTekst;
+    }
+</script>
+</body>
+</html>
+
+            

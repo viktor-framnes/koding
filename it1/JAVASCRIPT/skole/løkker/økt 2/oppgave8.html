@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+
+</style>
+</head>
+<body>
+
+<script>
+    let ord = "wjlups";
+    let kryptertBeskjed = "";
+    let alfabet = "abcdefghijklmnopqrstuvwxyzæøåa _-. "
+
+    for(let i = 0; i < ord.length; i++){
+        let bokstav = ord[i]
+        let index = alfabet.indexOf(bokstav);
+        kryptertBeskjed += alfabet[index - 1];
+    }
+    document.write(kryptertBeskjed)
+
+
+</script>
+</body>
+</html>

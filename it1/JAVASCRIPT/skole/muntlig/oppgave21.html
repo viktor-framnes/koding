@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .hoved{
+        border: solid 2px black;
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .rad1{
+        background-color: red;
+        height: 90px;
+        text-align: center;
+    }   
+    .rad2{
+        background-color: blue;
+        display: flex;
+        flex-direction: row;
+        height: 220px;
+    }
+    .boks1{
+        background-color: pink;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .boks2{
+        background-color: grey;
+        flex-basis: 78%;
+    }
+    .rad3{
+        background-color: green;
+        height: 90px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <div class="hoved">
+        <div class="rad1">
+            <h1>Overskrift</h1>
+        </div>
+        <div class="rad2">
+            <div class="boks1">
+                <img src="banan.png" alt="bilde av bananer" width="150px" height="150px">
+            </div>
+            <div class="boks2">
+                <input type="text">
+                <button>trykk her</button>
+                <p></p>
+            </div>
+        </div>
+        <div class="rad3">
+            <h3>En passende bunntekst</h3>
+        </div>
+    </div>
+<script>
+    let navn = document.querySelector("input");
+    let knappEl = document.querySelector("button")
+    let resEl = document.querySelector("p");
+
+    knappEl.addEventListener("click", function(){
+        resEl.innerHTML = "Det er " + navn.value.length + " bokstaver i navnet ditt";
+    })
+
+</script>
+</body>
+</html>

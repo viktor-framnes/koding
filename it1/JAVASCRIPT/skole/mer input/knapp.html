@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+div{
+    width: 800px;
+    background-color: lightgrey;
+    border: 3px solid black;
+    margin: auto;
+    padding: 15px;
+}
+</style>
+</head>
+<body>
+<div id="innpaking">    
+    <h1>Trykk på knappen under.</h1>
+    <button id="knapp1">Trykk her</button>
+    <p></p>
+    <button id="knapp2" onclick="reset()">reset</button>
+</div>
+<script>
+    let knappEl = document.querySelector("#knapp1");
+    let antallTrykk = 0;
+    
+    knappEl.addEventListener("click", vis);
+    function vis() {
+        antallTrykk ++;
+        document.querySelector("p").innerHTML = "Du har trykket på meg " + antallTrykk + " ganger."
+    }
+    function reset() {
+        antallTrykk = 0;
+        document.querySelector("p").innerHTML = "";
+    }
+
+</script>
+</body>
+</html>

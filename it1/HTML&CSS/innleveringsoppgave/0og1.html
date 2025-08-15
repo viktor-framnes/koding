@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Hvorfor 0 og 1?</title>
+    <link rel="stylesheet" href="stilark.css">
+</head>
+<body>
+    <div class="innpakning">
+        <div class="logo"><a href="index.html">Hjem</a></div>
+        <div class="top"><h1>Hvorfor 0 og 1?</h1></div>
+        <div class="filler"></div>
+    </div>
+    <div class="mid">
+        <div class="faktaboks3">
+            <div class="faktatekst3">
+                <h2 id="overskrift">
+                    Fra 0 og 1 til Tekst, Lyd og Bilde
+                </h2>
+                <p id="faktatekst2">
+                    Datamaskiner er egentlig regnemaskiner; de kan programmeres til å utføre beregninger med tall. Det betyr at en datamaskin må basere seg på et tallsystem. I teorien kunne vi ha brukt mange forskjellige tallsystemer, men det er totallsystemet som viser seg å være best egnet. Totallsystemet, som også kalles det binære tallsystemet, baserer seg på sifrene 0 og 1. <br><br>
+                </p>
+                <p id="faktatekst">
+                    Datamaskinens prosessor er enheten som utfører beregninger. Den består av milliarder av transistorer. Vi kan tenke på en transistor som en bryter som enten er på eller av. En transistor som er av, representerer verdien 0, mens en transistor som er på, representerer verdien 1. <br><br>
+                    Alt som skjer i en datamaskin, er basert på disse to sifrene. Det vil si at tekst, bilde, video og lyd eksisterer som serier av sifrene 0 og 1. Det er kombinasjonen av disse sifrene, og hvordan programvare tolker dem, som skaper datamaskinens innhold. <br><br>
+                </p>
+                <h2 id="overskrift">
+                    Bit og byte
+                </h2>
+                <p id="faktatekst">
+                    Informasjonen i en datamaskin består altså utelukkende av serier av 0 og 1. En slik enhet (0 eller 1) kalles en bit. Hvis vi setter sammen åtte biter, får vi en byte. Et eksempel på en byte kan være 0010 1011. En slik byte representerer et tall i totallsystemet. Vi må derfor først se litt på tallsystemer før vi kan forstå funksjonen til en byte.
+                </p>
+                <h2 id="overskrift">
+                    Titallsystemet
+                </h2>
+                <p id="faktatekst">
+                    I titallsystemet benytter vi de ti sifrene 0, 1, 2, 3, 4, 5, 6, 7, 8 og 9. For tall større enn 9 benyttes et posisjonssystem. Tallet 17 har sifferet 1 i tierposisjonen, og sifferet 7 i enerposisjonen. Vi har altså én tier og sju enere, til sammen sytten. <br><br>
+                    Vi kan definere dette posisjonssystemet ved hjelp av tierpotenser. I enerposisjonen har vi et antall av potensen 100, som er lik 1. I tierposisjonen har vi et antall av potensen 101, som er lik 10. I hundreposisjonen har vi et antall av potensen 102, som er lik 100. Og slik fortsetter det. Tabellen nedenfor illustrerer posisjonssystemet for tallet 3041 i titallsystemet. <br><br>
+                </p>
+                <table>
+                    <tr id="hvit">
+                        <th></th>
+                        <th>Tusener</th>
+                        <th>Hundrer</th>
+                        <th>Tiere</th>
+                        <th>Enere</th>
+                    </tr>
+                    <tr id="grey">
+                        <th>Potens</th>
+                        <td>10^3</td>
+                        <td>10^2</td>
+                        <td>10^1</td>
+                        <td>10^0</td>
+                    </tr>
+                    <tr id="hvit">
+                        <th>Antall</th>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="faktaboks2">
+            <div class="faktatekst">
+                <h2 id="overskrift">Totallsystemet</h2>
+                <p id="faktatekst">
+                    Totallsystemet er et posisjonssystem på samme måte som titallsystemet. Forskjellen er at vi bare benytter sifrene 0 og 1. Totallsystemet benytter derfor toerpotenser i stedet for tierpotenser. <br><br>
+                    I enerposisjonen har vi et antall av potensen 20, som er lik 1. Alle tall opphøyd i 0 blir 1, det er dette som gjør at alle tallsystemer kan ha en enerposisjon, uavhengig av grunntallet. Den neste posisjonen gir oss et antall av potensen 21, som er lik 2. Altså er dette en toerposisjon (og ikke en tierposisjon som i titallsystemet). Videre får vi firerposisjonen (22 = 4), åtterposisjonen (23 = 8), osv. <br><br>
+                    Det kan være greit å understreke hvilket tallsystem vi benytter når vi snakker om flere tallsystemer samtidig. Det gjør vi ved å legge til tallsystemets grunntall med senket skrift på slutten av et tall. Tallet 101 i titallsystemet kan derfor angis som 10110. Hvis tallet 101 benytter totallsystemet, kan vi skrive 1012. Hvis ingenting annet er angitt, er det titallsystemet som benyttes. <br><br>
+                </p>
+            </div>
+            <div class="faktabilde">
+                <img class="lagringsmedium" src="totall.png" alt="Bilde av lagringsmedium">
+            </div>
+        </div>
+        <div class="faktaboks3">
+            <div class="faktatekst3">
+                <p id="faktatekst">
+                    En byte har som nevnt plass til åtte biter. Det vil si at det største tallet vi kan lagre i en byte, er 1111 1111_2, som i titallsystemet blir: <br><br>
+                    1 * 2^7 + 1 * 2^6 + 1 * 2^5 + 1 * 2^4 + 1 * 2^3 + 1 * 2^2 + 1 * 2^1 + 1 * 2^0 = 255_10 <br><br>
+                    Samtidig er 0000 0000_2 det minste tallet vi kan lagre i en byte. Her har vi 0 av alle potensene, altså er dette tallet lik 0. Det betyr at vi kan lagre 256 (0 til og med 255) forskjellige verdier i én byte. Tallet 256 vil du derfor møte ofte i dette faget. 
+                </p>
+                <h2 id="overskrift">
+                    Sekstallsystemet
+                </h2>
+                <p id="faktatekst">
+                    Sekstentallsystemet er bedre kjent som det heksadesimale tallsystemet, eller bare hex. Dette tallsystemet brukes ofte til å representere farger. Vi kommer derfor til å bli bedre kjent med dette tallsystemet når vi skal jobbe med bilder eller farger på nettsider. <br><br>
+                    Sekstentallsystemet er også et posisjonssystem som de to andre vi har sett på. Her benyttes imidlertid 16 forskjellige sifre. Det virker kanskje litt rart med 16 sifre siden vi bare kjenner 10 ulike sifre. Dette løses i sekstentallsystemet ved å benytte bokstaver for å representere sifrene som er større enn 9. Sekstentallsystemet benytter derfor sifrene 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E og F. <br><br>
+                    Et tall fra sekstentallsystemet kan være FF0000_16. Dette er også fargekoden som gir fargen rød. I totallsystemet benytter dette tallet tre byte. Det vil si at dette tallet er lagret i vår datamaskin som <br><br>
+                    1111 1111 0000 0000 0000 0000_2 <br><br>
+                    I titallsystemet blir dette (F tilsvarer 15): <br><br>
+                    15 · 16^5 + 15 · 16^4 + 0 · 16^3 + 0 · 16^2 + 0 · 16^1 + 0 · 16^0 = 16 711 680_10 <br><br>
+                    Tabellen nedenfor viser de 16 første tallene i titallsystemet, totallsystemet og sekstentallsystemet. <br><br>
+                </p>
+                <table id="tallsystem">
+                    <tr id="hvit">
+                        <th>Titallsystemet</th>
+                        <th>Totallsystemet</th>
+                        <th>Sekstentallsystemet</th>
+                    </tr>
+                    <tr id="grey">
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr id="hvit">
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr id="grey">
+                        <td>2</td>
+                        <td>10</td>
+                        <td>2</td>
+                    </tr>
+                    <tr id="hvit">
+                        <td>3</td>
+                        <td>11</td>
+                        <td>3</td>
+                    </tr>
+                    <tr id="grey">
+                        <td>4</td>
+                        <td>100</td>
+                        <td>4</td>
+                    </tr>
+                    <tr id="hvit">
+                        <td>5</td>
+                        <td>101</td>
+                        <td>5</td>
+                    </tr>
+                    <tr id="grey">
+                        <td>6</td>
+                        <td>110</td>
+                        <td>6</td>
+                    </tr>
+                    <tr id="hvit">
+                        <td>7</td>
+                        <td>111</td>
+                        <td>7</td>
+                    </tr>
+                    <tr id="grey">
+                        <td>8</td>
+                        <td>1000</td>
+                        <td>8</td>
+                    </tr>
+                    <tr id="hvit">
+                        <td>9</td>
+                        <td>1001</td>
+                        <td>9</td>
+                    </tr>
+                    <tr id="grey">
+                        <td>10</td>
+                        <td>1010</td>
+                        <td>A</td>
+                    </tr>
+                    <tr id="hvit">
+                        <td>11</td>
+                        <td>1011</td>
+                        <td>B</td>
+                    </tr>
+                    <tr id="grey">
+                        <td>12</td>
+                        <td>1100</td>
+                        <td>C</td>
+                    </tr>
+                    <tr id="hvit">
+                        <td>13</td>
+                        <td>1101</td>
+                        <td>D</td>
+                    </tr>
+                    <tr id="grey">
+                        <td>14</td>
+                        <td>1110</td>
+                        <td>E</td>
+                    </tr>
+                    <tr id="hvit">
+                        <td>15</td>
+                        <td>1111</td>
+                        <td>F</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

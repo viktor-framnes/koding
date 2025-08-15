@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stilark.css">
+    <title>Fyne</title>
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <div class="tophøyre"><img class="logo" src="logo3.0.png" alt="logo" height="100"></div>
+        <div class="topmid">
+            <ul>
+                <li><a href="beats.html">Beats</a></li>
+                <li><a href="tjenester.html">Tjenester</a></li>
+                <li><a href="omoss.html">Om oss</a></li>
+                <li><a class="kontakt" href="kontakt.html">Kontakt oss</a></li>
+            </ul>
+        </div>
+        <div class="topvenstre">
+            <ul>
+                <li>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <img src="bars.png" alt="bars icocn" height="30">
+                      </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+</script>
+</body>
+</html>

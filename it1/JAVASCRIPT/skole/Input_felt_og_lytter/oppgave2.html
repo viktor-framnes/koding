@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h1>Quiz</h1>
+        <h2>Hvem skrev "Et dukkehjem?"</h2>
+        <input type="text">
+        <button>Trykk for sjekk</button>
+        <h3></h3>
+    </div>
+<script>
+    let navn = document.querySelector("input");
+    let knappEl = document.querySelector("button");
+    let svar = document.querySelector("h3");
+
+    knappEl.addEventListener("click", sjekk);
+    
+    function sjekk() {
+        if (navn.value.toUpperCase() === "HENRIK IBSEN"){
+            svar.innerHTML = "Ett poeng til deg!";
+        } else if (navn.value.toUpperCase() === "HENRIK" || navn.value.toUpperCase() === "IBSEN") {
+            svar.innerHTML = "Du skrev ikke hele navnet riktig. Ett halvtpoeng";
+        } else {
+            svar.innerHTML = "Beklager, feil svar";
+        }
+    }
+
+
+</script>
+</body>
+</html>

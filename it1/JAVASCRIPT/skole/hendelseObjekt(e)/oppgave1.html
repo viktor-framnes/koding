@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+body{
+    text-align: center;
+}
+div{
+    width: 250px;
+    height: 150px;
+    margin: auto;
+}
+.lys{
+    background-color: lightblue;
+}
+.mork{
+    background-color: blue;
+}
+
+</style>
+</head>
+<body>
+    <h1>Klikk på den lyseste fargen</h1>
+    <div class="lys"></div>
+    <div class="mork"></div>
+    <p></p>
+<script>
+    let divEl = document.querySelectorAll("div");
+    let resEl = document.querySelector("p")
+
+    for(let i = 0; i < divEl.length; i++){
+        divEl[i].addEventListener("click", function(e){
+            if(e.target.className == "lys"){
+                resEl.innerHTML = "Riktig"
+            } else if(e.target.className == "mork"){
+                resEl.innerHTML = "Feil"
+            }
+        })
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+
+</style>
+</head>
+<body>
+
+<script>
+    let svar = prompt('Hvem skrev "Et dukkehjem?"');
+    svar = svar.toUpperCase();
+    
+    if (svar === "HENRIK IBSEN") {
+        document.write("Ett poeng til deg");
+    } else if (svar === "HENRIK" || svar === "IBSEN") {
+        document.write("Du skrev ikke hele navnet, 1/2 poeng");
+    } else {
+        document.write("Beklager, feil svar")
+    }
+
+
+
+</script>
+</body>
+</html>

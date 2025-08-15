@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button>Trykk her</button>
+    <p></p>
+<script>
+    let array = [];
+    let navn = document.querySelector("input");
+    let knappEl = document.querySelector("button");
+    let resEl = document.querySelector("p");
+
+    knappEl.addEventListener("click", function(){
+        if(array.length >= 3){
+            resEl.innerHTML = array + "<br>Det går ikke. Det er fult med navn";
+        }
+        else{
+            array.push(navn.value);
+            resEl.innerHTML = array
+        }
+    })
+
+</script>
+</body>
+</html>

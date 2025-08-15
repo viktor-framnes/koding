@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    div{
+        background-color: grey;
+        width: 50%;
+        height: 300px;
+        margin: auto;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <div>
+        <input type="number" placeholder="skriv inn ditt fødselsår">
+        <button>Regn ut</button>
+        <p></p>
+    </div>
+<script>
+    let aar = document.querySelector("input");
+    let knappEl = document.querySelector("button");
+    let resEl = document.querySelector("p");
+
+    knappEl.addEventListener("click", function(){
+        let alder = 2024 - aar.value;
+        if(alder % 2 == 0){
+            resEl.innerHTML = "Du vil bli " + alder + " år dette året og det er et partall";
+        } else{
+            resEl.innerHTML = "Du vil bli " + alder + " år dette året og det er et oddetall";
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ny side</title>
+</head>
+<body>
+    <div>
+        <h1>Her er navnet ditt lagret, hentet fra index-siden</h1>
+        <p></p>
+    </div>
+<script>
+    let resultatEl = document.querySelector("p");
+
+    resultatEl.innerHTML = "Dette er ditt navn: " + localStorage.getItem("navn");
+</script>
+</body>
+</html>

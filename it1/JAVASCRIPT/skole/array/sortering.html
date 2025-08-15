@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+<style>
+
+</style>
+</head>
+<body>
+<script>
+    let tekst = ["Saft","Vann","Vin","Appelsinjuice"];
+    tekst.sort();
+    document.write(tekst + "<br>");
+    
+    let tall1 = [1,4,8,7,2];
+    tall1.sort();
+    document.write(tall1 + "<br>");
+
+    let tall2 = [1,4,41,82,101,14];
+    tall2.sort(sammenlign);
+    document.write(tall2 + "<br>")
+    
+    function sammenlign(a,b){
+        return a - b;
+    }
+
+
+</script>
+</body>
+</html>

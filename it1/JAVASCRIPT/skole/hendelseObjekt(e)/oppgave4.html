@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+body{
+    text-align: center;
+}
+</style>
+</head>
+<body>
+    <img src="0.png" id="0" alt="sommerfugl1">
+    <img src="1.png" id="1" alt="sommerfugl2">
+    <img id="tilf" style="margin: 0px 130px;" src="" alt="sommerfuglTilfeldig">
+    <br><br><p></p>
+<script>
+    let imgEl = document.querySelectorAll("img");
+    let resEl = document.querySelector("p");
+    let tilfImg = document.querySelector("#tilf")
+    let tilfTall = Math.floor(Math.random()*2)
+    tilfImg.src = tilfTall + ".png"
+
+    for(let i = 0; i < imgEl.length; i++){
+        imgEl[i].addEventListener("click", function(e){
+            if(e.target.id == tilfTall){
+                resEl.innerHTML = "Du trykket på riktig"
+            } else{
+                resEl.innerHTML = "Du trykket på feil"
+            }
+        })
+    }
+</script>
+</body>
+</html>

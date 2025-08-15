@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="tall1" type="number">
+    <input id="tall2" type="number">
+    <button>Regn ut</button>
+    <p></p>
+<script>
+    let tall1 = document.querySelector("#tall1")
+    let tall2 = document.querySelector("#tall2")
+    let knappEl = document.querySelector("button")
+    let res = document.querySelector("p");
+    let sum = 0;
+    knappEl.addEventListener("click", function(){
+        sum = Number(tall1.value) + Number(tall2.value)
+        res.innerHTML = sum + " er summen av tallene"
+        if(sum > 10){
+            res.innerHTML += "<br> Tallet er høyt"
+        } else{
+            res.innerHTML += "<br> Tallet er lavt"
+        }
+    })
+</script>
+</body>
+</html>

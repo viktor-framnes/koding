@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+div{
+    width: 500px;
+    background-color: lightgrey;
+    border: 3px solid black;
+    margin: auto;
+    padding: 15px;
+}
+p{
+    font-size: 25px;
+}
+</style>
+</head>
+<body>
+<div id="innpaking">    
+    <h1>Skriv et ord som består av 6 bokstaver</h1>
+    <input type="text"> <br>
+    <button>Sjekk antall</button>
+    <p></p>
+</div>
+<script>
+    let ord = document.querySelector("input");
+    let knappEl = document.querySelector("button");
+    
+    knappEl.addEventListener("click", sjekk);
+    function sjekk(){
+        let lengdeOrd = ord.value.length
+        if (lengdeOrd === 6){
+            document.querySelector("p").innerHTML = "👍 Bra! Ordet består av " + lengdeOrd + " bokstaver. 😀"
+        } else {
+            document.querySelector("p").innerHTML = "👎 Ordet består av " + lengdeOrd + " bokstaver. 😞"
+        }
+    }
+    
+</script>
+</body>
+</html>

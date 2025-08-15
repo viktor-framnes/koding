@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+    body{
+        background-color: grey;
+    }
+</style>
+</head>
+<body>
+
+<script>
+    let fraver = Number(prompt("Hvor mange prosent fravær har du?"));
+
+    if (fraver >= 10) {
+        document.write("Karakteren vil bortfalle.")
+    } else if (fraver >= 8) {
+        let fareProsent = 10 - fraver;
+        document.write("Du står i fare <br> Du er " + fareProsent + " prosent unna å miste karakteren i faget.");
+    } else {
+        let fareProsent = 10 - fraver;
+        document.write("Alt er greit <br> Du er " + fareProsent + " prosent unna å miste karakteren i faget.");
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <title>IS</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+  
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h1>Tilfeldig tall og fornavn</h1>
+        <p id="p1"></p>
+        <button>Vis utskrift</button>
+        <p id="p2"></p>
+    </div>
+<script>
+    let resultatEl = document.querySelector("#p1");
+    let resultatEl2 = document.querySelector("#p2");
+    let knappEl = document.querySelector("button");
+
+    let tilftall1 = Math.floor(Math.random()*9) + 2;
+    let tilftall2 = Math.floor(Math.random()*9) + 2;
+    
+    knappEl.addEventListener("click", vis)
+    function vis(){
+        resultatEl.innerHTML = "Tall en er: " + tilftall1 + ". Tall to er: " + tilftall2;
+        let sum = tilftall1 + tilftall2
+        for(let i = 0; i < sum; i++){
+            resultatEl2.innerHTML += "Viktor <br>"
+        }
+    }
+</script>
+</body>
+</html>

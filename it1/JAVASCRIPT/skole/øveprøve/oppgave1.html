@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+
+</style>
+</head>
+<body>
+
+<script>
+    let terningkast = Math.floor(Math.random()*20) + 1;
+
+    if (terningkast >= 18) {
+        document.write("Du fikk 18 eller mer.")
+    } else if (terningkast < 6 && terningkast < 18) {
+        document.write("Du fikk mellom 6 og 18.")
+    } else if (terningkast === 13) {
+        document.write("Du fikk 13!")
+    } else {
+        document.write("Du fikk 6 eller mindre.")
+    }
+
+</script>
+</body>
+</html>

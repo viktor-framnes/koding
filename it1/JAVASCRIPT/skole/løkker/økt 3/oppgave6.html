@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+</style>
+</head>
+<body>
+<div class="innpakning">
+    <h1>Quiz</h1>
+    <h3>Hovedstaden i Bulgaria</h3>
+    <input id="Bulgaria" type="text" placeholder="">
+    <button id="knapp1">Trykk for sjekk</button>
+    <p id="p1"></p>
+    <h3>Hovedstaden i Nepal</h3>
+    <input id="Nepal" type="text" placeholder="">
+    <button id="knapp2">Trykk for sjekk</button>
+    <p id="p2"></p>
+    <h3>Hovedstaden i Portugal</h3>
+    <input id="Portugal" type="text" placeholder="">
+    <button id="knapp3">Trykk for sjekk</button>
+    <p id="p3"></p>
+</div>
+<script>
+    let svar1 = document.querySelector("#Bulgaria")
+    let svar2 = document.querySelector("#Nepal")
+    let svar3 = document.querySelector("#Portugal")
+    let knapp1 = document.querySelector("#knapp1")
+    let knapp2 = document.querySelector("#knapp2")
+    let knapp3 = document.querySelector("#knapp3")
+    let res1 = document.querySelector("#p1")
+    let res2 = document.querySelector("#p2")
+    let res3 = document.querySelector("#p3")
+    let poeng = ""
+
+    knapp1.addEventListener("click", vis1)
+    function vis1(){
+        if(svar1.value.toLowerCase() == "sofia"){
+            poeng++;
+            res1.innerHTML = "Gratulerer, riktig svar"
+        } else {
+            res1.innerHTML = "Beklager, feil svar"
+        }
+    }
+    knapp2.addEventListener("click", vis2)
+    function vis2(){
+        if(svar2.value.toLowerCase() == "katmandu"){
+            poeng++;
+            res2.innerHTML = "Gratulerer, riktig svar"
+        } else {
+            res2.innerHTML = "Beklager, feil svar"
+        }
+    }
+    knapp3.addEventListener("click", vis3)
+    function vis3(){
+        if(svar3.value.toLowerCase() == "lisboa"){
+            poeng++;
+            res3.innerHTML = "Gratulerer, riktig svar <br>"
+            res3.innerHTML += "Du fikk tilsammen " + poeng + " poeng."
+        } else {
+            res3.innerHTML = "Beklager, feil svar <br>"
+            res3.innerHTML += "Du fikk tilsammen " + poeng + " poeng."
+        }
+    }
+
+</script>
+</body>
+</html>

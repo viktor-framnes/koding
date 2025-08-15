@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+}
+.innpakning{
+    background-color: pink;
+    width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+}
+.titteldiv{
+    background-color: rgb(26, 26, 61);
+    height: 120px;
+    margin-bottom: 12px;
+}
+.midrad{
+    height: 250px;
+    margin-bottom: 6px;
+    display: flex;
+    flex-direction: row;
+}
+.tabell{
+    height: 100%;
+    background-color: darkblue;
+    flex-basis: 76%;
+    border: red solid 6px;
+    margin-right: 14px;
+}
+.giflenke{
+    height: 100%;
+    background-color: darkcyan;
+    flex: 1;
+}
+.bunnrad{
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+}
+.bilde{
+    background-color: blueviolet;
+    flex: 1;
+}
+.bilde2{
+    margin: 0px 6px;
+    background-color: blueviolet;
+    flex: 1;
+}

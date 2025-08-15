@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number">
+    <button>regn ut</button>
+    <p></p>
+<script>
+    let alder = document.querySelector("input")
+    let knappEl = document.querySelector("button")
+    let res = document.querySelector("p")
+
+    knappEl.addEventListener("click", function(){
+        if(alder.value >= 60){
+            res.innerHTML = "Du er pensjonist"
+        }
+        else if(alder.value >= 18){
+            res.innerHTML = "Du er myndig"
+        } else{
+            res.innerHTML = "Du er ikke myndig"
+        }
+    })
+</script>
+</body>
+</html>

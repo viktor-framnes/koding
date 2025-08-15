@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h1>Fellesfag og programfag</h1>
+        <input type="text" placeholder="Skriv inn programfag">
+        <button>Legg til fag</button>
+        <p></p>
+        <p id="femte"></p>
+    </div>
+<script>
+    let resultatEl = document.querySelector("p");
+    let knappEl = document.querySelector("button");
+    let fag = document.querySelector("input");
+    let fellesfag = ["Religion","Historie","Gym","Norsk"]
+    let antall = 4;
+    let res2 = document.querySelector("#femte")
+
+    resultatEl.innerHTML = fellesfag + "<br><br> Antall fag: " + antall 
+
+    knappEl.addEventListener("click", function(){
+        antall++;
+        fellesfag.push(fag.value)
+        resultatEl.innerHTML = fellesfag + "<br><br> Antall fag: " + antall
+        if(fellesfag.length == 5){
+            res2.innerHTML = "Det femte faget er: " + fellesfag[4];
+        }
+    })
+</script>
+</body>
+</html>

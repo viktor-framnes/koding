@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+
+</style>
+</head>
+<body>
+<script>
+    let ord = prompt("Skriv inn et ord")
+    let ordlengde = ord.length
+
+    if (ordlengde % 2 == 0) {
+        document.write("Bokstavene i midten av ordet: " + ord + " er " + ord[ord.length/2-1] + " og " + ord[ord.length/2]);
+    }
+    else {
+        document.write("Bokstaven i midten av ordet: " + ord + " er " + ord[(ord.length-1)/2]);
+    }
+</script>
+</body>
+</html>

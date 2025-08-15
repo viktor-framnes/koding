@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+    div{
+        background-color: aquamarine;
+        border: 10px solid black;
+        border-radius: 15px;
+        width: 300px;
+        margin: auto;
+        padding: 10px;
+        text-align: center;
+    }
+    h1,h3{
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h1>Oversetter</h1>
+        <h2>Engelsk eller Norsk</h2>
+        <img src="" alt="Engelsk">
+        <img src="" alt="Norsk">
+        <input type="text">
+        <button>Oversett</button>
+        <p></p>
+    </div>
+<script>   
+    let NorskOrd = ["fisk","søppel","båt","mat","hest","bil","sykkel","hus","flaske","mobil"]
+    let EngelskOrd = ["fish","trash","boat","food","horse","car","bicycle","house","bottle","mobile"]
+    let ordValg = document.querySelector("input");
+    let knappEl = document.querySelector("button");
+    let resultatEL = document.querySelector("p");
+
+    knappEl.addEventListener("click", function(){
+        let ord = ordValg.value.toLowerCase();
+            for(let i = 0; i < EngelskOrd.length; i++){
+                if(ord === EngelskOrd[i]){
+                    resultatEL.innerHTML = NorskOrd[i]
+                } else if (ord === NorskOrd[i]){
+                    resultatEL.innerHTML = EngelskOrd[i]
+                } else {
+                    resultatEL.innerHTML = "Du må velge et annet ord"
+                }
+            } 
+    })
+
+</script>
+</body>
+</html>

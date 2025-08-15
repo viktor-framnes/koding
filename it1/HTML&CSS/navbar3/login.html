@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="stilark.css">
+    <title>Logg inn</title>
+</head>
+<body>
+    <div class="navbar">
+        <a class="logo" href="index.html">Fyne</a>
+        <div class="navliste">
+            <ul>
+                <li><a href="beats.html">Beats</a></li>
+                <li><a href="tjenester.html">Tjenester</a></li>
+                <li><a href="index.html">Kontakt oss</a></li>
+                <li class="hidden"><a href="login.html">Logg inn</a></li>
+            </ul>
+        </div>
+        <a class="login" href="login.html">Logg inn</a>
+        <div class="hamburger">
+            <img src="pilned.png" class="pil" id="pil" alt="" height="40px">
+        </div>
+    </div>
+    <div class="seksjon">
+        <h1>FYNE medlem</h1><br><br>
+       <!-- <img class="gif" src="/bilder/sound.gif" alt="fyne" width="90%"> -->    
+    </div>
+    <div class="seksjon2">
+        <br><br><br><br>
+        <div class="custom-shape-divider-top-1700513040">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        
+        <div class="skjema1">
+            <input type="email" placeholder="E-post">
+            <input type="password" placeholder="Passord">
+            <div style="display: flex; flex-direction: row;">
+            <p id="LagNyBruker">Lag bruker</p><br>
+            <p id="glemtPassord">Glemt passord?</p>
+            </div>
+            <br>
+            <input id="loggInnKnapp" type="submit" value="Logg inn">
+        </div>
+
+        <div class="skjema2 skjult">
+            <input type="text" placeholder="Fult navn">
+            <input type="email" placeholder="E-post">
+            <input type="password" placeholder="Passord">
+            <input type="password" placeholder="Gjenta Passord">
+            <p id="AlleredeRegistrert">Allerede registrert?</p><br>
+            <input id="loggInnKnapp" type="submit" value="Registrer deg">
+        </div>
+
+        <div class="skjema3 skjult">
+            <input type="password" placeholder="Nytt passord">
+            <input type="password" placeholder="Gjenta passord">
+            <input id="loggInnKnapp" type="submit" value="Sett som nytt passord">
+            <p id="tilbakeKnapp">Tilbake</p><br>
+        </div>
+    </div>
+    <div class="bunn" style="background-color: #f4a950;">
+        <img src="./bilder/motsattlogo3.0.png" alt="Fyne logo" height="200px">
+    </div>
+<script>
+    hamburger = document.querySelector(".hamburger");
+    pilBilde = document.getElementById("pil");
+    
+    hamburger.onclick = function() {
+        navBar = document.querySelector(".navliste");
+        navBar.classList.toggle("trykket");
+        
+        if (navBar.classList.contains("trykket")) {
+            pilBilde.src = "pilopp.png"
+        } else {
+            pilBilde.src = "pilned.png"
+        }
+    }
+
+    skjema = document.getElementById("LagNyBruker");
+
+    skjema.onclick = function() {
+        skjemaEndring = document.querySelector(".skjema1");
+        skjemaEndring.classList.add("skjult");
+    
+        skjemaEndring2 = document.querySelector(".skjema2");
+        skjemaEndring2.classList.remove("skjult");
+    }
+    
+    skjema2 = document.getElementById("AlleredeRegistrert");
+
+    skjema2.onclick = function() {
+        skjema2Endring = document.querySelector(".skjema2");
+        skjema2Endring.classList.add("skjult");
+
+        skjema2Endring2 = document.querySelector(".skjema1");
+        skjema2Endring2.classList.remove("skjult");
+    }
+
+    skjema3 = document.getElementById("glemtPassord");
+
+    skjema3.onclick = function() {
+        skjema3Endring = document.querySelector(".skjema1");
+        skjema3Endring.classList.add("skjult");
+
+        skjema3Endring2 = document.querySelector(".skjema2");
+        skjema3Endring2.classList.add("skjult");
+
+        skjema3Endring2 = document.querySelector(".skjema3");
+        skjema3Endring2.classList.remove("skjult");
+    }
+    
+    tilbake = document.getElementById("tilbakeKnapp");
+
+    tilbake.onclick = function() {
+        tilbakeKnapp = document.querySelector(".skjema1");
+        tilbakeKnapp.classList.remove("skjult");
+        
+        tilbakeKnapp = document.querySelector(".skjema2");
+        tilbakeKnapp.classList.add("skjult");
+        
+        tilbakeKnapp = document.querySelector(".skjema3");
+        tilbakeKnapp.classList.add("skjult");
+
+    }
+</script>
+</body>
+</html>

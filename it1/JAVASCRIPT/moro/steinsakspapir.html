@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Steinsakspapir</title>
+    <link rel="stylesheet" href="stilark.css">
+</head>
+<body>
+    <h1>Stein Saks Papir</h1>
+    <button onclick="
+        playGame('Stein')    
+    ">Stein</button>
+
+    <button onclick="
+        playGame('Saks')
+    ">Saks</button>
+
+    <button onclick="
+        playGame('Papir')
+    ">Papir</button>
+    
+    <h1 class="js-result"></h1>
+    <p class="js-moves"></p>
+    <p class="js-score"></p>
+
+    <button onclick="
+    score.vunnet = 0;
+    score.tapt = 0;
+    score.uavgjort = 0;
+    localStorage.removeItem('score');
+    updateScoreElement()
+    ">Reset score</button>
+
+<script>
+    let score = JSON.parse(localStorage.getItem('score')) || {
+        vunnet: 0,
+        tapt: 0,
+        uavgjort: 0
+    };
+    
+    updateScoreElement()
+
+/*
+    if (!score) {
+        score = {
+        vunnet: 0,
+        tapt: 0,
+        uavgjort: 0
+        }
+    }
+*/
+
+    function playGame(playerMove) {
+        const computerMove = pickComputerMove();
+
+        let result = '';
+
+        if (playerMove === 'Papir') {
+            if (computerMove === 'Stein') {
+                result = 'Du vant'
+            }
+            else if (computerMove === 'Saks') {
+                result = 'Du tapte'
+            }
+            else if (computerMove === 'Papir') {
+                result = 'Uavgjort'
+            }
+        } 
+
+        else if (playerMove === 'Saks') {
+            if (computerMove === 'Stein') {
+            result = 'Du tapte'
+            }
+            else if (computerMove === 'Saks') {
+                result = 'Uavgjort'
+            }
+            else if (computerMove === 'Papir') {
+                result = 'Du vant'
+            }
+        } 
+        
+        else if (playerMove === 'Stein') {
+            if (computerMove === 'Stein') {
+            result = 'Uavgjort'
+            }
+            else if (computerMove === 'Saks') {
+                result = 'Du vant'
+            }
+            else if (computerMove === 'Papir') {
+                result = 'Du tapte'
+            }
+        }
+
+        if (result === 'Du vant') {
+            score.vunnet += 1;
+        }
+        else if (result === 'Du tapte') {
+            score.tapt += 1;
+        }
+        else if (result === 'Uavgjort') {
+            score.uavgjort += 1;
+        }
+
+        localStorage.setItem('score', JSON.stringify(score));
+
+        updateScoreElement()
+
+        document.querySelector('.js-result')
+            .innerHTML = result
+
+        document.querySelector('.js-moves')
+            .innerHTML = "Du valgte " + playerMove + ", jeg valgte " + computerMove;
+        
+
+    }
+
+
+    function updateScoreElement() {
+        document.querySelector('.js-score')
+            .innerHTML = "Vunnet: " + score.vunnet + ", Tapt: " + score.tapt + ", Uavgjort: "+ score.uavgjort;
+    }
+
+    function pickComputerMove() {
+        const randomNumber = Math.random();
+
+        let computerMove = '';
+        
+        if (randomNumber >= 0 && randomNumber < 1 / 3) {
+            computerMove = 'Stein'
+        }
+        else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+            computerMove = 'Saks'
+        }
+        else if (randomNumber >= 2 / 3 && randomNumber < 1) {
+            computerMove = 'Papir'
+        }
+        return computerMove;
+    }
+</script>
+</body>
+</html>

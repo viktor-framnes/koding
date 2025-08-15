@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+</style>
+</head>
+<body>
+<div class="innpakning">
+    <h1>Multiplikasjonsoppgaver</h1><br>
+    <p id="opp1"></p>
+    <input id="inp1" type="number">
+    <button id="knapp1">Sjekk svar</button>
+    <p id="svar1"></p>
+    <p id="opp2"></p>
+    <input id="inp2" type="number">
+    <button id="knapp2">Sjekk svar</button>
+    <p id="svar2"></p>
+</div>
+<script>
+    let tall1 = Math.floor(Math.random()*11);
+    let tall2 = Math.floor(Math.random()*11);
+    let tall3 = Math.floor(Math.random()*11);
+    let tall4 = Math.floor(Math.random()*11);
+    let oppgave1 = document.querySelector("#opp1");
+    let oppgave2 = document.querySelector("#opp2");
+    let tipp1 = document.querySelector("#inp1");
+    let tipp2 = document.querySelector("#inp2");
+    let knapp1 = document.querySelector("#knapp1");
+    let knapp2 = document.querySelector("#knapp2");
+    let svar1 = document.querySelector("#svar1")
+    let svar2 = document.querySelector("#svar2")
+    let poeng = 0;
+
+    oppgave1.innerHTML = tall1 + " x " + tall2;
+    oppgave2.innerHTML = tall3 + " x " + tall4;
+
+    knapp1.addEventListener("click", vis1)
+    function vis1(){
+        if(tipp1.value == tall1 * tall2){
+            svar1.innerHTML = "Riktig"
+            poeng++;
+        } else {
+            svar1.innerHTML = "Feil"
+        }
+    }
+    knapp2.addEventListener("click", vis2)
+    function vis2(){
+        if(tipp2.value == tall3 * tall4){
+            svar2.innerHTML = "Riktig <br>"
+            poeng++;
+            svar2.innerHTML += "Du fikk " + poeng + " poeng."
+        } else {
+            svar2.innerHTML = "Feil <br>"
+            svar2.innerHTML += "Du fikk " + poeng + " poeng."
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+
+<script>
+    let tabell = [
+        {navn: "Danmark", areal: 42933},
+        {navn: "Norge", areal: 385207},
+        {navn: "Island", areal: 103000},
+        {navn: "Sverige", areal: 450295},
+        {navn: "Finland", areal: 338440}
+    ];
+
+    tabell.sort(sammenlign);
+    document.write(tabell[0].navn + " har minst areal på " + tabell[0].areal + " km2, <br> mens " +
+    tabell[tabell.length-1].navn + " har størst areal på " + tabell[tabell.length-1].areal + " km2")
+
+    let total = 0;
+
+    for(let i = 0; i < tabell.length; i++){
+        total += tabell[i].areal
+    }
+    document.write("<br><br> Total areal er " + total + " km2")
+
+    function sammenlign(a,b) {
+        if (a.areal > b.areal) {
+            return 1;
+        }
+        else if (a.areal < b.areal) {
+            return -1;
+        }
+        else {
+            return 0;
+        }
+    }
+
+</script>    
+</body>
+</html>

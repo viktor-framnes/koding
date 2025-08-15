@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <title>IS</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h1>Tallrekke</h1> 
+        <input type="number">
+        <button>Beregn</button>
+        <p></p>
+    </div>  
+<script>
+    let knappEl = document.querySelector("button");
+    let resultatEl = document.querySelector("p");
+    let svarEl = document.querySelector("input");
+
+    knappEl.addEventListener("click", vis)
+    function vis() {
+        for(let i = 0; i <= 30; i++){
+            if (i % svarEl.value !== 0) {
+                resultatEl.innerHTML += i + "<br>";
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

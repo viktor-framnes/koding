@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klikk på kua</title>
+<style>
+p{
+    cursor: pointer;
+    padding: 10px;
+}
+</style>
+</head>
+<body>
+    <h1>Hvilket land i verden har et flagg uten rødt, hvitt eller blått</h1>
+    <h2><p id="p2">Sør-Afrika</p></h2>
+    <h2><p id="p3">Kongo</p></h2>
+    <h2><p id="p4">Jamaica</p></h2>
+<script>
+    let pEl = document.querySelectorAll("h2"); 
+    for(let i = 0; i < pEl.length; i++){
+        pEl[i].addEventListener("click", function(e){
+            if(e.target.id == "p4"){
+                pEl[i].style.backgroundColor = "green";
+            } else{
+                pEl[i].style.backgroundColor = "red";
+            }
+        })
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+body{
+    background-image: url(fotball.png);
+    background-repeat: repeat;
+}
+table{
+    border-collapse: collapse;
+}
+th{
+    background-color: green;
+    border: 2px solid black;
+    padding: 5px;
+}
+td{
+    background-color: lightgreen;
+    border: 2px solid black;
+    padding: 5px;
+}
+
+ul li{
+    background-color: green;
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    list-style-type: none;
+    margin: 5px;
+}
+ol li{
+    background-color: lightgreen;
+    padding: 5px;
+    width: 200px;
+    border-radius: 5px;
+    list-style-type: none;
+    margin: 5px;
+}

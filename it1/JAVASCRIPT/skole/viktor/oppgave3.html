@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+* {
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<script>
+    let navn = prompt("skriv inn navnet ditt");
+    let alder = Number(prompt("Skriv inn din alder"));
+    alder = (100 - alder) * 12;
+    let alfabet = "abcdefghijklmnopqrstuvwxyzæøå"
+
+
+    document.write("Hei " + navn + ". Om " + alder + " måneder er du 100 år. <br>");
+    document.write("Den tredje bokstaven i navnet ditt er: " + navn[2] + "<br>");
+    document.write("Bokstaven " + navn[2] + " er nummer " + (alfabet.indexOf(navn[2]) + 1) + " i alfabetet.");
+</script>
+</body>
+</html>

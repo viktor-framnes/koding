@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+    //a
+    let hund = [
+        {hundenavn: "Tarzan", rase: "Puddel", alder: 2},
+        {hundenavn: "Pepsi", rase: "Beagle", alder: 1},
+        {hundenavn: "Doffen", rase: "Dachs", alder: 3},
+        {hundenavn: "Pølsa", rase: "Labrador", alder: 4}
+    ]
+    for(let i = 0; i < hund.length; i++){
+        document.write(hund[i].hundenavn + " er " + hund[i].alder + " år og er en " + hund[i].rase + "<br>");
+    }
+    
+    document.write("<br>");
+    
+    //b
+    for(let i = 0; i < hund.length; i++){
+        if(hund[i].alder < 3){
+            document.write(hund[i].hundenavn + " er " + hund[i].alder + " år og er en " + hund[i].rase + "<br>")
+        }
+    }
+
+    document.write("<br>");
+
+    //c
+    let antall = 0;
+    for(let i = 0; i < hund.length; i++){
+        if(hund[i].rase == "Puddel"){
+            antall++;
+            document.write("Det er " + antall + " pudler");
+        }
+    }
+    document.write("<br><br>")
+
+    //d
+    let total = 0;
+    for(let i = 0; i < hund.length; i++){
+        total += hund[i].alder
+    }
+    document.write("Den totale alderen for alle hundene er " + total + " år");
+
+</script>
+</body>
+</html>

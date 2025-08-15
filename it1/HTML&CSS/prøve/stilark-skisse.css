@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.innpakning{
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    background-color: rgb(32, 32, 32);
+    padding: 4px;
+    margin: 20px auto;
+}
+.top{
+    background-color: grey;
+    height: 100px;
+}
+.mid{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin: 8px 0px;
+    height: 275px;
+    gap: 8px;
+}
+.venstre{
+    flex-basis: 17%;
+    background-color: grey;
+}
+.midten{
+    flex: 1;
+    background-color: grey;
+    text-align: center;
+}
+.høyre{
+    flex-basis: 29%;
+    background-color: grey;
+}
+.bunn{
+    background-color: grey;
+    height: 100px;
+}

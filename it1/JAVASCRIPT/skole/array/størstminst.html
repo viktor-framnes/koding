@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+<style>
+
+</style>
+</head>
+<body>
+<script>
+    //metode 1
+
+    let tall = [3,2,6,37,4,26];
+    let minst = tall[0];
+
+    for(let i = 0; i < tall.length; i++){
+        if(tall[i] < minst){
+            minst = tall[i];
+        }
+    }
+    document.write(minst + "<br>");
+    
+    //metode 2
+
+    let tall2 = [3,2,6,37,4,26];
+    tall2.sort(sammenlign);
+    document.write(tall2[0] + "<br>");
+    function sammenlign(a,b){
+        return a - b;
+    }
+
+</script>
+</body>
+</html>

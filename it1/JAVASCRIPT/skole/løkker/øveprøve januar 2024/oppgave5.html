@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <title>IS</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h1>Hvor mange treff fikk deltakeren?</h1>
+        <input type="number">
+        <button>Trykk for resultat</button>
+        <p></p>
+    </div>  
+<script>
+    let resultatEl = document.querySelector("p");
+    let knappEl = document.querySelector("button");
+    let svarEl = document.querySelector("input");
+    let divEl = document.querySelector("div");
+
+    knappEl.addEventListener("click", vis)
+    function vis() {
+        let antallBomm = 5 - svarEl.value
+        resultatEl.innerHTML = "Med " + svarEl.value + " treff må deltakeren ta " + antallBomm + " strafferunder";
+        for(let i = 0; i < svarEl.value; i++){
+            let blink = document.createElement("img")
+            blink.src = "sortBlink.gif";
+            blink.height = "50";
+            blink.width = "50";
+            divEl.appendChild(blink);
+        }
+    }
+</script>
+</body>
+</html>

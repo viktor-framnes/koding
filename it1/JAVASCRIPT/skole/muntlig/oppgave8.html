@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number">
+    <button>regn ut</button>
+    <input id="in2" type="number">
+    <p></p>
+<script>
+    let aarstall = document.querySelector("input")
+    let knappEl = document.querySelector("button")
+    let in2 = document.querySelector("#in2")
+    let res = document.querySelector("p")
+    let kjonn = ""
+    let tall = 0;
+    
+    
+    
+    
+    
+    knappEl.addEventListener("click",function(){
+        tall = in2.value
+        if(tall % 2 != 0){
+            kjonn = "gutt"
+        }else{
+            kjonn = "jente"
+        }
+        res.innerHTML = (2024 - aarstall.value) + " og du er " + kjonn
+    })
+
+
+
+    
+
+</script>
+</body>
+</html>

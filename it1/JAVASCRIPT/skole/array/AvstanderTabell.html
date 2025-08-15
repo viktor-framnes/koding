@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h1>Finne avstander på Sørlandet</h1>
+        <b>Fra</b><br>
+        <select id="avstandFra">
+            <option value="0">Arendal</option>
+            <option value="1">Grimstad</option>
+            <option value="2">Lillesand</option>
+            <option value="3">Kristiansand</option>
+            <option value="4">Mandal</option>
+        </select><br><br>
+        <b>Til</b><br>
+        <select id="avstandTil">
+            <option value="0">Arendal</option>
+            <option value="1">Grimstad</option>
+            <option value="2">Lillesand</option>
+            <option value="3">Kristiansand</option>
+            <option value="4">Mandal</option>
+        </select><br><br>
+        <button>Beregn avstand</button>
+        <b><p></p></b>
+    </div>
+
+<script>
+    let resultatEl = document.querySelector("p");
+    let avstandFra = document.querySelector("#avstandFra");
+    let avstandTil = document.querySelector("#avstandTil");
+    let knappEl = document.querySelector("button");
+    let avstand = 0;
+
+    let byer = ["Arendal","Grimstad","Lillesand","Kristiansand","Mandal"];
+
+    let avstander = []
+        avstander[0] = [0,22,41,71,113] //Arendal
+        avstander[1] = [22,0,21,51,93] //Grimstad
+        avstander[2] = [41,21,0,30,72] //Lillesand
+        avstander[3] = [71,51,30,0,43] //Kristiansand
+        avstander[4] = [113,93,72,43,0] //Mandal
+
+    
+
+    knappEl.addEventListener("click", function(){
+        resultatEl.innerHTML = "Avstanden fra " + byer[avstandFra.value] + " til " + byer[avstandTil.value] + " er " + avstander[avstandFra.value][avstandTil.value] + " kilometer";
+    })
+
+
+</script>
+</body>
+</html>

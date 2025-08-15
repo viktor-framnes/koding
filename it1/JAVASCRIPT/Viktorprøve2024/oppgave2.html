@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <title>IS</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+  
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h1>9'ende tall i personnummer</h1>
+        <input type="number" placeholder="Tall 9">
+        <button>Vis kjønn</button>
+        <p></p>
+    </div>
+<script>
+    let knappEl = document.querySelector("button")
+    let svarEl = document.querySelector("input")
+    let resultatEl = document.querySelector("p")
+
+    knappEl.addEventListener("click", vis)
+    function vis() {
+        if(svarEl.value % 2 == 0) {
+            resultatEl.innerHTML = "Du er jente";
+        } else if (svarEl.value % 2 !== 0 ){
+            resultatEl.innerHTML = "Du er gutt";
+        }
+    }
+</script>
+</body>
+</html>

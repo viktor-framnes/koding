@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Å animere en bil som kjører</title>
+<style>
+    #innpakning{
+        background-image: url(bilder/bgr.png);
+        width: 747px;
+        height: 410px;
+        margin: auto;
+        position: relative;
+        overflow: hidden;
+    }
+    #bil{
+        background-image: url(bilder/bilen.png);
+        width: 530px;
+        height: 170px;
+        position: absolute;
+        left: -600px;
+        top: 180px;
+        animation: flyttBil 8s infinite;
+    }
+    @keyframes flyttBil{
+        0% {left: -600px;}
+        30% {left: 60px;}
+        80% {left: 60px;}
+        100% {left: 800px;}
+    }
+    #bakhjul{
+        background-image: url(bilder/bakhjul.png);
+        width: 58px;
+        height: 58px;
+        position: absolute;
+        left: 76px;
+        top: 100px;
+        animation: snurrHjul 8s infinite;
+    }
+    #forhjul{
+        background-image: url(bilder/forhjul.png);
+        width: 58px;
+        height: 58px;
+        position: absolute;
+        left: 412px;
+        top: 100px;
+        animation: snurrHjul 8s infinite;
+    }
+    @keyframes snurrHjul{
+        0% {transform: rotate(0deg);}
+        30% {transform: rotate(720deg);}
+        80% {transform: rotate(720deg);}
+        100% {transform: rotate(1440deg);}
+    }
+</style>
+</head>
+<body>
+    <div id="innpakning">
+        <div id="bil">
+            <div id="bakhjul"></div>
+            <div id="forhjul"></div>
+        </div>
+    </div>
+</body>
+</html>

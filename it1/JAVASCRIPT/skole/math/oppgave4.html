@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+
+</style>
+</head>
+<body>
+<script>
+    let terning1 = Math.floor(Math.random() * 6) + 1; 
+    let terning2 = Math.floor(Math.random() * 6) + 1; 
+    let terning3 = Math.floor(Math.random() * 6) + 1;   
+    let sum = terning1 + terning2 + terning3;
+
+    document.write("Resultat " + terning1 + ", " + terning2 + " og " + terning3 + "<br>");
+
+    
+    if (sum >= 15) {
+        document.write("Summen av alle øynene blir mer eller lik 15. <br>");
+    }
+    if (terning1 === terning2 && terning1 === terning3) {
+        document.write("Alle de tre terningene har samme antall øyne.");
+    }
+
+</script>
+</body>
+</html>

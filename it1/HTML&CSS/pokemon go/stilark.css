@@ -1,0 +1,23 @@
+body{
+    background-color: lightblue;
+    margin-left: 20px;
+}
+#logo{
+    border: solid 10px blue;
+    width: 400px;
+}
+button{
+    padding: 5px;
+    background-color: pink;
+}
+a:hover button{
+    background-color: yellow;
+}
+img{
+    width: 200px;
+    border: solid 10px red;
+}
+div{
+    margin: auto;       
+    text-align: center;
+}

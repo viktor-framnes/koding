@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="number">
+        <button>Trykk her</button><br><br>
+    </div>
+<script>
+    let tall = document.querySelector("input");
+    let knappEl = document.querySelector("button");
+    let divEl = document.querySelector("div");
+
+    knappEl.addEventListener("click", function(){
+        for(let i = 0; i < tall.value; i++){
+            let bilde = document.createElement("img");
+            bilde.src = "banan.png";
+            divEl.appendChild(bilde);
+        }
+    })
+
+</script>
+</body>
+</html>

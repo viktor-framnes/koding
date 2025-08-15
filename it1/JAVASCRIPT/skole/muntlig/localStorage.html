@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+<style>
+    div{
+        background-color: lightblue;
+        width: 500px;
+        margin: auto;
+        padding: 20px;
+        border: 5px solid black;
+        border-radius: 10px;
+    }
+</style>
+</head>
+<body>
+    <div>
+        <h1>Eksempel på localStorage</h1>
+        <a href="nyside.html">Her er en link til en ny side</a><br><br>
+        <button>Skriv inn et navn</button><br><br>
+        <input type="text">
+        <p></p>
+    </div>
+<script>
+    let knappEl = document.querySelector("button");
+    let navnEl = document.querySelector("input");
+    let resultatEl = document.querySelector("p");
+
+    knappEl.addEventListener("click", function(){
+        localStorage.setItem("navn", navnEl.value);
+    })
+
+        //koden under tømmer localStorage, og kan fjernes etter at den er tømt
+        //localStorage.navn = "";
+</script>
+</body>
+</html>

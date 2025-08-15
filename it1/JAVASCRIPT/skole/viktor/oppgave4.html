@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+body{
+    background-color: blueviolet;
+    text-align: center;
+}
+div{
+    border: 8px solid black;
+    background-color: white;
+    margin: auto;
+    padding: 6px;
+    width: 30%;
+}
+h1{
+    font-size: 55px;
+}
+p{
+    font-size: 25px;
+}
+</style>
+</head>
+<body>
+<div>
+    <h1>Sykkel eller buss til skolen?</h1>
+    <img src="" alt="">
+    <p></p>
+</div>
+<script>
+    let skoleVei = prompt("Tar du sykkel eller buss til skolen?");
+    let svar = skoleVei.toLowerCase();    
+
+    if (svar == "sykkel") {
+        document.querySelector("img").src = "sykkel.jpg"
+        document.querySelector("img").alt = "Bilde av en sykkel"
+        document.querySelector("p").innerHTML = "Du sykler til skolen"
+    } else if (svar == "buss") {
+        document.querySelector("img").src = "buss.jpg"
+        document.querySelector("img").alt = "Bilde av en buss"
+        document.querySelector("p").innerHTML = "Du tar buss til skolen."
+    }
+
+</script>
+</body>
+</html>

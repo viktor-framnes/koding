@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt oss</title>
+    <link rel="stylesheet" href="stilark.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo"><a href="index.html"><img src="logo3.0.png" alt="FYNE logo" height="100px" width="133"></a></div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="nav-bar">
+            <ul>
+                <li>
+                    <a href="beats.html">Beats</a>
+                </li>
+                <li>
+                    <a href="tjenester.html">Tjenester</a>
+                </li>
+                <li>
+                    <a href="omoss.html">Om oss</a>
+                </li>
+                <li>
+                    <a href="kontakt.html">Kontakt oss</a>
+                </li>
+                <li>
+                    <a href="login.html" class="hiddenlogin">Login</a>
+                </li>
+            </ul>
+        </div>
+        <div class="login"><a href="login.html" >Login</a></div>
+    </div>
+
+    <script>
+        hamburger = document.querySelector(".hamburger");
+        hamburger.onclick = function() {
+            navBar = document.querySelector(".nav-bar");
+            navBar.classList.toggle("active");    
+        }
+    </script>
+
+    <div class="mid">
+        <h1>Ta kontakt</h1> <br><br><br><br>
+        <div class="stillinger2">
+            <div class="boks">
+                <div class="hovedtekst">Mail</div>
+                <div class="boks4">
+                    <div class="h">
+                        <img src="mail.png" alt="mail logo" height="140">
+                    </div>
+                    <div class="v">
+                        <p>fyne.jvj@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="boks">
+                <div class="hovedtekst">Instagram</div>
+                <div class="boks4">
+                    <div class="h">
+                        <img src="insta.png" alt="mail logo" height="150">
+                    </div>
+                    <div class="v">
+                        <a class="lenke" href="https://www.instagram.com/fyne.no/"><p>@fyne.no</p></a>
+                    </div>
+                </div>
+            </div>
+            <div class="boks">
+                <div class="hovedtekst">TikTok</div>
+                <div class="boks4">
+                    <div class="h">
+                        <img src="tiktok.png" alt="mail logo" height="100">
+                    </div>
+                    <div class="v">
+                        <a class="lenke" href="https://www.tiktok.com/@fyne.no"><p>@fyne.no</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bunn">
+        <h1 class="bunntekst">~ FYNE ~</h1> <br>
+        <p>Jesper - Jonas - Viktor</p>
+    </div>
+</body>
+</html>

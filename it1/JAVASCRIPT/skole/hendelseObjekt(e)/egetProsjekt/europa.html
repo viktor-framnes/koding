@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kart</title>
+<style>
+.brett{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+button{
+    width: 200px;
+}
+.dott{
+    border-radius: 50%;
+    background-color: tomato;
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    cursor: pointer;
+}
+img{
+    position: absolute;
+    top: 150px;
+    left: 400px;
+}
+#Island{
+    top: 230px;
+    left: 480px;
+}
+#Norge{
+    top: 330px;
+    left: 665px;
+}
+#Sverige{
+    top: 350px;
+    left: 710px;
+}
+#Finland{
+    top: 300px;
+    left: 785px;
+}
+#Russland{
+    top: 380px;
+    left: 900px;
+}
+#Latvia{
+    top: 382px;
+    left: 805px;
+}
+#Albania{
+    top: 650px;
+    left: 795px;
+}
+#Andorra{
+    top: 628px;
+    left: 570px;
+}
+#Belarus{
+    top: 425px;
+    left: 850px;
+}
+#Belgia{
+    top: 500px;
+    left: 617px;
+}
+#Bosnia-Hercegovina{
+    top: 600px;
+    left: 760px;
+}
+#Bulgaria{
+    top: 615px;
+    left: 850px;
+}
+#Danmark{
+    top: 415px;
+    left: 664px;
+}
+#Estland{
+    top: 355px;
+    left: 800px;
+}
+#Frankrike{
+    top: 550px;
+    left: 600px;
+}
+#Hellas{
+    top: 670px;
+    left: 820px;
+}
+#Irland{
+    top: 440px;
+    left: 500px;
+}
+#Italia{
+    top: 590px;
+    left: 674px;
+}
+#Kosovo{
+    top: 624px;
+    left: 803px;
+}
+#Kroatia{
+    top: 578px;
+    left: 746px;
+}
+#Liechtenstein{
+    top: 557px;
+    left: 670px;
+}
+#Litauen{
+    top: 410px;
+    left: 805px;
+}
+#Luxembourg{
+    top: 516px;
+    left: 630px;
+}
+#Malta{
+    top: 740px;
+    left: 730px;
+}
+#Moldova{
+    top: 525px; 
+    left: 870px;
+}
+#Monaco{
+    top: 615px;
+    left: 635px;
+}
+#Montenegro{
+    top: 624px;
+    left: 780px;
+}
+#Nederland{
+    top: 475px;
+    left: 629px;
+}
+#Nord-Makedonia{
+    top: 635px;
+    left: 820px;
+}
+#Polen{
+    top: 470px;
+    left: 760px;
+}
+#Portugal{
+    top: 650px;
+    left: 446px;
+}
+#Romania{
+    top: 560px;
+    left: 850px;
+}
+#San-Marino{
+    top: 610px;
+    left: 700px;
+}
+#Serbia{
+    top: 600px;
+    left: 800px;
+}
+#Slovakia{
+    top: 525px;
+    left: 770px;
+}
+#Slovenia{
+    top: 575px;
+    left: 724px;
+}
+#Spania{
+    top: 650px;
+    left: 500px;
+}
+#Storbritannia{
+    top: 460px;
+    left: 560px;
+}
+#Sveits{
+    top: 562px;
+    left: 650px;
+}
+#Tsjekkia{
+    top: 515px;
+    left: 730px;
+}
+#Tyrkia{
+    top: 650px;
+    left: 955px;
+}
+#Tyskland{
+    top: 490px;
+    left: 670px;
+}
+#Ukraina{
+    top: 495px; 
+    left: 850px;
+}
+#Ungarn{
+    top: 555px;
+    left: 770px;
+}
+#Vatikanstaten{
+    top: 644px;
+    left: 700px;
+}
+#Østerrike{
+    top: 545px;
+    left: 724px;
+}
+h3{
+    position: absolute;
+    top: 100px;
+    left: 580px;
+}
+</style>
+</head>
+<body>
+    <div class="brett">
+        <h1>Klikk på Landet</h1>
+        <button>Start</button>
+        <p></p>
+        <h3></h3>
+    </div>
+    <img src="kart.png" alt="Bilde av europa" width="600" height="604">
+    <p id="res"></p>
+    <div class="dott" id="Island"></div>
+    <div class="dott" id="Norge"></div>
+    <div class="dott" id="Sverige"></div>
+    <div class="dott" id="Finland"></div>
+    <div class="dott" id="Russland"></div>
+    <div class="dott" id="Latvia"></div>
+    <div class="dott" id="Albania"></div>
+    <div class="dott" id="Andorra"></div>
+    <div class="dott" id="Belarus"></div>
+    <div class="dott" id="Belgia"></div>
+    <div class="dott" id="Bosnia-Hercegovina"></div>
+    <div class="dott" id="Bulgaria"></div>
+    <div class="dott" id="Danmark"></div>
+    <div class="dott" id="Estland"></div>
+    <div class="dott" id="Frankrike"></div>
+    <div class="dott" id="Hellas"></div>
+    <div class="dott" id="Irland"></div>
+    <div class="dott" id="Italia"></div>
+    <div class="dott" id="Kosovo"></div>
+    <div class="dott" id="Kroatia"></div>
+    <div class="dott" id="Liechtenstein"></div>
+    <div class="dott" id="Litauen"></div>
+    <div class="dott" id="Luxembourg"></div>
+    <div class="dott" id="Malta"></div>
+    <div class="dott" id="Moldova"></div>
+    <div class="dott" id="Monaco"></div>
+    <div class="dott" id="Montenegro"></div>
+    <div class="dott" id="Nederland"></div>
+    <div class="dott" id="Nord-Makedonia"></div>
+    <div class="dott" id="Polen"></div>
+    <div class="dott" id="Portugal"></div>
+    <div class="dott" id="Romania"></div>
+    <div class="dott" id="San-Marino"></div>
+    <div class="dott" id="Serbia"></div>
+    <div class="dott" id="Slovakia"></div>
+    <div class="dott" id="Slovenia"></div>
+    <div class="dott" id="Spania"></div>
+    <div class="dott" id="Storbritannia"></div>
+    <div class="dott" id="Sveits"></div>
+    <div class="dott" id="Tsjekkia"></div>
+    <div class="dott" id="Tyrkia"></div>
+    <div class="dott" id="Tyskland"></div>
+    <div class="dott" id="Ukraina"></div>
+    <div class="dott" id="Ungarn"></div>
+    <div class="dott" id="Vatikanstaten"></div>
+    <div class="dott" id="Østerrike"></div>
+
+<script>
+    let tilfLandTekst = document.querySelector("p");
+    let knappEl = document.querySelector("button");
+    let dotter = document.querySelectorAll(".dott");
+    let score = document.querySelector("h3");
+
+    let riktig = 0;
+    let feil = 0;
+    let land = ["Island","Norge","Sverige","Finland","Russland","Latvia","Albania","Andorra","Belarus","Belgia","Bosnia-Hercegovina","Bulgaria","Danmark","Estland","Frankrike","Hellas","Irland","Italia","Kosovo","Kroatia","Liechtenstein","Litauen","Luxembourg","Malta","Moldova","Monaco","Montenegro","Nederland","Nord-Makedonia","Polen","Portugal","Romania","San-Marino","Serbia","Slovakia","Slovenia","Spania","Storbritannia","Sveits","Tsjekkia","Tyrkia","Tyskland","Ukraina","Ungarn","Vatikanstaten","Østerrike"];
+    let tilfland = "";
+    
+    knappEl.addEventListener("click", function(){
+        velgTilfLand()
+        knappEl.style.display = "none";
+        tilfLandTekst.innerHTML = tilfland
+        for(let i = 0; i < dotter.length; i++){
+            dotter[i].addEventListener("click", function(e){
+                
+                
+                if(tilfland == land[land.indexOf(e.target.id)]){
+                    riktig++; 
+                    land.splice(Number(land.indexOf(tilfland)),1)
+                    e.target.style.display = "none";
+                    score.innerHTML = "Du har " + riktig + " riktige svar og " + feil + " feil";
+                    velgTilfLand()
+                    tilfLandTekst.innerHTML = tilfland
+                    if(tilfland == undefined){
+                        tilfLandTekst.innerHTML = "Du har vunnet"
+                        score.innerHTML = "Du har " + riktig + " riktige svar og " + feil + " feil";
+                    }
+                } else{
+                    feil++;
+                    score.innerHTML = "Du har " + riktig + " riktige svar og " + feil + " feil";
+                }
+            })
+        }
+    })
+    
+    function velgTilfLand() {
+        tilfland = land[Math.floor(Math.random()*land.length)];
+    }
+
+</script>
+</body>
+</html>

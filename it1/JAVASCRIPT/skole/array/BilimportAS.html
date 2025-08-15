@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+    p{
+        font-size: 25px;
+    }
+    img{
+        position: fixed;
+        right: 300px;
+        top: 30px;
+        border: 5px solid black;
+    }
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <img src="" height="200" width="300" alt="Bilde av bil">
+        <h1>Bilimport AS</h1>
+        <b>Bil:</b><br>
+        <select id="bil">
+            <option value="0">Audi A4</option>
+            <option value="1">Audi A6</option>
+        </select>
+        <b>Pakke:</b><br>
+        <select id="pakke">
+            <option value="0">Pakke 1</option>
+            <option value="1">Pakke 2</option>
+            <option value="2">Pakke 3</option>
+            <option value="3">Pakke 4</option>
+        </select>
+        <b>Tast inn eurokurs:</b><br>
+        <input type="number">
+        <button>Beregn Pris</button>
+        <b><p></p></b>
+    </div>
+    
+<script>
+    let resultatEl = document.querySelector("p");
+    let knappEl = document.querySelector("button");
+    let bilde = document.querySelector("img");
+    let bil = document.querySelector("#bil");
+    let pakke = document.querySelector("#pakke");
+    let kurs = document.querySelector("input");
+
+    let tabell = []
+        tabell[0] = [20000,22000,24000,26000]; //Audi A4
+        tabell[1] = [25000,27000,29000,31000]; //Audi A6
+
+
+    knappEl.addEventListener("click", function(){
+        let pris = tabell[bil.value][pakke.value]
+        resultatEl.innerHTML = "Prisen er " + pris + " euro, som tilsvarer " + (pris*kurs.value).toFixed(2) + " NOK";
+
+        if(bil.value == 0){
+            bilde.src = "0.jpg";
+        } else {
+            bilde.src = "1.jpg";
+        }
+    })
+
+</script>
+</body>
+</html>

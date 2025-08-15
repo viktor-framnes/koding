@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <title>IS</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+    h1{
+        color: red;
+    }       
+    .ramme{
+        border: 3px solid red;
+    }
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h1>Den store is-testen</h1>
+        <input type="number" placeholder="Skriv inn antall iskuler">
+        <button>Trykk for resultat</button>
+    </div>
+<script>
+    let antallEl = document.querySelector("input");
+    let knappEl = document.querySelector("button");
+    let divEl = document.querySelector("div");
+
+    knappEl.addEventListener("click", vis);
+        function vis(){
+            for(let i = 0; i < antallEl.value; i++){
+                let is = document.createElement("img");
+                is.src = "iskule.jpg";
+                is.width = "100";
+                is.height = "100";    
+                is.className = "ramme";
+                let linjeskift = document.createElement("br");
+                divEl.appendChild(linjeskift);    
+                divEl.appendChild(is);
+            }
+        }
+</script>
+</body>
+</html>

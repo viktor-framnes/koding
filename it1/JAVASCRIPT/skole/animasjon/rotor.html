@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Å animere en bil som kjører</title>
+<style>
+    body{
+        background-color: black;
+    }
+    .rotor{
+        background-image: url(bilder/rotor.png);
+        width: 200px;
+        height: 200px;
+        margin: auto;
+        animation: roter 3s infinite linear;
+    }
+    @keyframes roter{
+        0%{transform: rotate(0deg);}
+        100%{transform: rotate(360deg);}
+    }
+</style>
+</head>
+<body>
+    <button id="sakte">Sakte</button>
+    <button id="raskt">Raskt</button>
+    <div class="rotor"></div>
+<script>
+    let sakteEl = document.querySelector("#sakte");
+    let rasktEl = document.querySelector("#raskt");
+    let rotorEl = document.querySelector(".rotor");
+
+    sakteEl.addEventListener("click", sakte)
+    function sakte(){
+        rotorEl.style.animationDuration = "6s"
+    }
+    rasktEl.addEventListener("click", raskt)
+    function raskt(){
+        rotorEl.style.animationDuration = "0.2s"
+    }
+</script>
+</body>
+</html>

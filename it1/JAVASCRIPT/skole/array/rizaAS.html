@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h1>Riza AS</h1>
+        <b>Foss:</b>
+        <select id="foss">
+            <option value="0">Øvre</option>
+            <option value="1">Nedre</option>
+        </select>
+        <b>Vare:</b>
+        <select id="vare">
+            <option value="0">Baguette</option>
+            <option value="1">Dagens middag</option>
+            <option value="2">Brus</option>
+            <option value="3">Salat</option>
+        </select>
+        <button>Beregn Pris</button>
+        <p></p>
+    </div>
+<script>
+    let resultatEL = document.querySelector("p");
+    let varerPris = []
+        varerPris[0] = [47,45,23,43]
+        varerPris[1] = [40,42,20,38]
+    let varer = ["Baguette","Dagens middag","Brus","Salat"]
+    let skolested = ["Øvre Foss","Nedre Foss"]
+    let sted = document.querySelector("#foss");
+    let vare = document.querySelector("#vare");
+    let knappEl = document.querySelector("button");
+
+    knappEl.addEventListener("click", function(){
+        resultatEL.innerHTML = "Du valgte varen " + varer[vare.value] + "<br> Prisen blir " + varerPris[sted.value][vare.value] +
+        " kr, siden du valgte " + skolested[sted.value];
+    })
+
+</script>
+</body>
+</html>

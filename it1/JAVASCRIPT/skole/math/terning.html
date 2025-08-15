@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+    div{
+        margin: auto;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <div>
+        <h1>Terningkast</h1>
+        <img>
+        <p></p>
+    </div>
+<script>
+    let terning = Math.floor(Math.random() * 6) + 1;
+
+    if (terning === 1) {
+        document.querySelector("img").src = "./bilder/en.jpg";
+        document.querySelector("p").innerHTML = "Det ble en"
+    } else if (terning === 2) {
+        document.querySelector("img").src = "./bilder/to.jpg";
+        document.querySelector("p").innerHTML = "Det ble to"
+    } else if (terning === 3) {
+        document.querySelector("img").src = "./bilder/tre.jpg";
+        document.querySelector("p").innerHTML = "Det ble tre"
+    } else if (terning === 4) {
+        document.querySelector("img").src = "./bilder/fire.jpg";
+        document.querySelector("p").innerHTML = "Det ble fire"
+    } else if (terning === 5) {
+        document.querySelector("img").src = "./bilder/fem.jpg";
+        document.querySelector("p").innerHTML = "Det ble fem"
+    } else if (terning === 6) {
+        document.querySelector("img").src = "./bilder/seks.jpg";
+        document.querySelector("p").innerHTML = "Det ble seks"
+    }
+</script>
+</body>
+</html>

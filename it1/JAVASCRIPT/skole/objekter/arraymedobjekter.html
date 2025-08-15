@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //vanskelig måte
+    let person1 = {navn: "Ola", fodselsaar: 2014,};
+    let person2 = {navn: "Iben", fodselsaar: 2010,};
+    let person3 = {navn: "Martin", fodselsaar: 2004,};
+
+    //bedre måte
+    let personer = [
+        {navn: "Ola", fodselsaar: 2014},
+        {navn: "Iben", fodselsaar: 2010},
+        {navn: "Martin", fodselsaar: 2004}
+    ];
+    
+    for(let i = 0; i < personer.length; i++){
+        document.write(personer[i].navn + " " + personer[i].fodselsaar + "<br>")
+    }
+
+</script>
+</body>
+</html>

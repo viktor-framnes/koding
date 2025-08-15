@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Kjendisquiz</h1>
+        <h3>Navnet i rødt tilhører en av kjendisene. <br> Trykk på riktig kjendis</h3>
+        <p></p>
+        <img src="haaland.png" id="Haaland">
+        <img src="tate.png" id="Tate">
+        <img src="Trump.png" id="Trump">
+    </div>
+<script>
+    let random = document.querySelector("p");
+    let kjendiser = ["Haaland","Tate","Trump"];
+    let tall = Math.floor(Math.random()*kjendiser.length)
+    random.style.color = "red";
+    random.innerHTML = kjendiser[tall];
+    let bilder = document.querySelectorAll("img");
+
+    for(let i = 0; i < bilder.length; i++){
+        bilder[i].addEventListener("click", function(e){
+            if(e.target.id == kjendiser[tall]){
+                random.innerHTML = "Riktig"
+            }
+            else{
+                random.innerHTML = "Feil"
+            }
+        })
+    }
+</script>
+</body>
+</html>

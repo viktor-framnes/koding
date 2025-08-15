@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klikk på kua</title>
+<style>
+body{
+    background-color: lightgray;
+}
+h1{
+    font-size: 60px;
+    text-align: center;
+}
+.innpakning{
+    background-image: url(Husdyr.jpg);
+    width: 800px;
+    height: 459px;
+    position: relative;
+    margin: auto;
+}
+.knapp{
+    width: 60px;
+    height: 60px;
+    background-color: tomato;
+    opacity: 0.7;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+}
+.gris{
+    top: 35px;
+    left: 150px;
+}
+.okse{
+    top: 75px;
+    left: 575px;
+}
+.ku{
+    top: 260px;
+    left: 200px;
+}
+.hone{
+    top: 330px;
+    left: 590px;
+}
+.melding{
+    width: 100%;
+    position: absolute;
+    top: 250px;
+    background-color: lightblue;
+    opacity: 0.7;
+    padding: 20px;
+    display: none;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+    <h1>Klikk på kua</h1>
+    <div class="innpakning">
+        <div class="knapp gris"></div>
+        <div class="knapp okse"></div>
+        <div class="knapp ku"></div>
+        <div class="knapp hone"></div>
+    </div>
+    <div class="melding"></div>
+<script>
+    let meldingEl = document.querySelector(".melding");
+    let knapperEl = document.querySelectorAll(".knapp");
+
+    for(let i = 0; i < knapperEl.length; i++){
+        knapperEl[i].addEventListener("click", function(e){
+            meldingEl.style.display = "block";
+            if(e.target.className === "knapp ku"){
+                meldingEl.innerHTML = "<h1>Riktig</h1>"
+            } else{
+                meldingEl.innerHTML = "<h1>Galt</h1>"
+            }
+        })
+    }
+</script>
+</body>
+</html>

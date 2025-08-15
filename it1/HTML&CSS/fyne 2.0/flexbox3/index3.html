@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>3</title>
+<style>
+#innpakning{
+    display: flex;
+    background-color: gray(65, 65, 65);
+    width: 900px;
+    border: 2px solid black;
+    width: 1000px;
+    height: 500px;
+    margin: auto;
+    flex-direction: column;
+}
+#top{
+    background-color: grey;
+    flex: 1;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    border-bottom: none;
+}
+#bunn{
+    background-color: grey;
+    flex: 1;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-top: none;
+}
+.top1{
+    flex: 3;
+    border: 2px solid black;
+}
+.top2{
+    flex: 1;
+    border: 2px solid black;
+}
+.bunn1{
+    flex: 1;
+    border: 2px solid black;
+}
+.bunn2{
+    flex: 2;
+    border: 2px solid black;
+}
+.bunn3{
+    flex: 1;
+    border: 2px solid black;
+}
+
+</style>
+</head>
+<body>
+    <div id="innpakning">
+        <div id="top">
+            <div class="top1"></div>
+            <div class="top2"></div>
+        </div>
+        <div id="bunn">
+            <div class="bunn1"></div>
+            <div class="bunn2"></div>
+            <div class="bunn3"></div>
+        </div>
+    </div>
+</body>
+</html>

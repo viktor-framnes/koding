@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+
+</style>
+</head>
+<body>
+
+<script>
+    let navn =  prompt("Hva er navnet ditt?")
+    let fodselsar = Number(prompt("Hva er ditt fødselsår?"));
+    let alder = 2023 - fodselsar;
+    let rabatt = 0;
+
+    if (alder > 67) {
+        rabatt = 50;
+    } else if (alder >= 4 && alder <= 15) {
+        rabatt = 40;       
+    } else if (alder > 0 && alder <= 3) {
+        rabatt = 100;
+    }
+
+    document.write("Du får en rabatt på " + rabatt + "<br> Du heter " + navn + "<br> Den tredje bokstaven i navnet ditt er: " + (navn[2]));
+
+</script>
+</body>
+</html>

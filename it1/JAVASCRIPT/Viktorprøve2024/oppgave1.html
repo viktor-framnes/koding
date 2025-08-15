@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <title>IS</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+  
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h1>Tall fra 1 til 12</h1>
+        <button>Trykk her</button>
+        <p></p>
+    </div>
+<script>
+    let knappEl = document.querySelector("button")
+    let resultatEl = document.querySelector("p")
+
+    knappEl.addEventListener("click", vis)
+    function vis() {
+       for(let i = 1; i<=12; i++){
+        resultatEl.innerHTML += i + "<br>"
+       }
+    }
+</script>
+</body>
+</html>

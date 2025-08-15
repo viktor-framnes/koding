@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>7</title>
+<style>
+#innpakning{
+    display: flex;
+    background-color: gray(65, 65, 65);
+    width: 900px;
+    border: 2px solid black;
+    width: 1000px;
+    height: 500px;
+    margin: auto;
+    flex-direction: column;
+}
+#top{
+    background-color: white;
+    flex: 1;
+    margin: 10px;
+}
+#bunn{
+    background-color: white;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-top: none;
+}
+#bunn2{
+    background-color: grey;
+    flex: 1;
+    margin: 20px;
+}
+#bunn3{
+    background-color: white;
+    flex: 1;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+#a{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#b{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#c{
+    flex: 1;
+    background-color: grey;
+    margin: 0px 8px 8px 0px;
+}
+#e{
+    flex: 1;
+    background-color: grey;
+    margin: 8px 8px 0px 0px;
+}
+#d{
+    flex: 1;
+    background-color: grey;
+    margin: 0px 0px 8px 8px;
+}
+#f{
+    flex: 1;
+    background-color: grey;
+    margin: 8px 0px 0px 8px;
+}
+</style>
+</head>
+<body>
+    <div id="innpakning">
+        <div id="top"></div>
+        <div id="bunn">
+            <div id="bunn2"></div>
+            <div id="bunn3">
+                <div id="a">
+                    <div id="c"></div>
+                    <div id="d"></div>
+                </div>
+                <div id="b">
+                    <div id="e"></div>
+                    <div id="f"></div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

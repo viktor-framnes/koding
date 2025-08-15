@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    div{
+        background-color: grey;
+        width: 50%;
+        height: 400px;
+        margin: auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+</head>
+<body>
+    <div>
+        <input id="int1" type="number" placeholder="bruttolønn"><br>
+        <input id="int2" type="number" placeholder="skatteprosent"><br>
+        <button>Trykk her</button><br><br>
+        <p></p>
+    </div>
+
+<script>
+    let brutto = document.querySelector("#int1");
+    let skatt = document.querySelector("#int2");
+    let knappEl = document.querySelector("button");
+    let resEl = document.querySelector("p");
+    let nettoinntekt = 0;
+
+    knappEl.addEventListener("click", function(){
+        resEl.innerHTML = "Du tjener " + (brutto.value * ((100 - skatt.value)/100)) + " kr i nettolønn"
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #161b21;
+}
+
+
+/* Generell css */
+a{
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+a:hover{
+    color: #F4A950;
+}
+ul li{
+    list-style-type: none;
+    display: inline;
+    margin: 15px;
+    line-height: 30.61px;
+}
+input{
+    background-color: #161B21;
+    padding: 8px 0px 8px 20px;
+    border: none;
+    margin: 10px;
+    color: #F4A950;
+    border-radius: 50px;
+    width: 300px;
+    height: 50px;
+}
+/* Generell css */
+
+/* navbar */
+.navbar{
+    background-color: #161b21;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 35px;
+    letter-spacing: 1px;
+}
+.navliste{
+    text-align: center;
+    margin: auto;
+}
+.logo{
+    font-size: 20px;
+    color: #F4A950;
+    height: 46px;
+    line-height: 43px;
+    width: 77px;
+    transition: 0.2s;
+}
+.logo:hover{
+    color: white;
+}
+.login{
+    line-height: 30.61px;
+    color: red;
+    width: 77px;
+}
+.login:hover{
+    color: white;
+    transition: 0.2s;
+}
+.hamburger{
+    display: none;
+}
+.hidden{
+    display: none;
+}
+/* navbar */
+
+/* hovedinnhold */
+.seksjon{
+    text-align: center;
+    color: white;
+    letter-spacing: 1px;
+    margin: 30px auto;
+}
+.seksjon2{
+    position: relative;
+    background-color: #F4A950;
+    text-align: center;
+    height: 600px;
+}
+/* Hovedinnhold */
+
+/* Bunn */
+.bunn{
+    display: flex;
+    justify-content: center;
+}
+/* Bunn */
+
+/* Kontakt oss */
+.faktainnpakningVertikal{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: white;
+    gap: 50px;
+    margin: 70px auto;
+}
+.info{
+    background-color: #161B21;
+    padding: 20px;
+    letter-spacing: 1px;
+    flex-basis:43%;
+}
+.innholdBoks{
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+    align-items: center;
+}
+.h{
+    flex-basis: 320px;
+    margin: auto;
+}
+.v{
+    flex: 1;
+    height: 110px;
+}
+#taKontakt{
+    text-align: center;
+    color: white;
+    position: relative;
+}
+/* Kontakt oss */
+
+/* login side */
+#loggInnKnapp{
+    width: 180px;
+    height: 40px;
+    padding: 8px 0px;
+    transition: 0.2s;
+}
+#loggInnKnapp:hover{
+    transform: scale(1.1);
+}
+.skjema1, .skjema2, .skjema3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.skjult{
+    display: none;
+}
+#glemtPassord, #LagNyBruker, #AlleredeRegistrert, #tilbakeKnapp{
+    margin: 7px 15px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline;
+    color: white;
+    transition: 0.2s;
+    cursor: pointer;
+}
+#glemtPassord:hover ,#LagNyBruker:hover, #AlleredeRegistrert:hover, #tilbakeKnapp:hover{
+    color: white;  
+    border-bottom: 2px solid white;
+}
+/* login side */
+
+/* svg bølge øverst */
+.custom-shape-divider-top-1700513040 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+.custom-shape-divider-top-1700513040 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 48px;
+}
+.custom-shape-divider-top-1700513040 .shape-fill {
+    fill: #161B21;
+}
+/* svg bølge øverst */
+
+/* svg bølge nederst */
+.custom-shape-divider-top-1700678542 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+.custom-shape-divider-top-1700678542 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 34px;
+}
+.custom-shape-divider-top-1700678542 .shape-fill {
+    fill: #F4A950;
+}
+/* svg bølge nederst */
+
+/* for å skape en responsive nettside */
+@media only screen and (max-width: 800px) {
+    .login{
+        display: none;
+    }
+    .hamburger{
+        display: block;
+    }
+    .hidden{
+        display: inline;
+        opacity: 0;
+        transition: 0.6s;
+    }
+    .hidden a{
+        color: red;
+    }
+    .hidden a:hover{
+        color: white;
+    }
+    .navliste{
+        font-size: 14.5px;
+        height: 0;
+        display: block;
+        width: 93%;
+        background-color: #161B21;
+        position: absolute;
+        top: 65px;
+        right: 0;
+        left: 0;
+        transition: 0.3s;
+    }
+    .navliste ul li{
+        opacity: 0;
+        transition: 0.3s;
+    }
+    .navliste.trykket ul li{
+        opacity: 1;
+        transition: 0.4s;
+        transition-delay: 0.1s;
+        display: inline;
+        line-height: 40px;
+    }
+    .navliste.trykket{
+        height: 40px;
+        transition: 0.3s;
+    }
+    .pil{
+        margin: auto;
+    }
+    ul li a:hover{
+        text-decoration: none;
+    }
+}
+@media only screen and (max-width: 780px) {
+    .v{
+        display: none;
+    }
+    .innholdBoks{
+        margin: 40px 0px;
+    }
+    .faktainnpakningVertikal .info{
+        flex-basis: 400px;
+    }
+}

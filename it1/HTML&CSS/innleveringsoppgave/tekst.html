@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Representasjon av tekst</title>
+    <link rel="stylesheet" href="stilark.css">
+</head>
+<body>
+    <div class="innpakning">
+        <div class="logo"><a href="index.html">Hjem</a></div>
+        <div class="top"><h1>Representasjon av tekst</h1></div>
+        <div class="filler"></div>
+    </div>
+    <div class="mid">
+        <div class="faktaboks3">
+            <div class="faktatekst3">
+                <p id="faktatekst2">
+                    Alt vi ser på dataskjermen vår, er lagret som kombinasjoner av 0 og 1 i maskinen. Programmene må derfor bruke kombinasjoner av 0 og 1 for å representere tekst, lyd og bilde. Det vil si at bokstaver og andre tegn må være definert som en kombinasjon av 0-er og 1-ere. Disse kombinasjonene tolkes av et tegnsett som representerer tallene som tegn. <br><br>
+                </p>
+                <h2 id="overskrift">ASCII</h2>
+                <p id="faktatekst">
+                    ASCII-tegnsettet («American Standard Code for Information Interchange») var et av de tidligere tegnsettene som ble benyttet. Her fantes bare de engelske bokstavene i tillegg til en del «ikke-bokstaver» som mellomrom («Space») og Esc («Escape»). I tabellen nedenfor kan du se noen eksempler på tegn i ASCII-tegnsettet. <br><br>
+                    ASCII benyttet bare tallene fra 0 til 127, altså var det nok med 7 biter. Maskinene brukte imidlertid 8 biter i sine byte, det vil si at det i én byte er plass til alle de originale ASCII-tegnene i tillegg til like mange nye tegn. <br><br>
+                    Disse 128 ekstra tegnene ble benyttet til forskjellige tegn avhengig av hvem som utviklet programvaren. I Israel kunne en byte gi en hebraisk bokstav, mens i Russland ga den samme byten en kyrillisk bokstav. ASCII ble derfor etter hvert en problematisk standard når databruken ble mer internasjonal. Windows har sin egen utvidelse av ASCII som heter Windows-1252-koding. Her finner vi blant annet bokstavene æ, ø og å. Windows-1252-koding kalles også ANSI-koding. <br><br>
+                    Tabellen nedenfor viser noen eksempler på ASCII-koder og hvilket symbol de representerer. <br><br>
+                </p>
+                <table id="kode">
+                    <tr id="hvit">
+                        <th>Kode</th>
+                        <th>Symbol</th>
+                    </tr>
+                    <tr id="grey">
+                        <td>32</td>
+                        <td>Space</td>
+                    </tr>
+                    <tr id="hvit">
+                        <td>33</td>
+                        <td>!</td>
+                    </tr>
+                    <tr id="grey">
+                        <td>43</td>
+                        <td>+</td>
+                    </tr>
+                    <tr id="hvit">
+                        <td>50</td>
+                        <td>2</td>
+                    </tr>
+                    <tr id="grey">
+                        <td>60</td>
+                        <td><</td>
+                    </tr>
+                    <tr id="hvit">
+                        <td>64</td>
+                        <td>@</td>
+                    </tr>
+                    <tr id="grey">
+                        <td>65</td>
+                        <td>A</td>
+                    </tr>
+                    <tr id="hvit">
+                        <td>76</td>
+                        <td>L</td>
+                    </tr>
+                    <tr id="grey">
+                        <td>79</td>
+                        <td>O</td>
+                    </tr>
+                    <tr id="hvit">
+                        <td>97</td>
+                        <td>a</td>
+                    </tr>
+                    <tr id="grey">
+                        <td>108</td>
+                        <td>l</td>
+                    </tr>
+                    <tr id="hvit">
+                        <td>111</td>
+                        <td>o</td>
+                    </tr>
+                </table id="grey">
+                <h2 id="overskrift">
+                    Unicode og UTF-8
+                </h2>
+                <p id="faktatekst">
+                    Løsningen på standardiseringsproblemet med ASCII kom med Unicode. Det er et tegnsett som inkluderer alle tenkelige skriftspråk, også utdødde skriftspråk og fantasispråk, som Klingon fra TV-serien Star Trek. <br><br>
+                    UTF-8, som står for det litt kompliserte navnet «Universal Coded Character Set + Transformation Format 8-bit», håndterer alle Unicode-tegn. UTF-8 benytter én byte for å håndtere ASCII-tegn, og opp til fire byte for andre tegn. Det er derfor ingen fast «lengde» på et tegn i UTF-8. Det at UTF-8 benytter sin første byte til å håndtere ASCII-tegn, betyr at UTF-8 også kan håndtere noe som egentlig er tegnsatt med ASCII. Det betyr at UTF-8 kan brukes på mange filer som ble laget før UTF-8 ble tatt i bruk. <br><br>
+                    Grunnen til at vi er interessert i UTF-8, er at vi i Norge har noen tegn som ikke dekkes av engelskspråklige tegnsett. Når du senere skal lage din første nettside, kan det oppstå problemer med æ, ø og å. Derfor bruker vi tegnsettet UTF-8 for å få riktig representasjon av våre særegne tegn. <br><br>
+                </p>
+            </div>
+        </div>
+        <div class="faktaboks">
+            <div class="faktatekst">
+                <h2 id="overskrift">Glyfer</h2>
+                <p id="faktatekst">
+                    Ved hjelp av UTF-8 kan vi representere tegn, men et tegn i seg selv har ikke noe fast utseende. <br><br>
+                    På en nettside defineres tegnenes utseende av noe som kalles stilark. Her angir vi hvilke stiler vi ønsker å benytte på tegnene våre. På den måten kan vi representere tegn på mange ulike måter. <br><br>
+                </p>
+            </div>
+            <div class="faktabilde">
+                <img src="glyfer.png" alt="Bilde av glyfer">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

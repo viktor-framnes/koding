@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tikk-Takk-Tok</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+<style>
+    #game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin-bottom: 10px;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+h1, button {
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+    <h1>Tikk-Takk-Tok</h1>
+    <div id="game-board">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
+    <button id="restart-btn">Start på nytt</button>
+    <script src="script.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const cells = document.querySelectorAll(".cell");
+    const restartButton = document.querySelector("#restart-btn");
+
+    let currentPlayer = "X";
+    let gameActive = true;
+
+    cells.forEach(function(cell) {
+        cell.addEventListener("click", handleClick);
+    });
+
+    restartButton.addEventListener("click", restartGame);
+
+    function handleClick(e) {
+        const cell = e.target;
+        const cellIndex = Array.from(cells).indexOf(cell);
+
+        if (cell.textContent !== "" || !gameActive) {
+            return;
+        }
+
+        cell.textContent = currentPlayer;
+        cell.classList.add(currentPlayer);
+
+        if (checkWin()) {
+            endGame();
+        } else if (checkDraw()) {
+            endGame(true);
+        } else {
+            changePlayer();
+        }
+    }
+
+    function checkWin() {
+        const winCombinations = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ];
+
+        for (let combination of winCombinations) {
+            if (
+                cells[combination[0]].textContent === currentPlayer &&
+                cells[combination[1]].textContent === currentPlayer &&
+                cells[combination[2]].textContent === currentPlayer
+            ) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    function checkDraw() {
+        return Array.from(cells).every(function(cell) {
+            return cell.textContent !== "";
+        });
+    }
+
+    function changePlayer() {
+        currentPlayer = currentPlayer === "X" ? "O" : "X";
+    }
+
+    function endGame(draw = false) {
+        gameActive = false;
+
+        if (draw) {
+            alert("Spillet endte uavgjort!");
+        } else {
+            alert("Spiller " + currentPlayer + " vant!");
+        }
+    }
+
+    function restartGame() {
+        currentPlayer = "X";
+        gameActive = true;
+
+        cells.forEach(function(cell) {
+            cell.textContent = "";
+            cell.classList.remove("X");
+            cell.classList.remove("O");
+        });
+    }
+});
+</script>
+</body>
+</html>

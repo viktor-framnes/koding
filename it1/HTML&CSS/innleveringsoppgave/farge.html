@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Representasjon av farge</title>
+    <link rel="stylesheet" href="stilark.css">
+</head>
+<body>
+    <div class="innpakning">
+        <div class="logo"><a href="index.html">Hjem</a></div>
+        <div class="top"><h1>Representasjon av farge</h1></div>
+        <div class="filler"></div>
+    </div>
+    <div class="mid">
+        <div class="faktaboks3">
+            <div class="faktatekst3">
+                <p id="faktatekst2">
+                    Farger kan representeres på ulike måter, men for farger på dataskjerm er det vanlig å benytte RGB-modellen (Rød Grønn Blå). Denne modellen baserer seg på at man angir en verdi mellom 0 og 255 for hver av de tre fargene rød, grønn og blå.
+                </p>
+                <p id="faktatekst">
+                    Hvis vi angir 0 for hver av de tre fargene, får vi svart. Hvis vi angir 255 for hver av fargene, får vi hvit. <br><br>
+                    Det vil si at vi starter med svart, og at fargene blir lysere jo mer vi legger til av dem. RGB-modellen er derfor et eksempel på en additiv fargemodell. Det vil si at vi får forskjellige farger ved å legge sammen (addere) ulike mengder rødt, grønt og blått. <br><br>
+                    Fordi vi kan angi 256 mulige verdier for hver av de tre fargene, kan vi totalt angi nesten 17 millioner ulike farger med RGB-modellen (256 · 256 · 256 = 16 777 216).  <br><br>
+                </p>
+                <div>
+                    <img src="farger.png" alt="Bilde av glyfer"> <br><br>
+                </div>
+                <p id="faktatekst">
+                    Tallet 255 er i totallsystemet 1111 1111_2, det vil si at datamaskinen lagrer én RGB-farge som tre byte (én byte for rød, én byte for grønn og én byte for blå). <br><br>
+                    Når vi skal angi RGB-farger i våre nettsider, er det vanlig å bruke sekstentallsystemet. To sifre i sekstentallsystemet tilsvarer én byte, vi trenger derfor seks sifre i sekstentallsystemet for å representere én farge. For å angi en farge for en nettside skriver vi en emneknagg, # (eng. hashtag), etterfulgt av seks sifre fra sekstentallsystemet. En slik kode kalles en heksadesimal fargekode. <br><br>
+                    Koden #000000 gir svart, #FFFFFF gir hvit, #FF0000 gir rød, #00FF00 gir grønn og #0000FF gir blå. Legg merke til at de to første sifrene angir mengden rød, de to i midten angir mengden grønn, og de to siste angir mengden blå. Dette er ikke koder vi trenger å huske, vi finner dem i egne programmer når vi skal velge farger. <br><br>
+                    Dersom vi angir like mye av de tre fargene rød, grønn og blå, får vi ulike gråtoner, høyere tall gir lysere gråtoner. Det vil si at #000000 gir svart, #353535 gir en mørk gråfarge, #DEDEDE gir en lys gråfarge, og #FFFFFF gir hvit. Det kan ofte være fint å bruke lyse gråfarger i stedet for hvitt på en nettside, og mørke gråfarger i stedet for svart på tekst. Men det er viktig å ha god kontrast mellom tekst og bakgrunn, slik at teksten blir lett å lese for alle. <br><br>
+                    Samspillet mellom fargene rød, grønn og blå kan altså gi oss de fleste farger. <br><br>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

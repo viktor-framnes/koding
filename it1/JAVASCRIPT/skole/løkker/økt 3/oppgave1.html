@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+
+</style>
+</head>
+<body>
+<div class="innpakning">
+    <h1>Bestem antall beskjeder</h1>
+    <input type="number" placeholder="Skriv tall">
+    <button>Se resultat</button>
+    <p></p>
+</div>
+<script>
+    let tallEl = document.querySelector("input");
+    let knappEl = document.querySelector("button");
+    let resultatEl = document.querySelector("p");
+
+    knappEl.addEventListener("click", vis)
+    function vis(){
+        resultatEl.innerHTML = ""
+        for(let i = 1; i <= tallEl.value; i++){
+            resultatEl.innerHTML += "JavaScript er det morsomte jeg vet <br>";
+        }
+    }
+</script>
+</body>
+</html>

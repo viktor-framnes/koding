@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+input[type="date"]{
+    width: 120px;
+}
+</style>
+</head>
+<body>
+&nbsp;
+<div class="innpakning">
+    <h1>Bestill din flytur</h1>
+    <b>Fly fra</b><br>
+    <select id="flyfra">
+        <option value="">Fly fra</option>
+        <option value="OSL">Oslo</option>
+        <option value="BGO">Bergen</option>
+        <option value="TRD">Trondheim</option>
+    </select>
+    <b>Fly til</b><br>
+    <select id="flytil">
+        <option value="">Fly til</option>
+        <option value="OSL">Oslo</option>
+        <option value="BGO">Bergen</option>
+        <option value="TRD">Trondheim</option>
+    </select>
+    <br>
+    <p>Dato for utreise &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dato for hjemreise</p>
+    <input type="date" id="datoUt">
+    <input type="date" id="datoHjem"><br><br>
+
+    <input name="yup" type="radio" id="turRetur">Tur-retur <br>
+    <input name="yup" type="radio">En vei <br><br>
+
+    <label>Antall voksne</label>
+    <input type="number" id="antallVoksne">
+
+    <label>Antall barn</label>
+    <input type="number" id="antallBarn"><br>
+
+    <input type="checkbox" id="hotell">Tilbud på hotel
+    <input type="checkbox">Tilbud på leiebil <br><br>
+    <button>Bestill</button>
+    <p id="resultat"></p>
+</div>
+<script>
+    let valgFra = document.querySelector("#flyfra");
+    let valgTil = document.querySelector("#flytil");
+    let datoUt = document.querySelector("#datoUt");
+    let datoHjem = document.querySelector("#datoHjem");
+    let turRetur = document.querySelector("#turRetur");
+    let antallV = document.querySelector("#antallVoksne");
+    let antallB = document.querySelector("#antallBarn");
+    let check1 = document.querySelector("#hotell");
+    let knappEl = document.querySelector("button");
+    let resultatEl = document.querySelector("#resultat");
+
+    knappEl.addEventListener("click", function(){
+        let reiseType = "";
+        let tilbud = "";
+        let pris = 0;
+
+        if(turRetur.checked){
+            reiseType = "Tur-retur"
+        } else {
+            reiseType = "En-vei"
+        }
+        if(check1.checked){
+            tilbud = "hotell"
+        } else {
+            tilbud = "leiebil"
+        }
+
+        if(reiseType=="Tur-retur"){
+            pris = antallV.value * 800 * 2 + antallB.value * 500 * 2;
+        } else{
+            pris = antallV.value * 800 + antallB.value * 500;
+        }
+        
+        resultatEl.innerHTML = "Utreise fra: " + valgFra.value + "<br>" +
+        "Flyreise til: " + valgTil.value + "<br>" +
+        "Dato utreise: " + datoUt.value + "<br>" +
+        "Dato hjemreise: " + datoHjem.value + "<br>" +
+        "Reisetype: " + reiseType + "<br>" +
+        "Antall voksne: " + antallV.value + "<br>" +
+        "Antall barn: " + antallB.value + "<br>" +
+        "Kunden ønsker tilbud på " + tilbud + "<br>" +
+        "Total pris: " + pris;
+
+
+    })
+</script>
+</body>
+</html>

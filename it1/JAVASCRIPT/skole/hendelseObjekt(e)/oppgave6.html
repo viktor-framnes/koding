@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+.innpakning{
+    background-color: darkgrey;
+}
+.boks{
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    margin: 5px;
+    padding: 8px;
+}
+
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h1>Klikk på en av boksene og den forandrer farge og tekst</h1>
+        <div class="boks" id="div0">Boks 1</div>
+        <div class="boks" id="div1">Boks 2</div>
+        <div class="boks" id="div2">Boks 3</div>
+    </div>
+<script>
+    let bokser = document.querySelectorAll(".boks")    
+    
+    for(let i = 0; i < bokser.length; i++){
+        bokser[i].addEventListener("click", function(e){
+            bokser[i].innerHTML = "du trykket på meg"
+            
+            if(e.target.id == "div0"){
+                div0.style.backgroundColor = "red";
+            } else if(e.target.id == "div1"){
+                div1.style.backgroundColor = "lightgreen";
+            } else {
+                div2.style.backgroundColor = "pink"
+            }
+        })
+    }
+
+</script>
+</body>
+</html>

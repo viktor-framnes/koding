@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+
+</style>
+</head>
+<body>
+    <input type="number">
+    <button>ukedag</button>
+    <p></p>
+<script>
+    let ukedager = ["mandag","tirsdag","onsdag","torsdag","fredag","lørdag","søndag"];
+    let dag = document.querySelector("input");
+    let knappEl = document.querySelector("button");
+    
+    knappEl.addEventListener("click", function(){
+        document.querySelector("p").innerHTML = ukedager[dag.value - 1];
+    })
+
+
+</script>
+</body>
+</html>

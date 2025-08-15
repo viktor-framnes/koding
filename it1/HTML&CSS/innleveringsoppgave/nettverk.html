@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Nettverk og internett</title>
+    <link rel="stylesheet" href="stilark.css">
+</head>
+<body>
+    <div class="innpakning">
+        <div class="logo"><a href="index.html">Hjem</a></div>
+        <div class="top"><h1>Nettverk og internett</h1></div>
+        <div class="filler"></div>
+    </div>
+    <div class="mid">
+        <div class="faktaboks">
+            <div class="faktatekst">
+                <h2 id="overskrift">Nettverk</h2>
+                <p id="faktatekst">
+                    Internett består av maskinvare (eng. hardware) som fysisk kobler maskiner sammen gjennom kabler, rutere, tjenere, mobiltårn, satellitter, radioer, smarttelefoner og andre apparater. I tillegg kreves programvare (eng. software) som behandler informasjonen som sendes rundt. <br><br>
+                    All informasjon sendes via datamaskiner, selv om vi ofte snakker om «skyer». Når datamaskiner er koblet sammen, har vi det vi kaller et nettverk. Det enkleste nettverket vi kan tenke oss, er to maskiner koblet sammen.  <br><br>
+                </p>
+            </div>
+            <div class="faktabilde">
+                <img src="nettverk.png" alt="Bilde av nettverk">
+            </div>
+        </div>
+        <div class="faktaboks3">
+            <div class="faktatekst3">
+                <p id="faktatekst">
+                    Ved å koble flere maskiner sammen får vi et større nettverk. I et slikt nettverk kan alle maskinene kommunisere med hverandre. Hvis vi kobler et slikt nettverk til et annet nettverk, kan informasjon sendes mellom nettverkene. Hvis vi fortsetter slik, ender vi opp med det vi kaller internett. Internett består av mengder av nettverk koblet sammen med hverandre. <br> <br>
+                    De maskinene som vi vanligvis benytter, altså din datamaskin eller smarttelefon, kalles klienter (eng. clients). Maskinene som lagrer informasjonen vi søker etter på internett, kalles tjenere (eng. servers). I læringsløpet om Firebase skal vi bruke Googles tjenere, som vi skal lagre og hente informasjon fra. <br><br>
+                </p>
+            </div>
+        </div>
+        <div class="faktaboks">
+            <div class="faktatekst">
+                <h2 id="overskrift">Hvordan virker internett?</h2>
+                <p id="faktatekst">
+                    Se for deg at du har åpnet en nettside og ser på et bilde. Hvordan kommer dette bildet seg til din maskin? <br><br>
+                    Det hele starter med at din maskin (klienten, A på figuren) sender en forespørsel til maskinen (tjeneren, B på figuren) der bildet er lagret. Denne forespørselen er i form av det vi kaller en pakke. Denne pakken inneholder informasjon om klienten, tjeneren og hva klienten ønsker. <br><br>
+                    Tjeneren mottar forespørselen og behandler den. Dersom det er mye informasjon som skal sendes tilbake, vil tjeneren dele opp informasjonen i flere mindre pakker. Disse pakkene finner den raskeste veien tilbake til klienten.  <br><br>
+                </p>
+            </div>
+            <div class="faktabilde">
+                <img src="internett.png" alt="Bilde av internett">
+            </div>
+        </div>
+        <div class="faktaboks3">
+            <div class="faktatekst3">
+                <p id="faktatekst">
+                    <br><br>
+                    Pakkene inneholder informasjon om hvor de kommer fra, hvor de skal, og hvordan de settes sammen igjen. Til slutt vises bildet på skjermen til klienten. <br><br>
+                    Denne prosessen involverer mange steg, men den gjennomføres i løpet av svært kort tid. Tjeneren kan være på den andre siden av kloden, men klienten vil likevel kunne få opp bildet i løpet av sekunder. <br> <br>
+                </p>
+                <h2 id="overskirft">
+                    Internettstandarer (protokoller)
+                </h2>
+                <p id="faktatekst">
+                    Internettstandarder sørger for at kommunikasjon mellom maskinvare og programvare kan fungere selv om produktene utvikles av ulike produsenter. Ordene «standard» og «protokoll» brukes om hverandre, men standarder for datakommunikasjon kalles oftest protokoller. <br> <br>
+                    En protokoll angir regler eller oppskrifter som maskiner og programmer må følge ved sending av informasjon. Det er nødvendig for å få vellykket kommunikasjon mellom maskiner og programmer. <br> <br>
+                    De to viktigste protokollene for Internett er den som kalles TCP («Transmission Control Protocol») og IP (Internettprotokollen). Disse to blir ofte sammen referert til som TCP/IP. <br><br>
+                </p>
+            </div>
+        </div>
+        <div class="faktaboks2">
+            <div class="faktatekst">
+                <h2 id="overskrift">IP (internettprotokollen)</h2>
+                <p id="faktatekst">
+                    Internettprotokollen, IP (eng. Internet Protocol) tar seg av kommunikasjon mellom maskiner. Alle maskiner som er koblet til internett, har en unik IP-adresse. En IP-adresse består vanligvis av fire tall adskilt med punktum, for eksempel 192.168.1.1. Når en tjener sender pakker til en klient, vil pakkene inneholde IP-adressene til både tjeneren og klienten. Det er disse adressene som benyttes for at pakkene skal finne fram.<br><br>
+                    Når vi åpner en nettside, pleier vi ikke å skrive inn IP-adressen til tjeneren direkte. Vi bruker i stedet tjenerens domenenavn. Et domenenavn er et unikt navn som hører til en IP-adresse. Domenenavnet www.aschehoug.no er et eksempel på dette. Når vi skriver et domenenavn i nettleseren vår, blir dette slått opp ved hjelp av en domenenavntjener (DNS-tjener, eng. «Domain Name System server»). Denne tjeneren finner IP-adressen til www.aschehoug.no slik at vi kan opprette en tilkobling til tjeneren. Domenenavntjenere er altså egne tjenere som holder styr på domenenavn og IP-adresser. Dette gjør at vi slipper å huske rekker av tall.
+                </p>
+            </div>
+            <div class="faktabilde">
+                <img class="lagringsmedium" src="ip.png" alt="Bilde av IP">
+            </div>
+        </div>
+        <div class="faktaboks3">
+            <div class="faktatekst3">
+                <h2 id="overskirft">TCP (Transmission Control Protocol)</h2>
+                <p id="faktatekst">
+                    Der IP gir oss et system for hvordan vi kan opprette kommunikasjon mellom maskiner, angir TCP hvordan pakker skal sendes og mottas.  <br><br>
+                    TCP bestemmer hvordan det som sendes, skal deles opp i pakker, i tillegg til hvordan pakkene skal settes sammen igjen når de kommer fram. Dette gjøres ved at tilleggsinformasjon legges til i pakkene som sendes. <br><br>
+                    Denne tilleggsinformasjonen kalles en «header». I headeren ligger informasjon om pakken og hvordan den skal settes sammen med tilhørende pakker. I tillegg til dette kan TCP brukes til å undersøke om alle pakker har blitt mottatt, og på denne måten la oss kontrollere at all informasjon som skal sendes, blir sendt. <br> <br>
+                </p>
+            </div>
+        </div>
+        <div class="faktaboks2">
+            <div class="faktatekst">
+                <h2 id="overskrift">HTTP (Hypertext Transfer Protocol)</h2>
+                <p id="faktatekst">
+                    Verdensveven (www, eng. «World Wide Web») er en av de viktigste tjenestene på internett. Protokollen som sørger for at verdensveven fungerer, heter HTTP («Hypertext Transfer Protocol»).   <br><br>
+                    Denne protokollen brukes av nettlesere og tjenere slik at de kan kommunisere med hverandre. <br> <br>
+                    Når vi skriver inn en adresse i nettleseren vår, vil nettleseren koble seg til tjeneren og sende en HTTP-forespørsel. Denne forespørselen inneholder informasjon om hva klienten ønsker tilgang til. De første linjene i en forespørsel kan se slik ut: <br><br>
+                    GET / HTTP/1.1 <br>
+                    Host: www.aschehoug.no <br>
+                    ...
+                </p>
+            </div>
+            <div class="faktabilde">
+                <img src="http.png" alt="Bilde av HTTP">
+            </div>
+        </div>
+        <div class="faktaboks3">
+            <div class="faktatekst3">
+                <p id="faktatekst">
+                    Her sender vi en forespørsel til www.aschehoug.no. Dersom siden finnes, vil tjeneren sende et svar til klientens nettleser. De første linjene i et svar kan se slik ut: <br> <br>
+                    HTTP/1.1 200 OK <br>
+                    Server: Apache/2.2.15 (Red Hat) <br>
+                    ... <br> ... <br> ... <br>
+                    >!doctype html> <br> ... <br> <br>
+                    Tjeneren finner fram den ønskede siden og sender den til klienten sammen med informasjonen ovenfor. Nettleseren viser så fram svaret som en nettside. <br> <br>
+                    Dersom tjeneren ikke finner ønsket side, blir en 404-feilmelding sendt i stedet. Denne feilmeldingen står for «Page Not Found». Dersom vi forsøker å åpne siden www.aunivers.no/it, som ikke eksisterer, får vi et svar som kan se slik ut: <br> <br>
+                    HTTP/1.1 404 Not Found <br>
+                    Server: Apache/2.2.15 (Red Hat) <br>
+                    ... <br> <br>
+                    Da vil nettleseren vanligvis vise fram en side der det står «404» sammen med en tekst om at siden ikke finnes. Etter at tjeneren har sendt siden til klienten, blir koblingen avsluttet. Denne prosessen gjentar seg hver gang vi klikker på en lenke eller skriver inn en ny adresse i nettleseren vår. <br> <br>
+                </p>
+                <h2 id="overskrift">
+                    HTTPS (Hypertext Transfer Protocol Secure)
+                </h2>
+                <p id="faktatekst">
+                Du har kanskje lagt merke til at det ofte står https:// i stedet for http:// i begynnelsen av adresser i nettleseren. HTTPS er en utvidelse av HTTP som gir bedre sikkerhet i kommunikasjonen mellom klient og tjener. Når informasjon sendes med HTTPS, blir den kryptert, slik at det blir vanskeligere å misbruke informasjonen som blir sendt. <br> <br>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

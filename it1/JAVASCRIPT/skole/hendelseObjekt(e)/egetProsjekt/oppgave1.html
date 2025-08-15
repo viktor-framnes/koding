@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+<script>
+    let mynter = [
+        {land: "Norge", aarstall: 1999, verdi: 20000},
+        {land: "Sverige", aarstall: 1705, verdi: 50050},
+        {land: "Danmark", aarstall: 2001, verdi: 106},
+        {land: "Russland", aarstall: 1945, verdi: 22222}
+    ];
+    for(let i = 0; i < mynter.length; i++){
+        document.write("Mynt fra " + mynter[i].land + " fra " + mynter[i].aarstall + " har en verdi på " + mynter[i].verdi + " kr<br>")
+    }
+    let indeks = Math.floor(Math.random()*mynter.length)
+    document.write("<br>Mynt fra " + mynter[indeks].land + " fra " + mynter[indeks].aarstall + " har en verdi på " + mynter[indeks].verdi + " kr<br>");
+
+    for(let i = 0; i < mynter.length; i++){
+        if(mynter[i].aarstall < 1950){
+            document.write("<br>Mynten fra " + mynter[i].land + " er fra tidligere enn 1950")
+        }
+    }
+
+    let total = 0;
+    for(let i = 0; i < mynter.length; i++){
+        total += mynter[i].verdi
+    }
+    document.write("<br>Total verdien av myntene er " + total);
+</script>
+</body>
+</html>

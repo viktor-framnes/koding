@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h1>En liten kulkulator</h1>
+        <input id="tall1" type="number" placeholder="Skriv inn et tall">
+        <input id="tall2" type="number" placeholder="Skriv inn enda et tall">
+        <button>Trykk her for svar</button>
+        <p></p>
+    </div>
+<script>
+    let tall1El = document.querySelector("#tall1");
+    let tall2El = document.querySelector("#tall2");
+    let knappEl = document.querySelector("button");
+    let resultatEl = document.querySelector("p");
+
+    knappEl.addEventListener("click", vis);
+    function vis() {
+       let sum = tall1El.value * tall2El.value; 
+       resultatEl.innerHTML = tall1El.value + " * " + tall2El.value +
+       " = " + sum;
+    }
+
+</script>
+</body>
+</html>

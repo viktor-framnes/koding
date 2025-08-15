@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <title>IS</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+</style>
+</head>
+<body>
+    <div class="innpakning">
+       <h1>Land og språk</h1>
+       <input type="text" placeholder="Hvilket land i Skandinavia er du fra?">
+       <button>Resultat</button>
+       <p></p>
+    </div>
+<script>
+    let svarEl = document.querySelector("input");
+    let knappEl = document.querySelector("button");
+    let resultatEl = document.querySelector("p");
+
+    knappEl.addEventListener("click", vis);
+    function vis() {
+        if (svarEl.value.toLowerCase() == "norge") {
+            resultatEl.innerHTML = "Du snakker mest sansynelig Norsk";
+        }
+        else if (svarEl.value.toLowerCase() == "danmark") {
+            resultatEl.innerHTML = "Du snakker mest sansynelig Dansk";
+        }
+        else if (svarEl.value.toLowerCase() == "sverige") {
+            resultatEl.innerHTML = "Du snakker mest sansynelig Svensk";
+        }
+    }
+</script>
+</body>
+</html>

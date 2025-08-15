@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+<style>
+
+</style>
+</head>
+<body>
+<script>
+    let tall = [3,2,6,37,4,26];
+    //a)
+    document.write(tall.length + "<br>");
+    //b)
+    tall.splice(tall.indexOf(6),1);
+    document.write(tall);
+    //c)
+    tall.splice(2,0,9);
+    document.write("<br>" + tall);
+    //d)
+    let sum = 0;
+
+    for(let i = 0; i < tall.length; i++){
+        sum += tall[i]
+    }
+    document.write("<br>" + sum);
+    //e)
+    tall.sort(sammenlign);
+    document.write("<br>" + tall);
+    function sammenlign(a,b){
+        return a - b;
+    }
+    //f)
+    document.write("<br>" + tall[0]) //siden vi allerde har sortert
+
+    let minst = tall[0];
+    for(let i = 0; i < tall.length; i++){
+        if(tall[i] < minst){
+            minst = tall[i]
+        }
+    }
+    document.write("<br>" + minst)
+    //g)
+    document.write("<br>" + tall[tall.length-1]) //siden vi allerede har sortert
+
+    let storst = tall[tall.length-1]
+    for(let i = 0; i < tall.length; i++){
+        if(tall[i] > storst){
+            storst = tall[i]
+        }
+    }
+    document.write("<br>" + storst);
+</script>
+</body>
+</html>

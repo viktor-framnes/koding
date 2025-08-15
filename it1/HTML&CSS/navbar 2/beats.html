@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beats</title>
+    <link rel="stylesheet" href="stilark.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo"><a href="index.html"><img src="logo3.0.png" alt="FYNE logo" height="100px" width="133"></a></div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="nav-bar">
+            <ul>
+                <li>
+                    <a href="beats.html">Beats</a>
+                </li>
+                <li>
+                    <a href="tjenester.html">Tjenester</a>
+                </li>
+                <li>
+                    <a href="omoss.html">Om oss</a>
+                </li>
+                <li>
+                    <a href="kontakt.html">Kontakt oss</a>
+                </li>
+                <li>
+                    <a href="login.html" class="hiddenlogin">Login</a>
+                </li>
+            </ul>
+        </div>
+        <div class="login"><a href="login.html" >Login</a></div>
+    </div>
+
+    <script>
+        hamburger = document.querySelector(".hamburger");
+        hamburger.onclick = function() {
+            navBar = document.querySelector(".nav-bar");
+            navBar.classList.toggle("active");    
+        }
+    </script>
+
+    <div class="mid">
+        <div class="midoverskrift"><h1>Masse kule beats</h1></div>
+        <img class="gif" src="sound.gif" alt="fyne" width="1000">
+        <div class="faktaboks">
+            <div>
+                <h2>Vi har sjuke beats</h2>
+            </div>
+        </div>
+    </div>
+    <div class="bunn">
+        <h1 class="bunntekst">~ FYNE ~</h1> <br>
+        <p>Jesper - Jonas - Viktor <br></p>
+    </div>
+</body>
+</html>

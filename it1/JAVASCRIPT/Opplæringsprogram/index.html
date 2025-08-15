@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+    .innpakning{
+        text-align: center;
+        background-color:darkseagreen;
+        width: 600px;
+    }
+    .trykket{
+        display: none;
+    }
+    img:hover{
+        transform: scale(1.03);
+    }
+    .skjult{
+        display: hidden;
+    }
+    .voksen{
+        display: flex;
+        flex-direction: row;
+        height: 280px;
+    }
+    .meny{
+        flex: 1;
+        text-align: left;
+    }
+    .is{
+        flex-basis: 200px;
+        height: 280px;
+        display: flex;
+        flex-direction: column;
+        margin-top: -75px;
+    }
+    #bildeKule2{
+        position: relative;
+        z-index: 1;
+        top: 80px;
+    }
+    #bildeKule2:hover{
+        transform: none;
+    }
+    #bildeKule1{
+        position: relative;
+        top: 40px;
+    }
+    #bildeKule1:hover{
+        transform: none;
+    }
+    #bildeKopp:hover{
+        transform: none;
+    }
+</style>
+</head>
+<body>
+                 <!--Forside-->
+    <div class="innpakning">
+        <h1>Det Geografiske Spillet!</h1>
+        <h3>Før du spiller, hvor gammel er du?</h3>   
+        <input type="range">
+        <h2></h2>
+        <h1 id="oi"></h1>
+        <button>Neste</button>
+    </div>
+                <!--Velge karakter-->
+    <div id="etterForside" class="trykket">
+        <h1>Velkommen til Det Geografiske Spillet!</h1>
+        <h3>Hver karakter har hvert sitt spill, så prøv alle!</h3><br><br>
+        <div id="karakterValg" class="trykket">
+            <button id="per" style="background-color: darkseagreen; border: none; box-shadow: none; background: none;"><p style="font-size: 30px; color: black; font-weight: bold;">Per</p><img src="gutt1.png" alt="" height="200"></button>
+            <button id="ella" style="background-color: darkseagreen; border: none; box-shadow: none; background: none;"><p style="font-size: 30px; color: black; font-weight: bold;">Ella</p><img src="jente.png" alt="" height="200"></button>
+            <button id="ola" style="background-color: darkseagreen; border: none; box-shadow: none; background: none;"><p style="font-size: 30px; color: black; font-weight: bold;">Ola</p><img src="gutt2.png" alt="" height="200"></button> <br><br>
+        </div>
+        <button id="velgeSpiller">Velg en karakter!</button>
+        <h3 id="yup"></h3>
+    </div>
+                <!--quiz område-->
+                <!--PerQuiz-->
+    <div id="perQuiz" class="trykket">
+        <h1>Du valgte Per! <br> </h1>
+        <h2>Per, han er veldig glad i geografi og spesielt Land! <br> Derfor vil du bli testet i land i Europa</h2>
+        <img src="gutt1.png" alt="" height="180">
+        <br><br>
+        <div style="text-align: left;">
+            <h2>Første spørsmål: <br> Hvor mange land er det i Skandinavia?</h2>
+            <input id="PerForsteSvar" type="number">
+            <button id="PerForsteSjekk">Sjekk</button>
+            <p id="PerForsteResultat"></p>
+            <br>
+            <h2>Andre spørsmål: <br> Hva er hovedstaden til Albania?</h2>
+            <input id="PerAndreSvar" type="text">
+            <button id="PerAndreSjekk">Sjekk</button>
+            <p id="PerAndreResultat"></p>
+            <br>
+            <h2>Tredje spørsmål: <br> Hvor mange land er det i Europa?</h2>
+            <input id="PerTredjeSvar" type="number">
+            <button id="PerTredjeSjekk">Sjekk</button>
+            <p id="PerTredjeResultat"></p>
+            <h2>Siste spørsmål: <br> Hvor mange land er det i Norden?</h2>
+            <input id="PerFjerdeSvar" type="number">
+            <button id="PerFjerdeSjekk">Sjekk</button>
+            <p id="PerFjerdeResultat"></p>
+            <p id="PerPoengSum"></p>
+        </div>
+        <br><br><button id="PerReset">Tilbake</button>
+    </div>
+                <!--EllaQuiz-->
+    <div id="ellaQuiz" class="trykket">
+        <h1>Du valgte Ella! <br></h1>
+        <h2>Ella liker geografi veldig mye, men mer spesefikt flagg! <br> Hun har fått helt hekta på flagg <br>
+        Derfor skal du få gjette hvilke land som hørere til noen flagg</h2>
+        <img src="jente.png" alt="">
+        <br><br>
+
+        <div id="flaggQuiz" class="">
+            <h2 id="tilfLand"></h2>
+            <p id="tommel"></p>
+            <div id="rad1">
+                <img id="flagg1" src="./flagg/albania.png" alt="" height="80" width="100">
+                <img id="flagg2" src="./flagg/italia.png" alt="" height="80" width="100">
+                <img id="flagg3" src="./flagg/latvia.png" alt="" height="80" width="100">
+                <img id="flagg4" src="./flagg/luxembourg.png" alt="" height="80" width="100">
+            </div>
+            <div id="rad2">
+                <img id="flagg5" src="./flagg/montenegro.png" alt="" height="80" width="100">
+                <img id="flagg6" src="./flagg/norge.png" alt="" height="80" width="100">
+                <img id="flagg7" src="./flagg/polen.png" alt="" height="80" width="100">
+                <img id="flagg8" src="./flagg/spania.png" alt="" height="80" width="100">
+            </div>
+            <div id="rad3">
+                <img id="flagg9" src="./flagg/sveits.png" alt="" height="80" width="100">    
+                <img id="flagg10" src="./flagg/sverige.png" alt="" height="80" width="100">    
+                <img id="flagg11" src="./flagg/tyskland.png" alt="" height="80" width="100">    
+                <img id="flagg12" src="./flagg/ungarn.png" alt="" height="80" width="100">    
+            </div>
+            <b><p id="flaggResultat"></p></b>
+            <br><br><button id="EllaReset">Tilbake</button>
+        </div>
+    </div>
+                <!--OlaQuiz-->
+    <div id="olaQuiz" class="trykket">
+        <h1>Du valgte Ola!</h1>
+        <h2>Ola er ikke så glad i geografi, <br> men han er helt sjukt glad i Iskrem. <br> Derfor skal du få lage han en is!</h2>
+        <img id="olabilde" src="gutt2.png" height="150px" alt="">
+        <p id="olatakk"></p>
+        <br><br><br>
+        <div class="voksen">
+            <div class="meny">
+                <b><label for="kopp">Kjeks eller beger?</label></b>
+                <select name="kopp" id="kopp">
+                    <option value="kjeks">Kjeks</option>
+                    <option value="beger">Beger</option>
+                </select>
+                <b><label for="kule1">Hvilke smak på første kule?</label></b>
+                <select name="kule1" id="kule1">
+                    <option value="sjokolade">Sjokolade</option>
+                    <option value="vanilje">Vanilje</option>
+                    <option value="jordbær">Jordbær</option>
+                </select>
+                <b><label for="kule2">Hvilke smak på andre kule?</label></b>
+                <select name="kule2" id="kule2">
+                    <option value="sjokolade">Sjokolade</option>
+                    <option value="vanilje">Vanilje</option>
+                    <option value="jordbær">Jordbær</option>
+                </select>
+                <button id="isknapp">Lag iskremen</button>
+            </div>
+            <div id="isDiv" class="trykket">
+                <img id="bildeKule2" src="" alt="" height="120px" width="90px">
+                <img id="bildeKule1" src="" alt="" height="120px" width="90px">
+                <img id="bildeKopp" src="" alt="" height="150px" width="90px">
+            </div>
+        </div>
+        <button id="giIsen">Gi Ola isen</button>
+        <br><br><button id="OlaReset">Tilbake</button>
+    </div>
+<script>
+            /*      forside     */
+
+    let overskrift = document.querySelector("h1");
+    let svarEl = document.querySelector("input");
+    let resultatEl = document.querySelector("h2");
+    let alderKnapp = document.querySelector("button");
+    let forGammel = document.querySelector("#oi");
+
+    resultatEl.innerHTML = svarEl.value + " år";
+
+    svarEl.addEventListener("mousemove", function() {    
+        resultatEl.innerHTML = "";
+        resultatEl.innerHTML = svarEl.value + " år";
+    });
+    svarEl.addEventListener("change", function() {    
+        resultatEl.innerHTML = "";
+        resultatEl.innerHTML = svarEl.value + " år";
+    });
+
+            /*      Aldersjekk      */
+
+    let forside = document.querySelector(".innpakning");
+    let etterForside = document.querySelector("#etterForside");
+    alderKnapp.addEventListener("click", function() {
+        if(svarEl.value > 14) {
+            forGammel.innerHTML = "Oi du var nok for gammel for spillet! <br> Det er tross alt for barneskolen 😉";
+        } else {
+            forGammel.innerHTML = "";
+            forside.classList.add("trykket");
+            etterForside.classList.add("innpakning");
+            etterForside.classList.remove("trykket");
+        }
+    });
+
+
+            /*      karakter side      */
+
+    let knappEl = document.querySelector("#velgeSpiller");
+    let karakterer = document.querySelector("#karakterValg");
+    let valgtPer = document.querySelector("#per");
+    let valgtElla = document.querySelector("#ella");
+    let valgtOla = document.querySelector("#ola");
+
+    let quizSidePer = document.querySelector("#perQuiz");
+    let quizSideElla = document.querySelector("#ellaQuiz");
+    let quizSideOla = document.querySelector("#olaQuiz");
+
+    knappEl.addEventListener("click", function() {
+        karakterer.classList.remove("trykket")
+        knappEl.classList.add("trykket")
+    });
+
+    
+    valgtPer.addEventListener("click", function() {
+        etterForside.classList.add("trykket");
+        quizSidePer.classList.remove("trykket");
+        quizSidePer.classList.add("innpakning");
+    });
+    valgtElla.addEventListener("click", function() {
+        etterForside.classList.add("trykket");
+        quizSideElla.classList.remove("trykket");
+        quizSideElla.classList.add("innpakning");
+    });
+    valgtOla.addEventListener("click", function() {
+        etterForside.classList.add("trykket");
+        quizSideOla.classList.remove("trykket");
+        quizSideOla.classList.add("innpakning");
+    });
+
+
+            /*      Quiz område     */
+        /*          Per quiz            */
+
+    let PerForsteSvar = document.querySelector("#PerForsteSvar");
+    let PerAndreSvar = document.querySelector("#PerAndreSvar");
+    let PerTredjeSvar = document.querySelector("#PerTredjeSvar");
+    let PerFjerdeSvar = document.querySelector("#PerFjerdeSvar");
+    
+    let PerForsteSjekk = document.querySelector("#PerForsteSjekk");
+    let PerAndreSjekk = document.querySelector("#PerAndreSjekk");
+    let PerTredjeSjekk = document.querySelector("#PerTredjeSjekk");
+    let PerFjerdeSjekk = document.querySelector("#PerFjerdeSjekk");
+    
+    let PerForsteResultat = document.querySelector("#PerForsteResultat");
+    let PerAndreResultat = document.querySelector("#PerAndreResultat");
+    let PerTredjeResultat = document.querySelector("#PerTredjeResultat");
+    let PerFjerdeResultat = document.querySelector("#PerFjerdeResultat");
+    
+    let PerRiktigSvar1 = 3;
+    let PerRiktigSvar2 = "tirana";
+    let PerRiktigSvar3 = 46;
+    let PerRiktigSvar4 = 5;
+
+    let perPoeng = 0;
+    let PerPoengSum = document.querySelector("#PerPoengSum")
+
+    PerForsteSjekk.addEventListener("click", function() {
+        if(PerForsteSvar.value == PerRiktigSvar1){
+            perPoeng ++;
+            PerForsteResultat.innerHTML = "Riktig! 1 poeng til deg"
+        } else{
+            PerForsteResultat.innerHTML = "Feil, ingen poeng til deg"
+        }
+    });
+    PerAndreSjekk.addEventListener("click", function() {
+        if(PerAndreSvar.value.toLowerCase() == PerRiktigSvar2){
+            perPoeng ++;
+            PerAndreResultat.innerHTML = "Riktig! 1 poeng til deg"
+        } else{
+            PerAndreResultat.innerHTML = "Feil, ingen poeng til deg"
+        }
+    });
+    PerTredjeSjekk.addEventListener("click", function() {
+        if(PerTredjeSvar.value == PerRiktigSvar3){
+            perPoeng ++;
+            PerTredjeResultat.innerHTML = "Riktig! 1 poeng til deg"
+        } else{
+            PerTredjeResultat.innerHTML = "Feil, ingen poeng til deg"
+        }
+    });
+    PerFjerdeSjekk.addEventListener("click", function() {
+        if(PerFjerdeSvar.value == PerRiktigSvar4){
+            perPoeng ++;
+            PerFjerdeResultat.innerHTML = "Riktig! 1 poeng til deg <br> Du fikk " + perPoeng + " poeng totalt"
+        } else{
+            PerFjerdeResultat.innerHTML = "Feil, ingen poeng til deg <br> Du fikk " + perPoeng + " poeng totalt!"
+        }
+        
+        PerForsteSjekk.classList.add("trykket");
+        PerAndreSjekk.classList.add("trykket");
+        PerTredjeSjekk.classList.add("trykket");
+        PerFjerdeSjekk.classList.add("trykket");
+
+        for(let i = 0; i < perPoeng; i++){
+            let stjerne = document.createElement("img")
+            stjerne.src = "stjerne.png"
+            stjerne.height = "100"
+            PerPoengSum.appendChild(stjerne)
+            Perpoeng = 0;
+        }
+    });
+
+    let PerResetKnapp = document.querySelector("#PerReset");
+    PerResetKnapp.addEventListener("click", function() {
+        quizSidePer.classList.add("trykket");
+        etterForside.classList.remove("trykket");
+    });
+
+
+        /*      Ella quiz       */
+
+
+    let FlaggSpill = document.querySelector("#flaggQuiz");
+    let tilfLand = document.querySelector("#tilfLand");
+
+    let flaggAlbania = document.querySelector("#flagg1")
+    let flaggItalia = document.querySelector("#flagg2")
+    let flaggLatvia = document.querySelector("#flagg3")
+    let flaggLuxembourg = document.querySelector("#flagg4")
+    let flaggMontenegro = document.querySelector("#flagg5")
+    let flaggNorge = document.querySelector("#flagg6")
+    let flaggPolen = document.querySelector("#flagg7")
+    let flaggSpania = document.querySelector("#flagg8")
+    let flaggSveits = document.querySelector("#flagg9")
+    let flaggSverige = document.querySelector("#flagg10")
+    let flaggTyskland = document.querySelector("#flagg11")
+    let flaggUngarn = document.querySelector("#flagg12")
+
+    let flaggResultat = document.querySelector("#flaggResultat");
+    let flaggFeil = 0;
+
+    let land = ["Sveits", "Norge", "Sverige", "Spania", "Tyskland", "Italia", "Ungarn", "Albania", "Montenegro", "Luxembourg", "Latvia", "Polen"];
+    let ValgtLand = velgTilfeldigLand();
+
+    let tommel = document.querySelector("#tommel");
+
+    function velgTilfeldigLand() {
+        if(land.length == 0){
+            tilfLand.innerHTML = "Gratulerer du har vunnet. Du fikk " + flaggFeil + " feil!";
+            flaggResultat.innerHTML = "";
+            for(let i = 0; i < flaggFeil; i++){
+                let feil = document.createElement("img");
+                feil.src = "feil.png"
+                feil.height = "80"
+                tommel.appendChild(feil);
+            }
+            return;
+        }
+        let valgtLand = land[Math.floor(Math.random()* land.length)];
+        tilfLand.innerHTML = valgtLand;
+        return valgtLand;
+    }
+    
+    flaggAlbania.addEventListener("click", function(){
+        if(ValgtLand == "Albania") {
+            flaggAlbania.classList.add("trykket")
+            flaggResultat.innerHTML = "Riktig";
+            land.splice(land.indexOf(ValgtLand), 1)
+            ValgtLand = velgTilfeldigLand();
+        } 
+        else{
+            flaggFeil++;
+            flaggResultat.innerHTML = "Feil, du har tatt " + flaggFeil + " feil.";
+        }
+    });
+
+    flaggItalia.addEventListener("click", function(){
+        if(ValgtLand == "Italia") {
+            flaggItalia.classList.add("trykket")
+            flaggResultat.innerHTML = "Riktig";
+            land.splice(land.indexOf(ValgtLand), 1)
+            ValgtLand = velgTilfeldigLand();
+        } 
+        else{
+            flaggFeil++;
+            flaggResultat.innerHTML = "Feil, du har tatt " + flaggFeil + " feil.";
+        }
+    });
+    flaggLatvia.addEventListener("click", function(){
+        if(ValgtLand == "Latvia") {
+            flaggLatvia.classList.add("trykket")
+            flaggResultat.innerHTML = "Riktig";
+            land.splice(land.indexOf(ValgtLand), 1)
+            ValgtLand = velgTilfeldigLand();
+        } 
+        else{
+            flaggFeil++;
+            flaggResultat.innerHTML = "Feil, du har tatt " + flaggFeil + " feil.";
+        }
+    });
+    flaggLuxembourg.addEventListener("click", function(){
+        if(ValgtLand == "Luxembourg") {
+            flaggLuxembourg.classList.add("trykket")
+            flaggResultat.innerHTML = "Riktig";
+            land.splice(land.indexOf(ValgtLand), 1)
+            ValgtLand = velgTilfeldigLand();
+        } 
+        else{
+            flaggFeil++;
+            flaggResultat.innerHTML = "Feil, du har tatt " + flaggFeil + " feil.";
+        }
+    });
+    flaggMontenegro.addEventListener("click", function(){
+        if(ValgtLand == "Montenegro") {
+            flaggMontenegro.classList.add("trykket")
+            flaggResultat.innerHTML = "Riktig";
+            land.splice(land.indexOf(ValgtLand), 1)
+            ValgtLand = velgTilfeldigLand();
+        } 
+        else{
+            flaggFeil++;
+            flaggResultat.innerHTML = "Feil, du har tatt " + flaggFeil + " feil.";
+        }
+    });
+    flaggNorge.addEventListener("click", function(){
+        if(ValgtLand == "Norge") {
+            flaggNorge.classList.add("trykket")
+            flaggResultat.innerHTML = "Riktig";
+            land.splice(land.indexOf(ValgtLand), 1)
+            ValgtLand = velgTilfeldigLand();
+        } 
+    else{
+        flaggFeil++;
+        flaggResultat.innerHTML = "Feil, du har tatt " + flaggFeil + " feil.";
+    }
+    });
+    flaggPolen.addEventListener("click", function(){
+        if(ValgtLand == "Polen") {
+            flaggPolen.classList.add("trykket")
+            flaggResultat.innerHTML = "Riktig";
+            land.splice(land.indexOf(ValgtLand), 1)
+            ValgtLand = velgTilfeldigLand();
+        } 
+        else{
+            flaggFeil++;
+            flaggResultat.innerHTML = "Feil, du har tatt " + flaggFeil + " feil.";
+        }
+    });
+    flaggSpania.addEventListener("click", function(){
+        if(ValgtLand == "Spania") {
+            flaggSpania.classList.add("trykket")
+            flaggResultat.innerHTML = "Riktig";
+            land.splice(land.indexOf(ValgtLand), 1)
+            ValgtLand = velgTilfeldigLand();
+        } 
+        else{
+            flaggFeil++;
+            flaggResultat.innerHTML = "Feil, du har tatt " + flaggFeil + " feil.";
+        }
+    });
+    flaggSveits.addEventListener("click", function(){
+        if(ValgtLand == "Sveits") {
+            flaggSveits.classList.add("trykket")
+            flaggResultat.innerHTML = "Riktig";
+            land.splice(land.indexOf(ValgtLand), 1)
+            ValgtLand = velgTilfeldigLand();
+        } 
+        else{
+            flaggFeil++;
+            flaggResultat.innerHTML = "Feil, du har tatt " + flaggFeil + " feil.";
+        }
+    });
+    flaggSverige.addEventListener("click", function(){
+        if(ValgtLand == "Sverige") {
+            flaggSverige.classList.add("trykket")
+            flaggResultat.innerHTML = "Riktig";
+            land.splice(land.indexOf(ValgtLand), 1)
+            ValgtLand = velgTilfeldigLand();
+        } 
+        else{
+            flaggFeil++;
+            flaggResultat.innerHTML = "Feil, du har tatt " + flaggFeil + " feil.";
+        }
+    });
+    flaggTyskland.addEventListener("click", function(){
+        if(ValgtLand == "Tyskland") {
+            flaggTyskland.classList.add("trykket")
+            flaggResultat.innerHTML = "Riktig";
+            land.splice(land.indexOf(ValgtLand), 1)
+            ValgtLand = velgTilfeldigLand();
+        } 
+        else{
+            flaggFeil++;
+            flaggResultat.innerHTML = "Feil, du har tatt " + flaggFeil + " feil.";
+        }
+    });
+    flaggUngarn.addEventListener("click", function(){
+        if(ValgtLand == "Ungarn") {
+            flaggUngarn.classList.add("trykket")
+            flaggResultat.innerHTML = "Riktig";
+            land.splice(land.indexOf(ValgtLand), 1)
+            ValgtLand = velgTilfeldigLand();
+        } 
+        else{
+            flaggFeil++;
+            flaggResultat.innerHTML = "Feil, du har tatt " + flaggFeil + " feil.";
+        }
+    });
+    let EllaResetKnapp = document.querySelector("#EllaReset");
+    EllaResetKnapp.addEventListener("click", function() {
+        quizSideElla.classList.add("trykket");
+        etterForside.classList.remove("trykket");
+    });
+
+          /*      Ola quiz        */
+
+    
+    let kopp = document.querySelector("#kopp")
+    let kule1 = document.querySelector("#kule1")
+    let kule2 = document.querySelector("#kule2")
+    let isknapp = document.querySelector("#isknapp")
+    let bildeKopp = document.querySelector("#bildeKopp")
+    let bildeKule1 = document.querySelector("#bildeKule1")
+    let bildeKule2 = document.querySelector("#bildeKule2")
+    let isDiv = document.querySelector("#isDiv")
+    let gittis = 0;
+
+    isknapp.addEventListener("click", function(){
+        isDiv.classList.remove("trykket");
+        isDiv.classList.add("is")
+        gittis++;
+
+        if(kopp.value == "kjeks") {
+            bildeKopp.src = "kjeks.png"
+        } else {
+            bildeKopp.src = "beger.png"
+        }
+
+        if(kule1.value == "sjokolade") {
+            bildeKule1.src = "sjokolade.png"
+        } else if (kule1.value == "vanilje") {
+            bildeKule1.src = "vanilje.png"
+        } else {
+            bildeKule1.src = "jordber.png"
+        }
+
+        if(kule2.value == "sjokolade") {
+            bildeKule2.src = "sjokolade.png"
+        } else if (kule2.value == "vanilje") {
+            bildeKule2.src = "vanilje.png"
+        } else {
+            bildeKule2.src = "jordber.png"
+        }
+    });
+    let olatakk = document.querySelector("#olatakk")
+    let olabilde = document.querySelector("#olabilde")
+    let giIsen = document.querySelector("#giIsen")
+    giIsen.addEventListener("click", function() {
+        if(gittis > 0) {
+            isDiv.classList.remove("is");
+            isDiv.classList.add("trykket");
+            olabilde.src = "gutt2glad.png"
+            olatakk.innerHTML = '"Tusen takk, jeg elsker is 🥰" - Ola'
+        } else {
+            olatakk.innerHTML = '"Du må lage en is først!" - Ola'
+        }
+    })
+
+    let OlaResetKnapp = document.querySelector("#OlaReset");
+        OlaResetKnapp.addEventListener("click", function() {
+        quizSideOla.classList.add("trykket");
+        etterForside.classList.remove("trykket");
+        olatakk.innerHTML = "";
+        olabilde.src = "gutt2.png"
+    });
+</script>
+</body>
+</html>

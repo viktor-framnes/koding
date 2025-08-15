@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+
+</style>
+</head>
+<body>
+<div class="innpakning">
+    <h1>Flere inputfelt:</h1>
+    Fargevelger: <input id="farge" type="color"><br><br>
+    <label>Velg et hemmelig passord:</label>
+    <input type="password" id="passord"><br>
+    Velg deg en dato: <input id="dato" type="date"><br><br>
+    Velg en verdi fra slideren: <input id="slider" type="range" min="1" max="10">
+    <br>(Her har valgt verdier fra 1 til 10) <br><br>
+    <button>Trykk her for resultat</button>
+    <p id="resultat"></p>
+</div>
+<script>
+    let farge = document.querySelector("#farge");
+    let passord = document.querySelector("#passord");
+    let dato = document.querySelector("#dato");
+    let slider = document.querySelector("#slider")
+    let knappEl = document.querySelector("button");
+    let resultat = document.querySelector("#resultat");
+    let bodyEl = document.querySelector("body")
+
+    knappEl.addEventListener("click", function(){
+        resultat.innerHTML = "Resultat: <br> Ditt passord er: " + passord.value +
+        "<br> Du har valgt datoen: " + dato.value + "<br> Fra 1 til 10 gir du: " + slider.value;
+        bodyEl.style.backgroundColor = farge.value
+    })
+</script>
+</body>
+</html>

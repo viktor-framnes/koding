@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    div{
+        background-color: grey;
+        width: 50%;
+        height: 440px;
+        text-align: center;
+        margin: auto;
+        position: relative;
+        padding: 10px;
+    }
+    img{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+</style>
+</head>
+<body>
+    <div>
+        <h1>Liten quiz</h1>
+        <img src="banan.png" alt="bilde av bananer" width="100px" height="100px">
+        <input id="navn" type="text" placeholder="Hva er navnet ditt?"><br><br>
+        <h3>Hva er hovedstaten til Norge?</h3>
+        <input id="sp1" type="text">
+        <h3>Hvor gammel er Jens stoltenberg?</h3>
+        <input id="sp2" type="number">
+        <h3>Hvor mange farger er det i det norske flagget?</h3>
+        <input id="sp3" type="number">
+        <br><br><br><a href="localStorageOppgave2.html"><button>Sjekk svar</button></a><br>
+        <p></p>
+    </div>
+<script>
+    let navnEl = document.querySelector("#navn");
+    let sp1 = document.querySelector("#sp1");
+    let sp2 = document.querySelector("#sp2");
+    let sp3 = document.querySelector("#sp3");
+    let knappEl = document.querySelector("button");
+    let resEl = document.querySelector("p");
+    let poeng = 0;
+    
+    knappEl.addEventListener("click", function(){
+        if(sp1.value.toLowerCase() == "oslo"){
+            poeng++;
+        }
+        if(sp2.value == 65){
+            poeng++;
+        }
+        if(sp3.value == 3){
+            poeng++;
+        }
+        localStorage.setItem("navn", navnEl.value);
+        localStorage.setItem("poeng", poeng);
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+<style>
+
+</style>
+</head>
+<body>
+        
+<script>
+    tall = [3,7,1,21,45,67,22];
+    
+    tall.sort(sammenlign);
+    document.write(tall[(tall.length - 1)] + "<br>")
+    
+    function sammenlign(a,b){
+        return b - a;
+    }
+
+    document.write(tall)
+
+    for(let i = 0; i < tall.length; i++){
+        if(tall[i] == 21){
+            tall[i] = 8;
+            document.write("<br>" + tall)
+        }
+    }
+
+</script>
+</body>
+</html>

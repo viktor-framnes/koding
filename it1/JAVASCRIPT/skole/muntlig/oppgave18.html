@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    div{
+        margin: auto;
+        width: 300px;
+        background-color: lightblue;
+        border: 3px solid black;
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
+</head>
+<body>
+    <div>
+        <input type="number" placeholder="Skriv et tall mellom 1 og 10"><br><br>
+        <button>Trykk her</button><br><br>
+        <p></p><br><br>
+        <img src="banan.png" alt="bilde av bananer">
+        <br><br>
+        <table>
+            <tr>
+                <th>Overskrift</th>
+            </tr>
+            <tr>
+                <td>rad1</td>
+            </tr>
+            <tr>
+                <td>rad2</td>
+            </tr>
+            <tr>
+                <td>rad3</td>
+            </tr>
+        </table>
+    </div>
+<script>
+    let tall = document.querySelector("input");
+    let knappEl = document.querySelector("button");
+    let resEl = document.querySelector("p");
+
+    knappEl.addEventListener("click", function(){
+        for(let i = 0; i < tall.value; i++){
+            resEl.innerHTML += "Hallo <br>"
+        }
+    })
+
+</script>
+</body>
+</html>

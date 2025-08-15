@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+body{
+    margin: auto;
+    background-color: darkgrey;
+
+}
+.tall{
+    background-color: tomato;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.innpakning{
+    width: 800px;
+    background-color: lightgray;
+    border: 2px solid black;
+    margin:  50px auto;
+    text-align: center;
+}
+p{
+    font-size: 25px;
+}
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h1>Klikk på ditt lykketall</h1>
+        <div class="tall" id="1">1</div>
+        <div class="tall" id="2">2</div>
+        <div class="tall" id="3">3</div>
+        <div class="tall" id="4">4</div>
+        <p></p><br>
+    </div>
+<script>
+    let divEl = document.querySelectorAll(".tall");
+    let resEl = document.querySelector("p");
+
+    for(let i = 0; i < divEl.length; i++){
+        divEl[i].addEventListener("click", function(e){
+            resEl.innerHTML = "Ditt lykketall er: " + e.target.id
+        })
+    }
+
+
+</script>
+</body>
+</html>

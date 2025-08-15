@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h1>Karakteroversikt</h1>
+        <input type="number" min="1" max="6">
+        <button id="knappKarakter">Sett inn karakterer</button>
+        <button id="knappToppKarakter">Vis antall toppkarakterer</button>
+        <p></p>
+    </div>
+<script>
+    let karakterEl = document.querySelector("input");
+    let KarakterKnapp = document.querySelector("#knappKarakter");
+    let ToppKarakterKnapp = document.querySelector("#knappToppKarakter");
+    let resultatEl = document.querySelector("p");
+    let karakterer = [];
+
+    KarakterKnapp.addEventListener("click", function(){
+        karakterer.push(karakterEl.value);
+        resultatEl.innerHTML = karakterer + "<br>";
+    })
+    ToppKarakterKnapp.addEventListener("click", function(){
+        let antall = 0;
+        for(let i = 0; i < karakterer.length; i++){
+            if(karakterer[i] > 4){
+                antall ++;
+            }
+        }
+        resultatEl.innerHTML += "Antall karakterer bedre enn fire: " + antall;
+    })
+
+
+</script>
+</body>
+</html>

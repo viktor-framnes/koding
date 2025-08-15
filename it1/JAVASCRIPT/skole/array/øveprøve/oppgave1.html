@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h1>Frisør AS</h1><br>
+        <b>Kjønn:</b><br>
+        <select id="kjonn">
+            <option value="0">Gutt</option>
+            <option value="1">Jente</option>
+        </select> <br>
+        <b>Behandling:</b><br>
+        <select id="behandling">
+            <option value="0">Klipp</option>
+            <option value="1">Klipp og Vask</option>
+            <option value="2">Styling</option>
+        </select> <br>
+        <button>Beregn pris</button>
+        <b><p></p></b>
+    </div>
+<script>
+    let knappEl = document.querySelector("button");
+    let resultatEL = document.querySelector("p");
+    let kjonn = document.querySelector("#kjonn");
+    let behandling = document.querySelector("#behandling");
+
+    let priser = []
+        priser[0] = [250,350,300]
+        priser[1] = [400,500,450]
+    let kjonn2 = ["gutt","jente"]
+
+    knappEl.addEventListener("click", function(){
+        resultatEL.innerHTML = "Prisen blir " + priser[kjonn.value][behandling.value] + " kr, siden du er " + kjonn2[kjonn.value] + "."
+    })
+
+
+</script>
+</body>
+</html>

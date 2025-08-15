@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+    .innpakning{
+        background-color: rgb(239, 239, 135);
+    }
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h1>Ukestemeratur på Nedre Foss:</h1>
+        <b>Skriv inn temperaturen for de første 5 dagene i uka:</b><br>
+        (Trykk på knappen for hver dag): <br><br>
+        <input type="number" id="temp" placeholder="Skriv inn temp">
+        <input type="text" id="ukedag" placeholder="Skriv inn ukedag">
+        <button>Trykk her for registrering</button>
+        <p></p>
+        <p id="res2"></p>
+    </div>
+<script>
+    let resultatEl = document.querySelector("p");
+    let temp = document.querySelector("#temp");
+    let ukedag = document.querySelector("#ukedag");
+    let knappEl = document.querySelector("button");
+    let res2 = document.querySelector("#res2")
+
+    let tempArray = []
+    let ukedagArray = []
+    let gjennomsnitt = 0;
+
+    knappEl.addEventListener("click", function(){
+        tempArray.push(temp.value);
+        ukedagArray.push(ukedag.value);
+        
+        //gjennomsnitt
+        let antall = 0;
+        for(let i = 0; i < tempArray.length; i++){
+            antall += Number(tempArray[i])
+        }
+        gjennomsnitt = antall/tempArray.length
+        
+
+        resultatEl.innerHTML = ""
+        for(let i = 0; i < ukedagArray.length; i++){
+            resultatEl.innerHTML += ukedagArray[i] + " : " + tempArray[i] + " grader <br>"
+        }
+        res2.innerHTML = "<br> Gjennomsnitstemp. ble: " + gjennomsnitt.toFixed(2) + " grader.";
+
+    })
+
+</script>
+</body>
+</html>

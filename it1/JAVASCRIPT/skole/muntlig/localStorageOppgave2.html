@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    div{
+        width: 50%;
+        height: 400px;
+        margin: auto;
+        background-color: grey;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <div>
+        <h1>Overskrift</h1>
+        <p></p>
+    </div>
+<script>
+    let resEl = document.querySelector("p");
+
+    resEl.innerHTML = "Navnet ditt er " + localStorage.getItem("navn") + " og du fikk " + localStorage.getItem("poeng") + " poeng på quizen."
+</script>
+</body>
+</html>

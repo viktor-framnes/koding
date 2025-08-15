@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <title>IS</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h1>Stort eller lite tall</h1>
+        <button>Trykk for resultat</button>
+        <p></p>  
+    </div>  
+<script>
+    let knappEl = document.querySelector("button");
+    let resultatEl = document.querySelector("p");
+    
+    knappEl.addEventListener("click", vis)
+    function vis() {
+        let tall = Math.floor(Math.random()*17) + 2;
+        resultatEl.innerHTML = "Tallet er " + tall + "<br><br>";
+        if (tall > 10) {
+            for(let i = 0; i < 10; i++){
+                resultatEl.innerHTML += "Stort tall <br>"
+            }
+        }
+        else {
+            for(let i = 0; i < 5; i++){
+                resultatEl.innerHTML += "Lite tall <br>"
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(61, 12, 12);
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+div{
+    background-color: rgb(110, 17, 32);
+    width: 600px;
+    margin: auto;       /*denne midtstiller div'en*/
+    text-align: center;
+    padding: 8px;
+}
+h1{
+    color: rgba(255, 188, 55, 0.988);
+}
+.tekst1{
+    color: coral;
+}
+#tekst2{
+    color: rgb(21, 106, 2);
+}
+img{
+    border: 8px solid black;
+    border-radius: 20%;
+}

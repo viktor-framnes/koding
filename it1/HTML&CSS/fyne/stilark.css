@@ -1,0 +1,208 @@
+
+body{
+    background-color: #161b21;
+}
+
+div.top{
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: 1000px;
+}
+div.tophøyre{
+    flex: 1;
+}
+img.logo{
+    padding-left: 10px;
+}
+div.topmid{
+    flex: 3;
+}
+ul {
+    list-style-type: none;
+    text-align: center;
+    padding-right: 50px;
+    padding-top: 20px;
+}
+li{
+    display: inline;
+    margin: 10px;
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 2px;
+    font-size: 18px;
+    width: 120px;
+}
+a:hover{
+    color: #f4a950;
+}
+div.topvenstre{
+    flex: 1;
+}
+a.kontakt:hover{
+    color: rgb(150, 0, 0);
+}
+a.kontakt{
+    color: rgb(170, 7, 7);
+}
+div.mid{
+    background-color: #161b21;
+    height: 950px;
+    margin-top: 10px;
+    min-width: 1000px;
+}
+h1.overskrift{
+    letter-spacing: 5px;
+}
+img.gif{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+div.bunn{
+    background-color: #13171b;
+    height: 120px;
+    width: 100%;
+    padding-top: 20px;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    
+}
+h1.bunntekst{
+    letter-spacing: 5px;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    letter-spacing: 2px;
+}
+
+
+
+
+.stillinger{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #161b21;
+    width: 1100px;
+    height: 600px;
+    margin: auto;
+    text-align: center;
+    letter-spacing: 2px;
+}
+.boks1{
+    background-color: #1c222a;
+    flex: 1;
+    margin: 15px;
+    color: white;
+    padding: 10px;
+}
+.faktaboks{
+    background-color: #1c222a;
+    width: 850px;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+    letter-spacing: 2px;
+    color: white;
+}
+.stillinger2{
+    display: flex;
+    flex-direction: column;
+    background-color: #161b21;
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    text-align: center;
+    letter-spacing: 2px;
+}
+.boks{
+    display: flex;
+    flex-direction: column;
+    background-color: #1c222a;
+    margin: 15px;
+    color: white;
+}
+.boks4{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1;
+}
+.h{
+    flex: 1;
+}
+.v{
+    flex: 1;
+    font-size: 30px;
+    padding: 20px;
+}
+.hovedtekst{
+    letter-spacing: 5px;
+    font-size: 30px;
+    padding-top: 20px;
+    font-weight: bold;
+}
+.lenke{
+    color: white;
+    font-size: 30px;
+    font-weight: lighter;
+    font-family: 'Times New Roman', Times, serif;
+}
+a :hover{
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-skip-ink: auto;
+}
+
+
+
+
+.dropdown-content {
+    background-color: #161b21;
+    width: 320px;
+    height: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    transition: width 2s, height 2s;
+    overflow: hidden;
+}
+
+.kultekst{
+    transition: opacity 2s;
+    opacity: 0%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 800px;
+    height: 600px;
+    margin: auto;
+
+}
+.boks2{
+    flex: 1;
+    font-size: 20px;
+}
+.dropdown{
+    display: inline-block;
+}
+.dropdown-content:hover{
+    width: 800px;
+    height: 600px;
+}
+.kultekst:hover{
+    opacity: 100%;
+}
+
+* {
+    box-sizing: border-box;
+  }
+

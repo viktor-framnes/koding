@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <title>IS</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+   h1{
+        color: red;
+    }       
+    .ramme{
+        border: 3px solid red;
+        margin: 0px 5px;
+    }
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h3>Skriv inn alderen din</h3>
+        <input id="alder" type="number">
+        <h3>Skriv inn hvor mange timer du jobber i uken</h3>
+        <input id="timer" type="number">
+        <br><br>
+        <button>Trykk her for å regne ut lønnen din</button>
+        <b><p></p></b>
+    </div>
+<script>
+    let alder = document.querySelector("#alder")
+    let timer = document.querySelector("#timer")
+    let knappEl = document.querySelector("button")
+    let timelonn = 0;
+    let resultatEl = document.querySelector("p")
+    let divEl = document.querySelector("div")
+    
+
+    knappEl.addEventListener("click", vis);
+    function vis(){
+        if(alder.value < 16) {
+            timelonn = 80;
+            let ukelonn = timelonn * timer.value;
+            resultatEl.innerHTML += "Timeslønn: " + timelonn + "<br> Ukeslønn er: " + ukelonn + " kr <br> Månedslønnen er: " + ukelonn * 4 + "kr <br>";
+        }
+        else if (alder.value >= 16) {
+            timelonn = 120;
+            let ukelonn = timelonn * timer.value;
+            resultatEl.innerHTML += "Timeslønn: " + timelonn + "<br> Ukeslønn er: " + timelonn * timer.value + " kr <br> Månedslønnen er: " + ukelonn * 4 + "kr <br>";
+        }
+        for(let i = 0; i< Math.floor(alder.value *0.1); i++){
+            let lys = document.createElement("img");
+            lys.src = "kakelys.jpg"
+            lys.height = "50";
+            lys.width = "50";
+            lys.className = "ramme";
+            divEl.appendChild(lys);
+        }
+    }
+
+</script>
+</body>
+</html>

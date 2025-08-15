@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+    .innpakning{
+        border: none;
+        margin: 5px auto;
+        min-height: 100px;
+    } 
+</style>
+</head>
+<body>
+    <div class="innpakning" style="background-color: pink; height: 170px;">
+        <h1>Tall i en array</h1>
+        <button id="knapp1">Velg antall tall i en array</button>
+        <input type="number">
+        <p id="res1"></p>
+    </div>
+    <div class="innpakning" style="background-color: yellow;">
+        <button id="knapp2">Trekk et tilfeldig tall fra arrayen</button>
+        <p id="res2"></p>
+    </div>
+    <div class="innpakning" style="background-color: black; color: white;">
+        <button id="knapp3">Trykk for gjennomsnitt av arrayen</button>
+        <p id="res3"></p>
+    </div>
+
+<script>
+    let res1 = document.querySelector("#res1");
+    let res2 = document.querySelector("#res2");
+    let res3 = document.querySelector("#res3");
+    let knapp1 = document.querySelector("#knapp1");
+    let knapp2 = document.querySelector("#knapp2");
+    let knapp3 = document.querySelector("#knapp3");
+    let antallTall = document.querySelector("input");
+    let tall = [];
+
+    knapp1.addEventListener("click", function(){
+        for(let i = 1; i <= antallTall.value; i++){
+            tall.push(i);
+        }
+        res1.innerHTML = tall;
+    })
+
+    knapp2.addEventListener("click", function(){
+        res2.innerHTML = tall[Math.floor(Math.random()*tall.length)]
+    })
+
+    knapp3.addEventListener("click", function(){
+        let gjennomsnitt = 0;
+        for(let i = 0; i < tall.length; i++){
+            gjennomsnitt += tall[i]
+        }
+        res3.innerHTML = (gjennomsnitt/tall.length).toFixed(2);
+    })
+
+</script>
+</body>
+</html>

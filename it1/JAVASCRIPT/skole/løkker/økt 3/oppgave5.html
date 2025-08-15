@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+</style>
+</head>
+<body>
+<div class="innpakning">
+    <h1>Tast inn hvor mange flasker det er på hylla</h1>
+    <input type="number" placeholder="">
+    <button>Skriv ut sang</button>
+    <p></p>
+</div>
+<script>
+    let ordEl = document.querySelector("input");
+    let knappEl = document.querySelector("button");
+    let resultatEl = document.querySelector("p");
+
+    knappEl.addEventListener("click", vis)
+    function vis(){
+        for(let i = ordEl.value; i >= 1; i--){
+        resultatEl.innerHTML += i + " flasker med brus på hylla, " + i + " flasker med brus. <br> Ta en ned og send den rundt, " + (i-1) + " flasker med brus på hylla. <br><br>";
+    }
+    resultatEl.innerHTML += "Ingen flere flasker på hylla, ingen flasker igjen. <br> Gå i butikken og kjøp noen flere, 99 flasker med brus på hylla.";
+    }
+</script>
+</body>
+</html>

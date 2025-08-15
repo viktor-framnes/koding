@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Representasjon av bilde</title>
+    <link rel="stylesheet" href="stilark.css">
+</head>
+<body>
+    <div class="innpakning">
+        <div class="logo"><a href="index.html">Hjem</a></div>
+        <div class="top"><h1>Representasjon av bilde</h1></div>
+        <div class="filler"></div>
+    </div>
+    <div class="mid">
+        <div class="faktaboks3">
+            <div class="faktatekst3">
+                <p id="faktatekst2">
+                    Et bilde lagres altså i datamaskinen som kombinasjoner av 0 og 1, men det finnes likevel mange forskjellige måter å lagre bilder på. Hvorfor trenger vi forskjellige formater?
+                </p>
+                <p id="faktatekst">
+                    Et bilde er ikke bare et bilde. Et fotografi lagres gjerne på en helt annen måte enn en logo. I tillegg har vi bildebehandlingsprogrammer som lagrer et bilde sammen med det arbeidet du har gjort på det. Det finnes derfor veldig mange ulike bildeformater.
+                </p>
+            </div>
+        </div>
+        <div class="faktaboks">
+            <div class="faktabilde">
+                <img src="punktgrafikk.png" alt="Bilde av Punktgrafikk">
+            </div>
+            <div class="faktatekst">
+                <h2 id="overskrift">Punktgrafikk</h2>
+                <p id="faktatekst">
+                    Skjermer er basert på punkter (piksler, eng. pixler fra «picture element»). Hvert punkt består av tre farger (rød, grønn og blå). Ved å justere intensiteten til hver farge kan en datamaskin kontrollere fargen i hvert enkelt punkt. <br><br>
+                    Samspillet mellom rødt, grønt og blått avgjør punktets farge, som nevnt på forrige side. På den måten kan mange punkter settes sammen for å danne et bilde. <br><br>
+                </p>
+            </div>
+        </div>
+        <div class="faktaboks3">
+            <div class="faktatekst3">
+                <p id="faktatekst">
+                    <br><br>
+                    Bildestørrelsen til digitale bilder angis i piksler. Et bilde med størrelse 800 × 400 har en bredde på 800 piksler og en høyde på 400 piksler. Selve størrelsen til dette bildet på en skjerm vil avhenge av skjermens oppløsning. En piksel har ingen fast størrelse. <br><br>
+                    Bildet med størrelsen 800 × 400 har altså totalt 800 · 400 = 320 000 enkeltpiksler. I avsnittet om farger kom vi fram til at én farge benytter tre byte. For å plassere én farge i hver av pikslene trenger vi derfor 320 000 · 3 = 960 000 byte, eller omtrent 940 kilobyte. (Det er 1024 byte i en kilobyte og 1024 kilobyte i en megabyte. 960 000 byte er da 960 000/1024 ≈ 940 kilobyte.) <br><br>
+                    Dette er en forenkling av hvordan bilder faktisk lagres. De fleste bildefiler komprimeres, i tillegg til at det gjerne lagres mer informasjon enn bare bildets punkter. <br><br>
+                    PNG («Portable Network Graphics») og JPEG («Joint Photographic Experts Group») er de vanligste bildeformatene som benyttes på nettsider. PNG er et format som benytter «lossless» komprimering. Det vil si komprimering uten tap av kvalitet. JPEG benytter «lossy» komprimering. Det vil si at kvaliteten blir dårligere. JPEG kan derfor gi mindre filstørrelse enn PNG. Det er vanlig å benytte PNG-formatet for strektegninger og JPEG for fotografier. <br><br>
+                </p>
+                <h2 id="overskrift">Vektorgrafikk</h2>
+                <p id="faktatekst">
+                    Bilder kan også lagres som vektorer. Det vil si former og strukturer som kan beskrives av en oppskrift. Vektorbilder kan, i motsetning til punktgrafikk, forstørres så mye en måtte ønske, uten tap av informasjon. Et vektorbilde har derfor ingen fast størrelse. <br><br>
+                    SVG («Scalable Vector Graphics») er et eksempel på et vektorformat. I koden nedenfor vises en SVG-kode. I denne koden tegnes først et rektangel med bredde 300 og høyde 200 med hvit fyllfarge og en svart kantlinje. Deretter tegnes en sirkel med fargen #BE0029 og radius 120. Sirkelen havner i midten fordi x-koordinaten er halvparten av rektangelets bredde, og y-koordinaten er halvparten av rektangelets høyde. <br><br>
+                </p> <br>
+                <img src="kode.png" alt="bilde av kode"> <br><br>
+                <p id="faktatekst">
+                    Til sammen danner denne koden flagget til Japan. Dette bildet er basert på en oppskrift og ikke på punkter med farger (som i punktgrafikk). Ved å endre denne oppskriften kan vi gjøre bildet større uten at kvaliteten reduseres. Vi kan derfor forstørre et SVG-bilde så mye vi vil, uten tap av kvalitet.
+                </p> <br><br>
+                <img src="japan.png" alt="bilde av flagget til japan"> <br><br>
+                <h2 id="overskrift">Komprimering</h2>
+                <p id="faktatekst">
+                    Det finnes flere bildeformater vi kan bruke på en nettside, og hovedforskjellen mellom dem ligger i hvordan de komprimerer bilder. Å komprimere et bilde vil si å lagre det på en måte som gjør at det tar mindre plass. Det vil si at filstørrelsen blir mindre. Bildets størrelse forblir den samme. <br><br>
+                    Komprimering benyttes bare for punktgrafikk. Generelt handler komprimering om å fjerne unødig informasjon fra originalbildet. Det er for eksempel ikke nødvendig å lagre informasjon om alle lyseblå piksler i et bilde av en himmel hvis fargen på pikslene er omtrent lik. <br><br>
+                    I figuren nedenfor vises et enkelt eksempel på komprimering av et bilde av et tre. Punktene i dette bildet kan representeres som enten hvite (H) eller svarte (S). Hvis vi lagrer en ukomprimert versjon av dette bildet, får vi det som vises i den blå boksen. For å spare plass kan vi gruppere informasjonen i dette bildet. Det vises i den grønne boksen. Her leser vi linje for linje fra venstre, og angir antall hvite og svarte punkter. Denne komprimeringsvarianten kalles «Run-length Encoding». På denne måten kan vi representere det originale bildet med mindre informasjon. Dette fører til at bildefilen tar mindre plass. <br><br>
+                </p>
+                <img src="komprimering.png" alt="bilde på komprimering"> <br><br>
+                <p id="faktatekst">
+                    Det finnes mange ulike komprimeringsmetoder. Hvilken komprimeringsmetode vi bør benytte, avhenger av hva vi skal bruke bildet til. På en nettside er det viktig å ha så kort ventetid som mulig for den som skal lese siden. Derfor er det viktig å minimere alle filstørrelser. Dette var et større problem før, da internettlinjene ikke kunne levere like høye hastigheter som de kan i dag, men det er likevel lurt å begrense filstørrelser så mye som mulig. Dette er spesielt viktig for mobilbrukere, som kan oppleve tregere internett i tillegg til at de ofte har abonnementer med begrensninger eller kostnader for bruk av mobildata.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

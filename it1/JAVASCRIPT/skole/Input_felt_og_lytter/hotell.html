@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+    button{
+        background-color: rgb(56, 191, 56)
+        ;
+    }
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h1>Velkommen til Bø Turisthotell</h1>
+        <b>Navn</b><br>
+        <input type="text" id="Navn">
+        <b>Telefonnummer</b><br>
+        <input type="number" id="tlfnummer">
+        <b>Antallgjester</b><br>
+        <select id="antall">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+        <b>Antall døgn</b> <br>
+        <input type="number" id="dogn"> <br>
+        <b>Frokost:</b><br>
+        <input name="frokost" type="radio" id="frokostJa" checked>Ja<br>
+        <input name="frokost" type="radio" id="frokostNei">Nei<br><br>
+        <b>Ekstraaktivitet:</b><br>
+        <input type="checkbox" id="boSommerland">Dagpass til Bø sommerland (300kr) <br>
+        <input type="checkbox" id="klatrePark">Dagpass til Høyt og Lavt klatrepark (250kr) <br>
+        <input type="checkbox" id="omvFruktGard">Omvisning på fruktgård (200kr) <br>
+        <input type="checkbox" id="telemarksKanalen">Dagstur på Telemarkskanalen (800kr) <br> <br>
+        <button>Bekreftelse</button>
+        <b><p id="resultat"></p></b>
+    </div>
+<script>
+    let overnattingspris = 1000;
+    let frokost = 200;
+    let navnEl = document.querySelector("#Navn")
+    let tlfEl = document.querySelector("#tlfnummer")
+    let antallEl = document.querySelector("#antall");
+    let dognEl = document.querySelector("#dogn")
+    let knappEl = document.querySelector("button");
+    let resultatEl = document.querySelector("#resultat");
+    let frokostJaEl = document.querySelector("#frokostJa");
+    let frokostNeiEl = document.querySelector("#frokostNei");
+    let boSommerLandEl = document.querySelector("#boSommerland");
+    let klatreParkEl = document.querySelector("#klatrePark");
+    let omvFruktGardEl = document.querySelector("#omvFruktGard");
+    let telemarksKanalenEl = document.querySelector("#telemarksKanalen");
+
+    let forkostsum = 0;
+    let ekstrasum1 = 0;
+    let ekstrasum2 = 0;
+    let ekstrasum3 = 0;
+    let ekstrasum4 = 0;
+
+    knappEl.addEventListener("click", beregn);
+        function beregn() {
+            let antall = antallEl.value;
+
+            if(frokostJaEl.checked){
+                forkostsum = antall * frokost * dognEl.value;
+            }
+            if(boSommerLandEl.checked){
+                ekstrasum1 = antall * 300;
+            }
+            if(klatreParkEl.checked){
+                ekstrasum2 = antall * 250;
+            }
+            if(omvFruktGardEl.checked){
+                ekstrasum3 = antall * 200;
+            }
+            if(telemarksKanalenEl.checked){
+                ekstrasum4 = antall * 800;
+            }
+            
+            resultatEl.innerHTML = "Velkommmen til Bø Turisthotell, " + navnEl.value + ".<br> Telefonnummer: " + tlfEl.value + " <br> Antall personer: " + antallEl.value +  
+            "<br> Antall døgn: " + dognEl.value + "<br> Frokost: " + forkostsum + " kr. <br> Bø sommerland: " + ekstrasum1 + " kr. <br> Klatrepark: " + ekstrasum2 + " kr. <br> Omvisning på fruktgård: " + ekstrasum3 +
+            " kr. <br> Telemarkskanalen: " + ekstrasum4 + " kr. <br> Totalpris blir: " + ((overnattingspris * antall * dognEl.value) + forkostsum + ekstrasum1 + ekstrasum2 + ekstrasum3 + ekstrasum4 + " kr.");
+        }
+
+</script>
+</body>
+</html>

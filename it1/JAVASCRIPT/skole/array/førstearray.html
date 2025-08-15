@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+<style>
+
+</style>
+</head>
+<body>
+<script>
+
+
+    let tall0 = [3,5,8,"Tine",34,6]; //for å vise at tekst og tall kan stå sammen
+    document.write(tall0 + "<br>");
+
+    let tall1 = [3,5,2,8,34,6]; //gir oss lengden på array
+    document.write(tall1.length + "<br>");
+
+    let tall2 = [3,5,2,8,34,6]; //henter ut et tall her 8
+    document.write(tall2[3] + "<br>");
+
+    let tall3 = [3,5,2,8,34,6]; //legger til 5 bakerst i arrayen
+    tall3.push(5);
+    document.write(tall3 + "<br>");
+
+    let tall4 = [3,5,2,8,34,6]; //leeger til 5 først i arrayen
+    tall4.unshift(5);
+    document.write(tall4 + "<br>");
+
+    let tall5 = [3,5,2,8,34,6]; //fjerne det bakerste tallet
+    tall5.pop();
+    document.write(tall5 + "<br>");
+
+    let tall6 = [3,5,2,8,34,6]; //fjerne det første tallet
+    tall6.shift();
+    document.write(tall6 + "<br>");
+
+    let tall7 = [3,5,2,8,34,6]; //fjerner tallet 8 i arrayen
+    tall7.splice(3,1);
+    document.write(tall7 + "<br>");
+    
+    let tall8 = [3,5,2,8,34,6]; //legger til 4 og 6 fra indeks 3
+    tall8.splice(3,0,4,6);
+    document.write(tall8 + "<br>");
+
+    let tall9 = [3,5,2,8,34,6]; //gir oss indeks nummer til tallet 34
+    document.write(tall9.indexOf(34));
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+<script>
+    let res = document.querySelector("p");
+    let array = [1,2,3,4,5,6]
+    let sum = 0;
+    let gjenom = 0;
+
+    for(let i = 0; i < array.length; i++) {
+        sum += array[i];
+        
+    }
+    let gjennom = sum/array.length
+    res.innerHTML = gjennom + " er gjennomsnittet og " + sum + " er summen"
+</script>
+</body>
+</html>

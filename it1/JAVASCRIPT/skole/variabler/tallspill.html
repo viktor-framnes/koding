@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+
+</style>
+</head>
+<body>
+    
+<script>
+    let riktigTall = 42;
+    let gjettet = Number(prompt("Skriv inn et tall mellom 0 og 100"))
+
+    if (gjettet == riktigTall) {
+        document.write("Gratulerer, riktig tippa")
+    } else if (gjettet < riktigTall) {
+        document.write("For lavt tall")
+    } else if (gjettet > riktigTall) {
+        document.write("For høyt tall")
+    } else {
+        document.write("Du må skrive et tall")
+    }
+    /*
+    let riktigTall = Math.round(Math.random() * 100);
+
+    function gjettetall () {
+        let gjettet = Number(prompt("Skriv inn et tall mellom 0 og 100"))
+    }
+
+    sjekketall()
+
+    function sjekketall () {
+        if (gjettet == riktigTall) {
+            document.write("Gratulerer, riktig tippa")
+        } else if (gjettet < riktigTall) {
+            document.write("For lavt tall")
+        } else if (gjettet > riktigTall) {
+            document.write("For høyt tall")
+        } else {
+            document.write("Du må skrive et tall")
+        }
+    }
+    */
+
+</script>
+</body>
+</html>

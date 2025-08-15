@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+body{
+    text-align: center;
+    margin: 40px;
+    background-color: brown;
+}
+div{
+    border: 8px solid black;
+    background-color: white;
+    width: 500px;
+    margin: auto;
+}
+#s{
+    color: blue;
+}
+</style>
+</head>
+<body>
+<div>
+    <h1>Magic 8-ball</h1>
+    <h2 id="s"></h2>
+    <img src="8ball.png" alt="Bilde av 8-ball" height="300px">
+    <h1 id="a"></h1>
+</div>
+<script>
+    let question = prompt("Hva er ditt spørsmål?");
+    let svar1 = "Ja garantert";
+    let svar2 = "Ikke regn med det";
+    let svar3 = "Spør senere";
+    let svar4 = "Tviler på det";
+    let svar5 = "Ikke i det hele tatt";
+    let randomSvar = Math.floor(Math.random() *5) + 1;
+    let svar = ""
+
+    if (randomSvar == 1) {
+        svar = svar1;
+    } else if (randomSvar == 2) {
+        svar = svar2;
+    } else if (randomSvar == 3) {
+        svar = svar3;
+    } else if (randomSvar == 4) {
+        svar = svar4;
+    } else if (randomSvar == 5) {
+        svar = svar5;
+    }
+
+    document.querySelector("#s").innerHTML = "Spørsmål: " + question;
+    document.querySelector("#a").innerHTML = "Svar: " + svar;
+
+</script>
+</body>
+</html>

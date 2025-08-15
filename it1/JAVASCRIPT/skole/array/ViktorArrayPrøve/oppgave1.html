@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+
+</style>
+</head>
+<body>
+
+<script>
+
+    //opgave 1a)
+    tall = [4,7,9,6,3,2];
+
+    for(let i = 0; i < tall.length; i++){
+        document.write(tall[i])
+    }
+
+    //oppgave 1b)
+    document.write("<br>" + Number(tall[0] + tall[tall.length - 1]) + "<br>");
+
+    //oppgave 1c)
+    for(let i = 0; i < tall.length; i++){
+        if(tall[i] < 6){
+            document.write(tall[i])
+        }
+    }
+
+    //oppgave 1d)
+    tall.splice(3,0,26)
+    document.write("<br>" + tall)
+
+    //oppgave 1e)
+    tall.sort(sammenlign)
+    document.write("<br>" + tall)
+
+    function sammenlign(a,b){
+        return a - b;
+    }
+</script>
+</body>
+</html>

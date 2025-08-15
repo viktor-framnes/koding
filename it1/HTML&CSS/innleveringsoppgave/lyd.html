@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Representasjon av lyd</title>
+    <link rel="stylesheet" href="stilark.css">
+</head>
+<body>
+    <div class="innpakning">
+        <div class="logo"><a href="index.html">Hjem</a></div>
+        <div class="top"><h1>Representasjon av lyd</h1></div>
+        <div class="filler"></div>
+    </div>
+    <div class="mid">
+        <div class="faktaboks3">
+            <div class="faktatekst3">
+                <p id="faktatekst2">
+                    Nå er det kanskje ikke noen overraskelse lenger når vi sier at lyd også representeres av 0 og 1 i en datamaskin.
+                </p>
+                <p id="faktatekst">
+                    Lyd er trykkbølger som beveger seg gjennom lufta. En høyttaler vibrerer slik at det dannes lydbølger som ørene våre er i stand til å registrere. <br><br>
+                    I figuren nedenfor representerer den svarte kurven en lydbølge. En slik kurve består av uendelig mange punkter. Det er derfor umulig å digitalisere alle punktene. (Det vil si å representere lydsignalene som tall.) Løsningen på dette er å sample lyden. Det vil si at man gjør målinger (eng. samples) av lufttrykket ved faste tidsintervaller. <br><br>
+                    Verdiene av disse målingene sammen med samplingsfrekvensen (antall målinger per sekund) utgjør den digitaliserte lyden. De røde punktene i figuren viser en slik sampling. Her viser den røde linjen resultatet. For å få bedre kvalitet kan vi foreta flere målinger. Dette er gjort med de blå punktene og den blå linjen. <br><br>
+                </p>
+                <img src="lyd.png" alt="bilde av lyd"> <br><br>
+                <p id="faktatekst">
+                    For å få god lydkvalitet må vi ta mange målinger. Det betyr at vi må lagre mer informasjon, noe som igjen betyr at lydfilen blir stor. Kvaliteten vi ønsker på lydfilen, avhenger av hva vi ønsker å bruke den til. <br><br>
+                    Vi kan ofte redusere kvaliteten en del uten at vi kan oppfatte det med hørselen. Dette utnyttes blant annet i MP3-formatet. I tillegg til å redusere antall målinger kan vi også komprimere lyd ved å lete etter mønstre, på samme måte som for bilder.  <br><br>
+                    Vi kan skille mellom tre typer lydfiler: ukomprimerte (for eksempel WAV, «Waveform Audio File Format»), komprimerte uten tap («lossless» komprimering, for eksempel FLAC, «Free Lossless Audio Codec») og komprimerte med tap («lossy» komprimering, for eksempel MP3, «MPEG-1/MPEG-2 Audio Layer III»). <br><br>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

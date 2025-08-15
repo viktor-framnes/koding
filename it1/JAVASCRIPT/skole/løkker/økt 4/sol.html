@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <title>IS</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+    h1{
+        color: red;
+    }       
+    .ramme{
+        border: 5px solid black;
+    }
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <button>Trykk for sol</button>
+        <h3></h3>
+    </div>
+<script>
+    let knappEl = document.querySelector("button");
+    let divEl = document.querySelector("div");
+    let tesktEl = document.querySelector("h3");
+    let antall = 0;
+
+    knappEl.addEventListener("click", vis);
+        function vis(){
+                let sol = document.createElement("img");
+                sol.src = "sol.gif";
+                sol.width = "100";
+                sol.height = "100";    
+                sol.className = "ramme";
+                antall ++;
+                let linjeskift = document.createElement("br");
+                tesktEl.innerHTML = "Du ser nå " + antall + " bilder av en sol"
+                divEl.appendChild(linjeskift);    
+                divEl.appendChild(sol);
+        }
+</script>
+</body>
+</html>

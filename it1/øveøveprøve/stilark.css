@@ -1,0 +1,106 @@
+
+.innpakning{
+    width: 800px;
+    background-color: rgb(45, 44, 44);
+    margin: auto;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+}
+.toprad{
+    flex: 1;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+}
+.logo{
+    flex: 1;
+    margin-right: 3px;
+    height: 100px;
+}
+.tittel{
+    flex-basis: 80%;
+    background-color: rgb(22, 96, 180);
+    height: 100px;
+    text-align: center;
+    margin-left: 2px;
+}
+.midrad{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+.innhold{
+    flex-basis: 80%;
+    background-color: rgb(78, 144, 220);
+    margin-right: 3px;
+    height: 250px;
+    text-align: center;
+}
+.innhold img{
+    height: 230px;
+    width: 600px;
+    display: block;
+    margin: 10px auto;
+    border: solid 2px black;
+    border-radius: 30px;
+}
+.meny{
+    flex: 1;
+    background-color: rgb(36, 115, 206);
+    height: 250px;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 3px;
+}
+.meny img{
+    border-radius: 60px;
+    width: 45px;
+    height: 35px;
+    border: solid black 1.5px;
+}
+ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+ul li{
+    padding: 15px;
+}
+.logo img{
+    width: 100%;
+    height: 100%;
+    border: solid rgb(45, 44, 44);
+    border-top: none;
+    border-bottom: none;
+    box-sizing: border-box;
+}
+audio{
+    width: 250px;
+    height: 40px;
+    margin: 100px auto;
+    display: block;
+}
+.innhold2{
+    flex-basis: 80%;
+    background-color: rgb(163, 203, 248);
+    margin-right: 3px;
+    height: 250px;
+    text-align: center;
+}
+table{
+    margin: auto;
+    border-collapse: collapse;
+    text-align: left;
+    font-weight: bold;
+}
+tr td, th{
+    border: 2px solid black;
+    padding: 5px;
+}
+th{
+    background-color: rgb(252, 75, 104);
+}
+td{
+    background-color: pink;
+}

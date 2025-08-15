@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+body{
+    margin: auto;
+    background-color: darkgrey;
+
+}
+.tall{
+    background-color: tomato;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.innpakning{
+    width: 800px;
+    background-color: lightgray;
+    border: 2px solid black;
+    margin:  50px auto;
+    text-align: center;
+}
+p{
+    font-size: 25px;
+}
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h1>Klikk på ett av dyrene</h1>
+        <img src="ekorn.jpg" id="ekorn" alt="bilde av ekorn">
+        <img src="tiger.jpg" id="tiger" alt="bilde av tiger">
+        <p></p>
+    </div>
+<script>
+    let imgEl = document.querySelectorAll("img");
+    let resEl = document.querySelector("p");
+
+    for(let i = 0; i < imgEl.length; i++){
+        imgEl[i].addEventListener("click", function(e){
+            resEl.innerHTML = "Du trykket på: " + e.target.id
+        })
+    }
+
+
+</script>
+</body>
+</html>

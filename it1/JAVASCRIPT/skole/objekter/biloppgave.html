@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    biler = [
+        {forkortelse: "BMW", bilmerke: "Bayerische Motoren Werke", land: "Tyskland"},
+        {forkortelse: "VW", bilmerke: "Volkswagen", land: "Tyskland"},
+        {forkortelse: "FIAT", bilmerke: "Fabbrica Italiana Automobili Torino", land: "Italia"},
+        {forkortelse: "FORD", bilmerke: "Ford Motor Company", land: "USA"},
+        {forkortelse: "MERCEDES", bilmerke: "Mercedes-Benz", land: "Tyskland"},
+    ]
+
+    for(let i = 0; i < biler.length; i++){
+        document.write("Forkortelse: " + biler[i].forkortelse + ", Bilmerke: " + biler[i].bilmerke + ", Land: " + biler[i].land + ",<br>")
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: orange;
+            font-size: 25px;
+        }
+        h1{
+            color: blue;
+        }
+        #fakta{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Euro</h1>
+    
+    <p id="fakta"></p>
+
+    <script>
+       /*
+       let adjektiv1 = prompt("Skriv et adjektiv")
+        let adjektiv2 = prompt("Skriv et nytt adjektiv")
+        let adjektiv3 = prompt("Skriv enda et nytt adjektiv")
+
+        document.write("It1 klassen var på tur til en " + adjektiv1 +
+         " byggning. Byggningen var full av " + adjektiv2 + " mennesker. Det ble en ganske " + adjektiv3 + " tur.")
+        */
+
+        let kursMan = 7.85;
+        let kursTir = 7.9;
+
+        document.getElementById("fakta").innerHTML = `Euroen har endret seg fra ${kursMan} til ${kursTir}`;
+
+
+    </script>
+</body>
+</html>

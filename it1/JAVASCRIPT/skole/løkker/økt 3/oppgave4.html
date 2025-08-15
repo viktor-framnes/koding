@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+    div{
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+<div class="innpakning">
+    <h1>Sjekk den lille gangetabellen for et valgt tall</h1>
+    <input type="number" placeholder="">
+    <button>Trykk her</button>
+    <p></p>
+</div>
+<script>
+    let ordEl = document.querySelector("input");
+    let knappEl = document.querySelector("button");
+    let resultatEl = document.querySelector("p");
+
+    knappEl.addEventListener("click", vis)
+    function vis(){
+        resultatEl.innerHTML = ""
+        for(let i = 1; i <=ordEl.value; i++){
+            for(let j = 1; j <= 10; j++){
+                resultatEl.innerHTML += i + " x " + j + " = " + (i * j) + " " + "<br>";
+            }
+            resultatEl.innerHTML += "<br>";
+        }
+    }
+</script>
+</body>
+</html>

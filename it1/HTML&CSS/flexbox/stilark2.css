@@ -1,0 +1,58 @@
+#innpakning{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 800px;
+    background-color: #404040;
+    margin: auto;
+}
+#topptekst{
+    flex-basis: 100%;
+    height: 170px;
+    background-color: #909090;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+}
+#meny{
+    flex-basis: 200px;
+    background-color: orange;
+    margin: 5px;
+    padding: 5px;
+}
+#innhold{
+    display: flex; /*brukes for å midtstille horisontalt og vertikalt*/
+    align-items: center; /*midtstille*/
+    justify-content: center; /*midtstille*/
+    background-color: #909090;
+    flex: 1;
+    padding: 5px;
+    margin: 5px;
+}
+#bunntekst{
+    flex-basis: 100%;
+    background-color: red;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+}
+ul li{
+    list-style-type: none;
+}
+ul a{
+    display: block;
+    width: 80px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: green;
+    text-align: center;
+}
+ul a:hover{
+    background-color: yellow;
+    border-radius: 10px;
+}

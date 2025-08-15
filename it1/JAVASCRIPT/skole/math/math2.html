@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+body{
+    background-color: orange;
+}
+div{
+    background-color: white;
+    color: blue;
+    font-size: 30px;
+    margin: auto;
+    text-align: center;
+    width: 500px;
+    border: 10px solid black;
+}
+
+
+</style>
+</head>
+<body>
+    <div>
+        <h1>Kron eller mynt</h1>
+        <img>
+        <p></p>
+    </div>
+<script>
+    let bildeEl = document.querySelector("img");
+    let resultatEl = document.querySelector("p");
+    let myntkast = Math.random();
+    
+    if (myntkast > 0.5) {
+        bildeEl.src = "./bilder/kron.jpg";
+        resultatEl.innerHTML = "Det ble kron";
+    } else {
+        bildeEl.src = "./bilder/mynt.jpg"
+        resultatEl.innerHTML = "Det ble mynt";
+    }
+
+</script>
+</body>
+</html>

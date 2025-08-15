@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="pas1" type="password">
+    <input id="pas2" type="password">
+    <button>regn ut</button>
+    <p></p>
+<script>
+    let passord1 = document.querySelector("#pas1")
+    let passord2 = document.querySelector("#pas2")
+    let knappEl = document.querySelector("button")
+    let res = document.querySelector("p")
+
+    knappEl.addEventListener("click",function(){
+        if(passord1.value == passord2.value){
+            res.innerHTML = "fint passord"
+        } else{
+            res.innerHTML = "De er ikke like"
+        }
+    })
+</script>
+</body>
+</html>

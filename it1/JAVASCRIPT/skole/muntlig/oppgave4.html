@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number">
+    <button>regn ut</button>
+    <p></p>
+<script>
+    let tall = document.querySelector("input")
+    let knappEl = document.querySelector("button")
+    let res = document.querySelector("p")
+    let pris = 0;
+
+    knappEl.addEventListener("click", function(){
+        res.innerHTML = "prisen med mva på 25% er " + Number(tall.value) * 1.25 + " kr"
+    })
+
+</script>
+</body>
+</html>

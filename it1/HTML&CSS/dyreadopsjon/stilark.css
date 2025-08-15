@@ -1,0 +1,28 @@
+body{
+    background-color: rgb(60, 207, 60);
+}
+div{
+    background-color: lightblue;
+    margin: auto;       
+    text-align: center;
+    width: 700px;
+}
+h1{
+    color: darkgreen;
+}
+h3{
+    color: brown;
+}
+#hund{
+    color:yellow;
+}
+#katt{
+    color:brown;
+}
+#hest{
+    color:brown;
+}
+img{
+    border: 8px solid pink;
+    border-radius: 10%;
+}

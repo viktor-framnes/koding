@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+</head>
+<body>
+    <h1 id="tall">
+        Jeg har ingen tall!
+    </h1>
+    <button onclick="
+        console.log(mengde);
+        document.getElementById('tall').innerHTML = `Jeg har ${mengde} tall`
+        ">Vis mengde</button>
+    <button onclick="
+        mengde = mengde + 1;
+        console.log(mengde);
+        document.getElementById('tall').innerHTML = `Jeg har ${mengde} tall`
+    ">Legg til</button>
+    <button onclick="
+        mengde = mengde + 2;
+        console.log(mengde);
+        document.getElementById('tall').innerHTML = `Jeg har ${mengde} tall`
+    ">+2</button>
+    <button onclick="
+        mengde = mengde + 3;
+        console.log(mengde);
+        document.getElementById('tall').innerHTML = `Jeg har ${mengde} tall`
+    ">+3</button>
+    <button onclick="
+        mengde = 0;
+        console.log(mengde);
+        document.getElementById('tall').innerHTML = `Jeg har ${mengde} tall`
+    ">Tøm</button>
+
+<script>
+    let mengde = 0;
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+div{
+    width: 800px;
+    background-color: lightgrey;
+    border: 3px solid black;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+}
+img{
+    width: 300px;
+}
+</style>
+</head>
+<body>
+<div id="innpaking">    
+    <h1>Se bilder av ville dyr.</h1>
+    <button id="e">Vis meg en elefant</button>
+    <button id="g">Vis meg en giraff</button>
+    <button id="t">Vis meg en tiger</button><br><br>
+    <img src="" alt="">
+</div>
+<script>
+    let elefant = document.querySelector("#e")
+    let giraff = document.querySelector("#g")
+    let tiger = document.querySelector("#t")
+    
+    elefant.addEventListener("click", visE);
+    giraff.addEventListener("click", visG);
+    tiger.addEventListener("click", visT);
+
+    function visE() {
+        document.querySelector("img").src = "elefant.png";
+    }
+    function visG() {
+        document.querySelector("img").src = "giraff.png";
+    }
+    function visT() {
+        document.querySelector("img").src = "tiger.png";
+    }
+
+</script>
+</body>
+</html>

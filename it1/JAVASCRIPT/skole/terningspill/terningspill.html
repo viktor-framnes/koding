@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="brukerinput.css">
+<style>
+    body{
+        background-color: black;
+    }
+    p{
+        font-size: 20px;
+    }
+    .innpakning{
+        text-align: center;
+        border: 10px solid pink;
+        background-color: white;
+    }
+    #spiller1{
+        background-color: red;
+    }
+    #spiller2{
+        background-color: green;
+    }
+    #nullstill{
+        background-color: yellow;
+        color: black;
+    }
+    #resultat1{
+        color: red;
+        font-weight: bold;
+    }
+    #resultat2{
+        color: green;
+        font-weight: bold;
+    }
+    #vinner{
+        font-weight: bold;
+        color: blueviolet;
+    }
+</style>
+</head>
+<body>
+    <div class="innpakning">
+        <h1>Det fantastiske terningspillet</h1>
+        <h2>Førstemann til 50 poeng</h2>
+        <button id="nullstill">Nullstill</button>
+        <button id="spiller1">Kast terningen for spiller 1</button>
+        <button id="spiller2">Kast terningen for spiller 2</button><br>
+        <img src="blank.jpg" height="50px" width="50px">
+        <p id="resultat1"></p>
+        <p id="resultat2"></p>
+        <p id="vinner"></p>
+    </div>
+<script>
+    let nullstillEl = document.querySelector("#nullstill");
+    let spiller1El = document.querySelector("#spiller1");
+    let spiller2El = document.querySelector("#spiller2");
+    let bildeEl = document.querySelector("img");
+    let resultat1El = document.querySelector("#resultat1");
+    let resultat2El = document.querySelector("#resultat2");
+    let vinnerEl = document.querySelector("#vinner");
+
+    let sum1 = 0;
+    let sum2 = 0;
+    spiller1El.addEventListener("click", beregn1);
+        function beregn1(){
+            let terning1 = Math.floor(Math.random()*6)+1;
+            bildeEl.src = terning1 + ".jpg";
+            sum1 += terning1;
+            resultat1El.innerHTML = "Spiller1: Du fikk en " + terning1 + "-er" + " og har totalt " + sum1 + "poeng.";
+            if (sum1 >= 50) {
+                vinnerEl.innerHTML = "Spiller 1 vant. Gratulerer! " + 
+String.fromCodePoint(128512);
+            }
+        }
+    spiller2El.addEventListener("click", beregn2);
+        function beregn2(){
+            let terning2 = Math.floor(Math.random()*6)+1;
+            bildeEl.src = terning2 + ".jpg";
+            sum2 += terning2;
+            resultat2El.innerHTML = "Spiller2: Du fikk en " + terning2 + "-er" + " og har totalt " + sum2 + "poeng.";
+            if (sum2 >= 50) {
+                vinnerEl.innerHTML = "Spiller 2 vant. Gratulerer! " + 
+String.fromCodePoint(128512);
+            }
+        }
+    nullstillEl.addEventListener("click", tilbakestill);
+    function tilbakestill(){
+        sum1 = 0;
+        sum2 = 0;
+        resultat1El.innerHTML = "";
+        resultat2El.innerHTML = "";
+        vinnerEl.innerHTML = "";
+        bildeEl.src = "blank.jpg";
+    }
+</script>
+</body>
+</html>
