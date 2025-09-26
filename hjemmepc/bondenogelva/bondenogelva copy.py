@@ -22,7 +22,6 @@ class GameObject:
         self.x, self.y = x, y
         self.canvas.coords(self.id, x - r, y - r, x + r, y + r)
  
-200+5+30*3+50,hoyde/2+25, 200+5+30*3+50,hoyde/2-25
 class Båt(GameObject):
     def __init__(self, canvas,liste):
         startposx = 200+r+5

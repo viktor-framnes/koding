@@ -184,12 +184,13 @@ h1, h2{
     
     let gjerrigTekst = "";
 
-    if(gjerrigCount = 2){
+    if(gjerrigCount > 1){
         gjerrigTekst = "<br> Du er veldig gjerrig"
-    } else if(gjerrigCount = 1) {
+    } else if(gjerrigCount == 1) {
         gjerrigTekst = "<br> Du er litt gjerrig"
     }
     
+    document.write(gjerrigTekst)
 
 
     function bekreftelse(){
