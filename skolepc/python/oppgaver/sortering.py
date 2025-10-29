@@ -1,5 +1,5 @@
 tall = [3, 4, 1, 2, 5]
-buffer = 0
+
 
 for i in range(len(tall)):
     for j in range(i,len(tall)):
